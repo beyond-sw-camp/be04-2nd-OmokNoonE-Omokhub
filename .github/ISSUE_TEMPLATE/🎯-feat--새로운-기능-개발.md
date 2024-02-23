@@ -2,7 +2,7 @@
 name: "\U0001F3AF[Feat] 새로운 기능 개발"
 about: 이 템플릿은 새로운 기능을 추가할 때 사용됩니다.
 title: "\U0001F3AF[Feat] 새로운 기능 개발"
-labels: enhancement
+labels: ''
 assignees: ''
 
 ---
