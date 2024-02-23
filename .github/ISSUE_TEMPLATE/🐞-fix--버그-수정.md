@@ -1,7 +1,7 @@
 ---
-name: "\U0001F41E[Fix] 버그 수정 보고서"
+name: "\U0001F41E[Fix] 버그 수정"
 about: 이 템플릿은 버그를 수정할 때 사용됩니다.
-title: "\U0001F41E[Fix] 버그 수정 보고서"
+title: "\U0001F41E[Fix] 버그 수정"
 labels: bug
 assignees: ''
 
