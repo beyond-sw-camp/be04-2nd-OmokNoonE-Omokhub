@@ -163,6 +163,17 @@ gradle-app.setting
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+# useless files
+.gradle/*
+.idea/*
+gradle/**
+gradle/*
+HELP.md
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
+
 ### Gradle Patch ###
 # Java heap dump
 *.hprof
