@@ -1,8 +1,8 @@
 ---
-name: "\U0001F504️[Refactor] 코드 리팩토링"
+name: "\U0001F504️[Refactor] 코드 리펙토링"
 about: Describe this issue template's purpose here.
-title: "\U0001F504️[Refactor] 코드 리팩토링"
-labels: ''
+title: "\U0001F504️[Refactor] 코드 리펙토링"
+labels: refactor
 assignees: ''
 
 ---

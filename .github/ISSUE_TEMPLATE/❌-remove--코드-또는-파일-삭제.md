@@ -2,7 +2,7 @@
 name: "❌[Remove] 코드 또는 파일 삭제"
 about: 이 템플릿은 코드나 파일을 삭제할 때 사용됩니다.
 title: "❌[Remove] 코드 또는 파일 삭제"
-labels: ''
+labels: remove
 assignees: ''
 
 ---

@@ -2,7 +2,7 @@
 name: "\U0001F6A7[Test] 테스트 코드 추가 또는 수정"
 about: '이 템플릿은 테스트 코드를 추가하거나 수정할 때 사용됩니다. '
 title: "\U0001F6A7[Test] 테스트 코드 추가 또는 수정"
-labels: ''
+labels: Test
 assignees: ''
 
 ---
