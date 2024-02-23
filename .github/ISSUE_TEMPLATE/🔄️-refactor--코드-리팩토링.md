@@ -1,6 +1,6 @@
 ---
 name: "\U0001F504️[Refactor] 코드 리팩토링"
-about: Describe this issue template's purpose here.
+about: 이 템플릿은 코드를 리팩토링할 때 사용됩니다.
 title: "\U0001F504️[Refactor] 코드 리팩토링"
 labels: refactor
 assignees: ''
