@@ -2,7 +2,7 @@
 name: "✍️[Rename] 파일명 또는 폴더명 변경"
 about: 이 템플릿은 파일명이나 폴더명을 변경할 때 사용됩니다.
 title: "✍️[Rename] 파일명 또는 폴더명 변경"
-labels: bug, Rename
+labels: bug, documentation, Rename
 assignees: ''
 
 ---
