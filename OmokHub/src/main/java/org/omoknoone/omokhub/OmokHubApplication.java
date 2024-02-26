@@ -8,6 +8,12 @@ public class OmokHubApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(OmokHubApplication.class, args);
+
     }
 
+
 }
+
+
+
+
