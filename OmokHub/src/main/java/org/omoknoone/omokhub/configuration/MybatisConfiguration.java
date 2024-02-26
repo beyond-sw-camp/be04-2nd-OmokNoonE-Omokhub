@@ -5,6 +5,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan(basePackages = "org.omoknoone.omokhub.user.query.repository", annotationClass = Mapper.class)
+@MapperScan(basePackages = "org.omoknoone.omokhub.comment.query.repository", annotationClass = Mapper.class)
 public class MybatisConfiguration {
 }
