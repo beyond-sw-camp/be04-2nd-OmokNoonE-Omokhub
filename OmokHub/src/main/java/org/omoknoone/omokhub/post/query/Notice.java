@@ -6,27 +6,27 @@ import java.time.LocalTime;
 
 public class Notice {
 
-    private int notice_id;
+    private int noticeId;
     private String title;
     private String content;
-    private LocalTime posted_date;
-    private LocalTime last_modified_date;
-    private boolean is_deleted;
+    private LocalTime postedDate;
+    private LocalTime lastModifiedDate;
+    private boolean isDeleted;
 
     public Notice() {
     }
 
-    public Notice(int notice_id, String title, String content, LocalTime posted_date, LocalTime last_modified_date, boolean is_deleted) {
-        this.notice_id = notice_id;
+    public Notice(int noticeId, String title, String content, LocalTime postedDate, LocalTime lastModifiedDate, boolean isDeleted) {
+        this.noticeId = noticeId;
         this.title = title;
         this.content = content;
-        this.posted_date = posted_date;
-        this.last_modified_date = last_modified_date;
-        this.is_deleted = is_deleted;
+        this.postedDate = postedDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.isDeleted = isDeleted;
     }
 
-    public int getNotice_id() {
-        return notice_id;
+    public int getNoticeId() {
+        return noticeId;
     }
 
     public String getTitle() {
@@ -37,27 +37,27 @@ public class Notice {
         return content;
     }
 
-    public LocalTime getPosted_date() {
-        return posted_date;
+    public LocalTime getPostedDate() {
+        return postedDate;
     }
 
-    public LocalTime getLast_modified_date() {
-        return last_modified_date;
+    public LocalTime getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public boolean isIs_deleted() {
-        return is_deleted;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
     @Override
     public String toString() {
         return "Notice{" +
-                "notice_id=" + notice_id +
+                "noticeId=" + noticeId +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", posted_date=" + posted_date +
-                ", last_modified_date=" + last_modified_date +
-                ", is_deleted=" + is_deleted +
+                ", postedDate=" + postedDate +
+                ", lastModifiedDate=" + lastModifiedDate +
+                ", isDeleted=" + isDeleted +
                 '}';
     }
 }

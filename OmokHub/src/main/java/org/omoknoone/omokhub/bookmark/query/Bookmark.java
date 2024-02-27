@@ -3,58 +3,58 @@ package org.omoknoone.omokhub.bookmark.query;
 import java.time.LocalTime;
 
 public class Bookmark {
-    private int bookmark_id;
-    private boolean is_like;
-    private boolean is_bookmark;
-    private LocalTime added_date;
-    private int seeking_member_post_id;
-    private int user_id;
+    private int bookmarkId;
+    private boolean isLike;
+    private boolean isBookmark;
+    private LocalTime addedDate;
+    private int seeking_memberPostId;
+    private int userId;
 
     public Bookmark() {
     }
 
-    public Bookmark(int bookmark_id, boolean is_like, boolean is_bookmark, LocalTime added_date, int seeking_member_post_id, int user_id) {
-        this.bookmark_id = bookmark_id;
-        this.is_like = is_like;
-        this.is_bookmark = is_bookmark;
-        this.added_date = added_date;
-        this.seeking_member_post_id = seeking_member_post_id;
-        this.user_id = user_id;
+    public Bookmark(int bookmarkId, boolean isLike, boolean isBookmark, LocalTime addedDate, int seeking_memberPostId, int userId) {
+        this.bookmarkId = bookmarkId;
+        this.isLike = isLike;
+        this.isBookmark = isBookmark;
+        this.addedDate = addedDate;
+        this.seeking_memberPostId = seeking_memberPostId;
+        this.userId = userId;
     }
 
-    public int getBookmark_id() {
-        return bookmark_id;
+    public int getBookmarkId() {
+        return bookmarkId;
     }
 
-    public boolean isIs_like() {
-        return is_like;
+    public boolean isLike() {
+        return isLike;
     }
 
-    public boolean isIs_bookmark() {
-        return is_bookmark;
+    public boolean isBookmark() {
+        return isBookmark;
     }
 
-    public LocalTime getAdded_date() {
-        return added_date;
+    public LocalTime getAddedDate() {
+        return addedDate;
     }
 
-    public int getSeeking_member_post_id() {
-        return seeking_member_post_id;
+    public int getSeeking_memberPostId() {
+        return seeking_memberPostId;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserId() {
+        return userId;
     }
 
     @Override
     public String toString() {
         return "Bookmark{" +
-                "bookmark_id=" + bookmark_id +
-                ", is_like=" + is_like +
-                ", is_bookmark=" + is_bookmark +
-                ", added_date=" + added_date +
-                ", seeking_member_post_id=" + seeking_member_post_id +
-                ", user_id=" + user_id +
+                "bookmarkId=" + bookmarkId +
+                ", isLike=" + isLike +
+                ", isBookmark=" + isBookmark +
+                ", addedDate=" + addedDate +
+                ", seeking_memberPostId=" + seeking_memberPostId +
+                ", userId=" + userId +
                 '}';
     }
 }

@@ -3,51 +3,51 @@ package org.omoknoone.omokhub.projectmember;
 import java.time.LocalTime;
 
 public class Joinwaitingmember {
-    private int join_waiting_member_id;
-    private int project_team_id;
-    private String user_id;
+    private int joinWaitingMemberId;
+    private int projectTeamId;
+    private String userId;
     private String category;
-    private LocalTime join_date;
+    private LocalTime joinDate;
 
     public Joinwaitingmember() {
     }
 
-    public Joinwaitingmember(int join_waiting_member_id, int project_team_id, String user_id, String category, LocalTime join_date) {
-        this.join_waiting_member_id = join_waiting_member_id;
-        this.project_team_id = project_team_id;
-        this.user_id = user_id;
+    public Joinwaitingmember(int joinWaitingMemberId, int projectTeamId, String userId, String category, LocalTime joinDate) {
+        this.joinWaitingMemberId = joinWaitingMemberId;
+        this.projectTeamId = projectTeamId;
+        this.userId = userId;
         this.category = category;
-        this.join_date = join_date;
+        this.joinDate = joinDate;
     }
 
-    public int getJoin_waiting_member_id() {
-        return join_waiting_member_id;
+    public int getJoinWaitingMemberId() {
+        return joinWaitingMemberId;
     }
 
-    public int getProject_team_id() {
-        return project_team_id;
+    public int getProjectTeamId() {
+        return projectTeamId;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public LocalTime getJoin_date() {
-        return join_date;
+    public LocalTime getJoinDate() {
+        return joinDate;
     }
 
     @Override
     public String toString() {
         return "Joinwaitingmember{" +
-                "join_waiting_member_id=" + join_waiting_member_id +
-                ", project_team_id=" + project_team_id +
-                ", user_id='" + user_id + '\'' +
+                "joinWaitingMemberId=" + joinWaitingMemberId +
+                ", projectTeamId=" + projectTeamId +
+                ", userId='" + userId + '\'' +
                 ", category='" + category + '\'' +
-                ", join_date=" + join_date +
+                ", joinDate=" + joinDate +
                 '}';
     }
 }

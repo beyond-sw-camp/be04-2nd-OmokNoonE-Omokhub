@@ -1,37 +1,37 @@
 package org.omoknoone.omokhub.user.query;
 
 public class PersonalLink {
-    private int personal_link_id;
+    private int personalLinkId;
     private String url;
-    private String user_id;
+    private String userId;
 
     public PersonalLink() {
     }
 
-    public PersonalLink(int personal_link_id, String url, String user_id) {
-        this.personal_link_id = personal_link_id;
+    public PersonalLink(int personalLinkId, String url, String userId) {
+        this.personalLinkId = personalLinkId;
         this.url = url;
-        this.user_id = user_id;
+        this.userId = userId;
     }
 
-    public int getPersonal_link_id() {
-        return personal_link_id;
+    public int getPersonalLinkId() {
+        return personalLinkId;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
     @Override
     public String toString() {
         return "PersonalLink{" +
-                "personal_link_id=" + personal_link_id +
+                "personalLinkId=" + personalLinkId +
                 ", url='" + url + '\'' +
-                ", user_id='" + user_id + '\'' +
+                ", userId='" + userId + '\'' +
                 '}';
     }
 }

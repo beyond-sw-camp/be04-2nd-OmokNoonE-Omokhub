@@ -3,31 +3,31 @@ package org.omoknoone.omokhub.post.query;
 import java.time.LocalTime;
 
 public class Post {
-    private int posting_id;
+    private int postingId;
     private String title;
     private String content;
-    private LocalTime posted_date;
+    private LocalTime postedDate;
     private int hits;
-    private LocalTime last_modified_date;
-    private String user_id;
-    private boolean is_deleted;
+    private LocalTime lastModifiedDate;
+    private String userId;
+    private boolean isDeleted;
 
     public Post() {
     }
 
-    public Post(int posting_id, String title, String content, LocalTime posted_date, int hits, LocalTime last_modified_date, String user_id, boolean is_deleted) {
-        this.posting_id = posting_id;
+    public Post(int postingId, String title, String content, LocalTime postedDate, int hits, LocalTime lastModifiedDate, String userId, boolean isDeleted) {
+        this.postingId = postingId;
         this.title = title;
         this.content = content;
-        this.posted_date = posted_date;
+        this.postedDate = postedDate;
         this.hits = hits;
-        this.last_modified_date = last_modified_date;
-        this.user_id = user_id;
-        this.is_deleted = is_deleted;
+        this.lastModifiedDate = lastModifiedDate;
+        this.userId = userId;
+        this.isDeleted = isDeleted;
     }
 
-    public int getPosting_id() {
-        return posting_id;
+    public int getPostingId() {
+        return postingId;
     }
 
     public String getTitle() {
@@ -38,37 +38,37 @@ public class Post {
         return content;
     }
 
-    public LocalTime getPosted_date() {
-        return posted_date;
+    public LocalTime getPostedDate() {
+        return postedDate;
     }
 
     public int getHits() {
         return hits;
     }
 
-    public LocalTime getLast_modified_date() {
-        return last_modified_date;
+    public LocalTime getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public boolean isIs_deleted() {
-        return is_deleted;
+    public boolean isDeleted() {
+        return isDeleted;
     }
 
     @Override
     public String toString() {
         return "Post{" +
-                "posting_id=" + posting_id +
+                "postingId=" + postingId +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", posted_date=" + posted_date +
+                ", postedDate=" + postedDate +
                 ", hits=" + hits +
-                ", last_modified_date=" + last_modified_date +
-                ", user_id='" + user_id + '\'' +
-                ", is_deleted=" + is_deleted +
+                ", lastModifiedDate=" + lastModifiedDate +
+                ", userId='" + userId + '\'' +
+                ", isDeleted=" + isDeleted +
                 '}';
     }
 }
