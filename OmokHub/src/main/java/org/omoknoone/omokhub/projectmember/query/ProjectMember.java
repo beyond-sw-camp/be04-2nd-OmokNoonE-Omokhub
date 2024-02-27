@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.projectmember;
+package org.omoknoone.omokhub.projectmember.query;
 
 public class ProjectMember {
     private int projectMemberId;

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingmemberMapper">
+
+    <resultMap id="joinWaitingMemberMap" type="org.omoknoone.omokhub.projectmember.query.JoinwaitingmemberDTO">
+        <id property="category" column="CATEGORY"/>
+        <id property="joinDate" column="JOIN_DATE"/>
+        <association property="member" javaType="org.omoknoone.omokhub.user.query.UserDTO">
+            <id property="nickName" column="NICKNAME"/>
+            <id property="memberId" column="MEMBER_ID"/>
+        </association>
+    </resultMap>
+
+    <!-- 프로젝트 참여 대기인원 조회 -->
+    <select id="selectWaitingMember" resultMap="joinWaitingMemberMap">
+        SELECT
+                c.NICKNAME
+              , c.MEMBER_ID
+              , a.CATEGORY
+              , a.JOIN_DATE
+          FROM JOIN_WAITING_MEMBER a
+          JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+          JOIN MEMBER c ON (a.MEMBER_ID = c.MEMBER_ID)
+    </select>
+
+    <!-- 팀장이 보는 초대받은 or 신청한 프로젝트 참여 대기인원 -->
+    <select id="selectInviteOrApplyMember" resultMap="joinWaitingMemberMap">
+        SELECT
+                c.NICKNAME
+              , c.MEMBER_ID
+              , a.CATEGORY
+              , a.JOIN_DATE
+        FROM JOIN_WAITING_MEMBER a
+        JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+        JOIN MEMBER c ON (a.MEMBER_ID = c.MEMBER_ID)
+        WHERE a.CATEGORY IN ('초대', '신청')
+    </select>
+
+    <resultMap id="myCurrentApplyStatus" type="org.omoknoone.omokhub.projectmember.query.JoinwaitingmemberDTO">
+        <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
+        <association property="project" javaType="org.omoknoone.omokhub.project.query.ProjectDTO">
+            <id property="projectID" column="PROJECT_ID"/>
+        </association>
+        <association property="projectTeam" javaType="org.omoknoone.omokhub.projectmember.query.ProjectMemberDTO">
+            <id property="teamName" column="TEAM_NAME"/>
+        </association>
+    </resultMap>
+
+    <!-- 내가 신청한 프로젝트 참여 대기 현황 -->
+    <select id="myCurrentApplyStatus" resultMap="myCurrentApplyStatus">
+        SELECT
+          a.JOIN_WAITING_MEMBER_ID
+        , c.PROJECT_ID
+        , b.TEAM_NAME
+        FROM JOIN_WAITING_MEMBER a
+        JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+        JOIN PROJECT c ON (b.PROJECT_TEAM_ID = c.PROJECT_TEAM_ID)
+        WHERE MEMBER_ID = #{memberID}
+        ORDER BY c.START_DATE DESC;
+    </select>
+</mapper>
