@@ -1,17 +1,17 @@
-package org.omoknoone.omokhub.projectmember;
+package org.omoknoone.omokhub.projectmember.query;
 
 public class ProjectMember {
     private int projectMemberId;
-    private String userId;
+    private String memberId;    // 회원 엔티티로부터 가져온 pk
     private int projectTeamId;
     private String memberCategory;
 
     public ProjectMember() {
     }
 
-    public ProjectMember(int projectMemberId, String userId, int projectTeamId, String memberCategory) {
+    public ProjectMember(int projectMemberId, String memberId, int projectTeamId, String memberCategory) {
         this.projectMemberId = projectMemberId;
-        this.userId = userId;
+        this.memberId = memberId;
         this.projectTeamId = projectTeamId;
         this.memberCategory = memberCategory;
     }
@@ -20,8 +20,8 @@ public class ProjectMember {
         return projectMemberId;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public int getProjectTeamId() {
@@ -36,7 +36,7 @@ public class ProjectMember {
     public String toString() {
         return "ProjectMember{" +
                 "projectMemberId=" + projectMemberId +
-                ", userId='" + userId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", projectTeamId=" + projectTeamId +
                 ", memberCategory='" + memberCategory + '\'' +
                 '}';
