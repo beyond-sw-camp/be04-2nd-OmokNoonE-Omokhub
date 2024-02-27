@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.omoknoone.omokhub.project.query.repository.ProjectMapper">
+    <!--설명. 프로젝트 id 기준 조회 -->
+    <resultMap id="searchProjectByProjectIdResultMap" type="org.omoknoone.omokhub.project.query.ProjectDTO">
+        <id property="projectId" column="PROJECT_ID"/>
+        <result property="teamName" column="TEAM_NAME"/>
+        <result property="title" column="TITLE"/>
+        <result property="startDate" column="START_DATE"/>
+        <result property="endDate" column="END_DATE"/>
+        <result property="status" column="STATUS"/>
+        <result property="isPublic" column="IS_PUBLIC"/>
+        <result property="memberId" column="MEMBER_ID"/>
+    </resultMap>
+<select id="searchProjectByProjectId" parameterType="_int" resultMap="searchProjectByProjectIdResultMap">
+    SELECT
+          a.PROJECT_ID
+       ,  b.TEAM_NAME		-- 팀명
+       ,  a.TITLE
+       ,  a.START_DATE
+       ,  a.END_DATE
+       ,  a.STATUS
+       ,  a.IS_PUBLIC
+       ,  c.MEMBER_ID			-- 팀장
+     FROM PROJECT a
+     JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+     JOIN PROJECT_MEMBER c ON (a.PROJECT_MEMBER_ID = c.PROJECT_MEMBER_ID)
+    WHERE a.PROJECT_ID = #{projectId};
+</select>
+
+    <!---->
+
+</mapper>
