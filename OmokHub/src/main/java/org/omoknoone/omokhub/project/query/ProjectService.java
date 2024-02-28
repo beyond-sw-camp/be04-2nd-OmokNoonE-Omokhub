@@ -17,26 +17,34 @@ public class ProjectService {
     }
 
     /* 설명. 프로젝트 id 기준 조회 */
-    public void searchProjectByProjectId(int projectId){
-        List<ProjectDTO> projects = projectMapper.searchProjectByProjectId(projectId);
-        projects.forEach(System.out::println);
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByProjectId(int projectId){
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchProjectByProjectId(projectId);
+//        projects.forEach(System.out::println);
+
+        return projects;
     }
-//
-//    /* 설명. 진행상태 별 프로젝트 목록 보기 */
-//    public void searchProjectByStatus(String status){
-//        List<ProjectDTO> projects = projectMapper.searchProjectByStatus(status);
+
+    /* 설명. 진행상태 별 프로젝트 목록 보기 */
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByStatus(String status){
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchProjectByStatus(status);
 //        projects.forEach(System.out::println);
-//    }
-//
-//    /* 설명. 특정 팀이 속한 모든 프로젝트를 팀 이름으로 조회 */
-//    public void searchProjectByTeamName(String teamName){
-//        List<ProjectDTO> projects = projectMapper.searchProjectByTeamName(teamName);
+
+        return projects;
+    }
+
+    /* 설명. 특정 팀이 속한 모든 프로젝트를 팀 이름으로 조회 */
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByTeamName(String teamName){
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchProjectByTeamName(teamName);
 //        projects.forEach(System.out::println);
-//    }
-//
-//    /* 설명. 내가 참여한 프로젝트 목록 */
-//    public void searchMyProjects(int memberId){
-//        List<ProjectDTO> projects = projectMapper.searchMyProjects(memberId);
+
+        return projects;
+    }
+
+    /* 설명. 내가 참여한 프로젝트 목록 */
+    public List<ProjectAndTeamAndMemberDTO> searchMyProjects(String memberId){
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchMyProjects(memberId);
 //        projects.forEach(System.out::println);
-//    }
+
+        return projects;
+    }
 }

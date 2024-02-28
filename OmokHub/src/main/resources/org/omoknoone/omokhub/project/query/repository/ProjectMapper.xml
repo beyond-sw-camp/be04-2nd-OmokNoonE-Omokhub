@@ -4,33 +4,96 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ProjectMapper">
+
     <!--설명. 프로젝트 id 기준 조회 -->
-    <resultMap id="searchProjectByProjectIdResultMap" type="org.omoknoone.omokhub.project.query.ProjectDTO">
+    <resultMap id="projectAndTeamAndMemberResultMap" type="org.omoknoone.omokhub.project.query.ProjectAndTeamAndMemberDTO">
         <id property="projectId" column="PROJECT_ID"/>
-        <result property="teamName" column="TEAM_NAME"/>
         <result property="title" column="TITLE"/>
         <result property="startDate" column="START_DATE"/>
         <result property="endDate" column="END_DATE"/>
         <result property="status" column="STATUS"/>
         <result property="isPublic" column="IS_PUBLIC"/>
-        <result property="memberId" column="MEMBER_ID"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+        <collection property="projectTeams" ofType="org.omoknoone.omokhub.projectmember.ProjectTeamDTO">
+            <result property="teamName" column="TEAM_NAME"/>
+        </collection>
+        <collection property="projectMembers" ofType="org.omoknoone.omokhub.projectmember.ProjectMemberDTO">
+            <result property="memberId" column="MEMBER_ID"/>
+        </collection>
     </resultMap>
-<select id="searchProjectByProjectId" parameterType="_int" resultMap="searchProjectByProjectIdResultMap">
+<select id="searchProjectByProjectId" parameterType="_int" resultMap="projectAndTeamAndMemberResultMap">
     SELECT
           a.PROJECT_ID
-       ,  b.TEAM_NAME		-- 팀명
        ,  a.TITLE
        ,  a.START_DATE
        ,  a.END_DATE
        ,  a.STATUS
        ,  a.IS_PUBLIC
-       ,  c.MEMBER_ID			-- 팀장
+       ,  a.LAST_MODIFIED_DATE
+       ,  b.TEAM_NAME		-- 팀명
+       ,  c.MEMBER_ID		-- 팀장
      FROM PROJECT a
      JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
      JOIN PROJECT_MEMBER c ON (a.PROJECT_MEMBER_ID = c.PROJECT_MEMBER_ID)
-    WHERE a.PROJECT_ID = #{projectId};
+    WHERE a.PROJECT_ID = #{projectId}
+      AND c.MEMBER_CATEGORY = '팀장'
+    ORDER BY a.PROJECT_ID DESC;
 </select>
 
-    <!---->
+    <!-- 설명. 진행상태 별 프로젝트 목록 보기 -->
+    <select id="searchProjectByStatus" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+              a.PROJECT_ID
+            , a.TITLE
+            , a.START_DATE
+            , a.END_DATE
+            , a.STATUS
+            , a.IS_PUBLIC
+            , a.LAST_MODIFIED_DATE
+            , b.TEAM_NAME	-- 팀명
+            , c.MEMBER_ID		-- 팀장
+         FROM PROJECT a
+         JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+         JOIN PROJECT_MEMBER c ON (a.PROJECT_MEMBER_ID = c.PROJECT_MEMBER_ID)
+        WHERE c.MEMBER_CATEGORY = '팀장'
+          AND a.STATUS = #{status}
+        ORDER BY a.PROJECT_ID DESC;
+    </select>
 
+    <!-- 설명. 특정 팀이 속한 모든 프로젝트를 팀 이름으로 조회 -->
+    <select id="searchProjectByTeamName" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+              a.project_id
+            , a.title
+            , a.start_date
+            , a.end_date
+            , a.status
+            , a.is_public
+            , a.LAST_MODIFIED_DATE
+            , b.team_name
+            , c.member_id		-- 팀장
+        FROM project a
+         JOIN project_team b ON (a.project_team_id = b.project_team_id)
+         JOIN PROJECT_MEMBER c ON (a.PROJECT_MEMBER_ID = c.PROJECT_MEMBER_ID)
+        WHERE c.MEMBER_CATEGORY = '팀장'
+          AND b.team_name = #{teamName}
+    </select>
+
+    <!-- 설명. 내가 참여한 프로젝트 목록 -->
+    <select id="searchMyProjects" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+              a.project_id
+            , a.title
+            , a.start_date
+            , a.end_date
+            , a.status
+            , a.is_public
+            , a.LAST_MODIFIED_DATE
+            , b.team_name
+            , c.member_id
+         FROM project a
+         JOIN project_team b ON (a.project_team_id = b.project_team_id)
+         JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        WHERE c.member_id = #{memberId}
+    </select>
 </mapper>
