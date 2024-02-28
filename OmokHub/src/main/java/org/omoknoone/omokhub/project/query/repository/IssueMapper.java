@@ -1,14 +1,14 @@
 package org.omoknoone.omokhub.project.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.project.query.IssueDTO;
+import org.omoknoone.omokhub.project.query.IssueAndMemberDTO;
 
 import java.util.List;
 
 @Mapper
 public interface IssueMapper {
 
-    List<IssueDTO> searchProjectIssues(int projectId);
+    List<IssueAndMemberDTO> searchProjectIssues(int projectId);
 
-    List<IssueDTO> searchProjectMemberIssues(String memberId);
+    List<IssueAndMemberDTO> searchProjectMemberIssues(String memberId);
 }

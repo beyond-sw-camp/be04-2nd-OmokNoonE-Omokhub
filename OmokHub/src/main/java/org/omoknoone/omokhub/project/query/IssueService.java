@@ -17,13 +17,11 @@ public class IssueService {
         this.issueMapper = issueMapper;
     }
 
-    public void searchProjectIssues(int projectId){
-        List<IssueDTO> issues = issueMapper.searchProjectIssues(projectId);
-        issues.forEach(System.out::println);
+    public List<IssueAndMemberDTO> searchProjectIssues(int projectId){
+        return issueMapper.searchProjectIssues(projectId);
     }
 
-    public void searchProjectMemberIssues(String memberId){
-        List<IssueDTO> issues = issueMapper.searchProjectMemberIssues(memberId);
-        issues.forEach(System.out::println);
+    public List<IssueAndMemberDTO> searchProjectMemberIssues(String memberId){
+        return issueMapper.searchProjectMemberIssues(memberId);
     }
 }
