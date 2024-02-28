@@ -10,5 +10,5 @@ public interface MemberMapper {
 
     MemberDTO selectMemberIdByNickname(String nickname);
 
-    int selectProfileCountByMemberId(String memberId);
+    Integer selectProfileCountByMemberId(String memberId);
 }

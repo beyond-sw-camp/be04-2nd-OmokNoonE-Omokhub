@@ -13,6 +13,7 @@
         <result property="phoneNum" column="PHONE_NUM"/>
         <result property="address" column="ADDRESS"/>
         <result property="birthday" column="BIRTHDAY"/>
+        <result property="profileCount" column="PROFILE_COUNT"/>
     </resultMap>
 
     <select id="selectMemberInfoByMemberId" parameterType="string" resultMap="memberResultMap">
@@ -44,7 +45,7 @@
 
     <select id="selectProfileCountByMemberId" parameterType="string" resultType="_int">
         SELECT
-            COUNT(*) AS '프로필 수'
+            COUNT(*) AS 'PROFILE_COUNT'
         FROM
             MEMBER A
         JOIN PROFILE B ON (A.MEMBER_ID = B.MEMBER_ID)

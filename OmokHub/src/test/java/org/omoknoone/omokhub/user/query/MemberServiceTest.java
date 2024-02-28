@@ -2,9 +2,11 @@ package org.omoknoone.omokhub.user.query;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -33,6 +35,19 @@ public class MemberServiceTest {
         );
     }
 
+    private static Stream<Arguments> getProfileInfo() {
+
+        ProfileDTO profileInfo = new ProfileDTO();
+        profileInfo.setTitle("제목1");
+        profileInfo.setContent("내용1");
+        profileInfo.setTechStack("자바, 스프링");
+        profileInfo.setUserId("user1");
+
+        return Stream.of(
+                Arguments.of(profileInfo)
+        );
+    }
+
     @DisplayName("회원 정보 확인 테스트")
     @ParameterizedTest
     @MethodSource("getMemberInfo")
@@ -53,9 +68,9 @@ public class MemberServiceTest {
 
     @DisplayName("프로필 갯수 확인")
     @ParameterizedTest
-    @MethodSource("getMemberInfo")
-    void testSearchProfileCount(MemberDTO memberDTO) {
-        Assertions.assertNull(memberService.searchMemberIdByNickname(memberDTO.getMemberId()));
-//        Assertions.assertEquals(0, memberService.searchMemberIdByNickname(memberDTO.getMemberId()));
+    @ValueSource(strings = "user1")
+    void testSearchProfileCount(String memberId) {
+//        Assertions.assertEquals(1, memberService.searchMemberIdByNickname(memberDTO.getMemberId()));
+        Assertions.assertEquals(1, memberService.searchProfileCountByMemberId(memberId));
     }
 }

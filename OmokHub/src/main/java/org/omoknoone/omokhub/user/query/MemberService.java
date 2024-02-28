@@ -27,7 +27,7 @@ public class MemberService {
         return memberMapper.selectMemberIdByNickname(nickname);
     }
 
-    public int searchProfileCountByMemberId(String memberId) {
+    public Integer searchProfileCountByMemberId(String memberId) {
 
         return memberMapper.selectProfileCountByMemberId(memberId);
     }
