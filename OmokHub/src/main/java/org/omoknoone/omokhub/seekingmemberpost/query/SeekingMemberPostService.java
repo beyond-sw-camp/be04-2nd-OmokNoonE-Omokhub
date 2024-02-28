@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class SeekingMemberPostService {
@@ -16,9 +17,9 @@ public class SeekingMemberPostService {
         this.seekingMemberPostMapper = seekingMemberPostMapper;
     }
 
-    public List<SeekingMemberPostDTO> findSeekingMemberPostList() {
+    public List<SeekingMemberPostDTO> findSeekingMemberPostList(Map<String, Object> criteria) {
 
-        return seekingMemberPostMapper.selectSeekingMemberPostList();
+        return seekingMemberPostMapper.selectSeekingMemberPostList(criteria);
     }
 
     public SeekingMemberPostDTO findSeekingMemberPostDetail(int seekingMemberPostId) {

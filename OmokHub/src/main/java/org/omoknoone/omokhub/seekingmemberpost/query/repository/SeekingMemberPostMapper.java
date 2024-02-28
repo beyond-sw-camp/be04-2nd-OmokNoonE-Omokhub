@@ -4,10 +4,11 @@ import org.apache.ibatis.annotations.Mapper;
 import org.omoknoone.omokhub.seekingmemberpost.query.SeekingMemberPostDTO;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface SeekingMemberPostMapper {
-    List<SeekingMemberPostDTO> selectSeekingMemberPostList();
+    List<SeekingMemberPostDTO> selectSeekingMemberPostList(Map<String, Object> criteria);
 
     SeekingMemberPostDTO selectSeekingMemberPostDetail(int seekingMemberPostId);
 

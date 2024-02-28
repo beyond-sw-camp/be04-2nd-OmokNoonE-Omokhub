@@ -1,34 +1,48 @@
 package org.omoknoone.omokhub.seekingmemberpost.query;
 
+import org.omoknoone.omokhub.projectmember.query.ProjectTeamDTO;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class SeekingMemberPostDTO {
+    private int seekingMemberPostId;
     private String title;
     private int seekingMember;
     private LocalDate startDate;
     private LocalDate endDate;
     private String techStack;
-    private String Content;
+    private boolean isSeeking;
+    private boolean isDeleted;
+    private String content;
     private LocalTime lastModifiedDate;
     private String memberId;
-    private int maxMember;
-    private int currentMember;
+    private ProjectTeamDTO projectTeam;
 
     public SeekingMemberPostDTO() {
     }
 
-    public SeekingMemberPostDTO(String title, int seekingMember, LocalDate startDate, LocalDate endDate, String techStack, String content, LocalTime lastModifiedDate, String memberId, int maxMember, int currentMember) {
+    public SeekingMemberPostDTO(int seekingMemberId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, String techStack, boolean isSeeking, boolean isDeleted, String content, LocalTime lastModifiedDate, String memberId, ProjectTeamDTO projectTeam) {
+        this.seekingMemberPostId = seekingMemberId;
         this.title = title;
         this.seekingMember = seekingMember;
         this.startDate = startDate;
         this.endDate = endDate;
         this.techStack = techStack;
-        Content = content;
+        this.isSeeking = isSeeking;
+        this.isDeleted = isDeleted;
+        this.content = content;
         this.lastModifiedDate = lastModifiedDate;
         this.memberId = memberId;
-        this.maxMember = maxMember;
-        this.currentMember = currentMember;
+        this.projectTeam = projectTeam;
+    }
+
+    public int getSeekingMemberId() {
+        return seekingMemberPostId;
+    }
+
+    public void setSeekingMemberId(int seekingMemberId) {
+        this.seekingMemberPostId = seekingMemberId;
     }
 
     public String getTitle() {
@@ -71,12 +85,28 @@ public class SeekingMemberPostDTO {
         this.techStack = techStack;
     }
 
+    public boolean isSeeking() {
+        return isSeeking;
+    }
+
+    public void setSeeking(boolean seeking) {
+        isSeeking = seeking;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
+
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
     public LocalTime getLastModifiedDate() {
@@ -95,35 +125,29 @@ public class SeekingMemberPostDTO {
         this.memberId = memberId;
     }
 
-    public int getMaxMember() {
-        return maxMember;
+    public ProjectTeamDTO getProjectTeam() {
+        return projectTeam;
     }
 
-    public void setMaxMember(int maxMember) {
-        this.maxMember = maxMember;
-    }
-
-    public int getCurrentMember() {
-        return currentMember;
-    }
-
-    public void setCurrentMember(int currentMember) {
-        this.currentMember = currentMember;
+    public void setProjectTeam(ProjectTeamDTO projectTeam) {
+        this.projectTeam = projectTeam;
     }
 
     @Override
     public String toString() {
         return "SeekingMemberPostDTO{" +
-                "title='" + title + '\'' +
+                "seekingMemberId=" + seekingMemberPostId +
+                ", title='" + title + '\'' +
                 ", seekingMember=" + seekingMember +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", techStack='" + techStack + '\'' +
-                ", Content='" + Content + '\'' +
+                ", isSeeking=" + isSeeking +
+                ", isDeleted=" + isDeleted +
+                ", content='" + content + '\'' +
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", memberId='" + memberId + '\'' +
-                ", maxMember=" + maxMember +
-                ", currentMember=" + currentMember +
+                ", projectTeam=" + projectTeam +
                 '}';
     }
 }

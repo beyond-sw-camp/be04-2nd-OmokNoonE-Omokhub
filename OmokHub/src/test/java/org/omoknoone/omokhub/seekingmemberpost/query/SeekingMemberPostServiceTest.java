@@ -9,6 +9,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,48 +22,35 @@ class SeekingMemberPostServiceTest {
     @Autowired
     private SeekingMemberPostService seekingMemberPostService;
 
-    /*private static Stream<Arguments> getMemberInfo() {
+    private static Stream<Arguments> getSeekingMemberPostInfo() {
 
-        MemberDTO memberInfo = new MemberDTO();
-        memberInfo.setMemberId("user1");
-        memberInfo.setName("뱁새");
-        memberInfo.setNickname("오목눈이");
-        memberInfo.setEmail("user01@gmail.com");
-        memberInfo.setPhoneNum("010-1234-2233");
-        memberInfo.setAddress("서울시 서초구");
-        LocalDate birthday = LocalDate.of(2023, 7, 15);
-        memberInfo.setBirthday(birthday);
+        SeekingMemberPostDTO seekingMemberPost = new SeekingMemberPostDTO();
+        seekingMemberPost.setSeekingMemberId(1);
+        seekingMemberPost.setTitle("모집글 제목 1");
+        seekingMemberPost.setStartDate(LocalDate.now());
+        seekingMemberPost.setTechStack("자바, 스프링, MyBatis");
+        seekingMemberPost.setSeeking(true);
+        seekingMemberPost.setDeleted(false);
 
         return Stream.of(
-                Arguments.of(memberInfo)
+                Arguments.of(seekingMemberPost)
         );
     }
 
-    @DisplayName("모집글 목록 테스트")
+    @DisplayName("조건에 따른 모집글 목록 검색 테스트")
+//    @ParameterizedTest
+//    @MethodSource("getSeekingMemberPostInfo")
     @Test
     void testSearchMemberInfoByMemberId() {
+
+        Map<String, Object> criteria = new HashMap<>();
+        criteria.put("startDate", LocalDate.of(2024, 3, 8));
+        criteria.put("title", "자바 백엔드 프로젝트");
+        criteria.put("techStack", "자바");
+
         Assertions.assertDoesNotThrow(
-                () -> seekingMemberPostService.)
+                () -> seekingMemberPostService.findSeekingMemberPostList(criteria)
         );
     }
 
-    @DisplayName("모집글 상세보기 테스트")
-    @Test
-//    @ParameterizedTest
-//    @MethodSource("getMemberInfo")
-    void testSearchMemberInfoByMemberId(MemberDTO memberDTO) {
-        Assertions.assertDoesNotThrow(
-                () -> memberService.searchMemberInfoByMemberId(memberDTO.getMemberId())
-        );
-    }
-
-    @DisplayName("내가 작성한 모집글 목록 테스트")
-    @Test
-//    @ParameterizedTest
-//    @MethodSource("getMemberInfo")
-    void testSearchMemberInfoByMemberId(MemberDTO memberDTO) {
-        Assertions.assertDoesNotThrow(
-                () -> memberService.searchMemberInfoByMemberId(memberDTO.getMemberId())
-        );
-    }*/
 }
