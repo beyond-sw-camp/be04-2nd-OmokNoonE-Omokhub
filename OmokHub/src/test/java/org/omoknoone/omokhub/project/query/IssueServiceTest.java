@@ -29,7 +29,7 @@ class IssueServiceTest {
     @Test
     void searchProjectMyIssues() {
         Assertions.assertDoesNotThrow(
-                () -> issueService.searchProjectMemberIssues("member01")
+                () -> issueService.searchProjectMemberIssues("user1")
         );
     }
 }

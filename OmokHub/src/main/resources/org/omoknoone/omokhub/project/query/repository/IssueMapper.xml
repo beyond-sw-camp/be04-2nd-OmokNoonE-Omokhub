@@ -27,8 +27,10 @@
          FROM ISSUE A
          JOIN PROJECT B ON (A.PROJECT_ID = A.PROJECT_ID)
          JOIN PROJECT_MEMBER C ON (A.PROJECT_MEMBER_ID = C.PROJECT_MEMBER_ID)
-        WHERE A.IS_CLOSED IN (0, 1)
+        WHERE C.MEMBER_CATEGORY = '팀장'
+          AND A.IS_CLOSED IN (0, 1)     -- 닫힘 여부에 따라 조회도 가능
           AND A.PROJECT_ID = #{projectId}
+
     </select>
 
     <resultMap id="searchProjectMemberIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
