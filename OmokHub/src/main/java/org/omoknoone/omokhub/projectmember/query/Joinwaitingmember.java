@@ -1,21 +1,21 @@
-package org.omoknoone.omokhub.projectmember;
+package org.omoknoone.omokhub.projectmember.query;
 
 import java.time.LocalTime;
 
 public class Joinwaitingmember {
     private int joinWaitingMemberId;
     private int projectTeamId;
-    private String memberId;
+    private String userId;
     private String category;
     private LocalTime joinDate;
 
     public Joinwaitingmember() {
     }
 
-    public Joinwaitingmember(int joinWaitingMemberId, int projectTeamId, String memberId, String category, LocalTime joinDate) {
+    public Joinwaitingmember(int joinWaitingMemberId, int projectTeamId, String userId, String category, LocalTime joinDate) {
         this.joinWaitingMemberId = joinWaitingMemberId;
         this.projectTeamId = projectTeamId;
-        this.memberId = memberId;
+        this.userId = userId;
         this.category = category;
         this.joinDate = joinDate;
     }
@@ -28,8 +28,8 @@ public class Joinwaitingmember {
         return projectTeamId;
     }
 
-    public String getMemberId() {
-        return memberId;
+    public String getUserId() {
+        return userId;
     }
 
     public String getCategory() {
@@ -45,7 +45,7 @@ public class Joinwaitingmember {
         return "Joinwaitingmember{" +
                 "joinWaitingMemberId=" + joinWaitingMemberId +
                 ", projectTeamId=" + projectTeamId +
-                ", userId='" + memberId + '\'' +
+                ", userId='" + userId + '\'' +
                 ", category='" + category + '\'' +
                 ", joinDate=" + joinDate +
                 '}';
