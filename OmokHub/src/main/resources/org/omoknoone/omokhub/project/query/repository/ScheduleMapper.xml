@@ -4,53 +4,64 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ScheduleMapper">
-<<<<<<< HEAD
 
-</mapper>
-=======
-        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.ScheduleDTO">
+        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.ProjectAndScheduleDTO">
             <id property="projectId" column="PROJECT_ID"/>
             <result property="title" column="TITLE"/>
-            <result property="content" column="CONTENT"/>
-            <result property="startDate" column="START_DATE"/>
-            <result property="endDate" column="END_DATE"/>
-            <result property="progress" column="PROGRESS"/>
+            <result property="status" column="STATUS"/>
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.ScheduleDTO">
+                <id property="scheduleId" column="SCHEDULE_ID"/>
+                <result property="startDate" column="START_DATE"/>
+                <result property="endDate" column="END_DATE"/>
+                <result property="title" column="TITLE"/>
+                <result property="content" column="CONTENT"/>
+                <result property="progress" column="PROGRESS"/>
+                <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+            </collection>
         </resultMap>
-        <resultMap id="MySheduleResultMap" type="org.omoknoone.omokhub.project.query.ScheduleDTO">
+        <resultMap id="MySheduleResultMap" type="org.omoknoone.omokhub.project.query.UserAndScheduleDTO">
             <id property="memberId" column="MEMBER_ID"/>
-            <result property="title" column="TITLE"/>
-            <result property="startDate" column="START_DATE"/>
-            <result property="endDate" column="END_DATE"/>
-            <result property="progress" column="PROGRESS"/>
-            <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+            <result property="name" column="NAME"/>
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.ScheduleDTO">
+                <id property="scheduleId" column="SCHEDULE_ID"/>
+                <result property="projectId" column="PROJECT_ID"/>
+                <result property="title" column="TITLE"/>
+                <result property="startDate" column="START_DATE"/>
+                <result property="endDate" column="END_DATE"/>
+                <result property="progress" column="PROGRESS"/>
+                <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+            </collection>
         </resultMap>
 
         <select id="selectScheduleByProject" parameterType="_int" resultMap="scheduleInProjectResultMap">
             SELECT
-                   P.PROJECT_ID
+                   A.PROJECT_ID
                  , A.TITLE
-                 , A.CONTENT
-                 , A.START_DATE
-                 , A.END_DATE
-                 , A.PROGRESS
-              FROM SCHEDULE A
-              JOIN PROJECT P
-             WHERE P.PROJECT_ID = #{projectId}
+                 , A.STATUS
+                 , B.START_DATE
+                 , B.END_DATE
+                 , B.TITLE
+                 , B.CONTENT
+                 , B.PROGRESS
+                 , B.LAST_MODIFIED_DATE
+              FROM PROJECT A
+              JOIN SCHEDULE B ON (A.PROJECT_ID = B.PROJECT_ID)
+             WHERE A.PROJECT_ID = #{projectId}
         </select>
 
         <select id="selectScheduleByUser" parameterType="string" resultMap="MySheduleResultMap">
             SELECT
-                   PM.MEMBER_ID
-                 , S.TITLE
-                 , S.START_DATE
-                 , S.END_DATE
-                 , S.PROGRESS
-                 , S.LAST_MODIFIED_DATE
-              FROM SCHEDULE S
-              JOIN PROJECT P ON (S.PROJECT_ID = P.PROJECT_ID)
-              JOIN PROJECT_MEMBER PM ON (S.PROJECT_MEMBER_ID = PM.PROJECT_MEMBER_ID)
-             WHERE PM.MEMBER_ID = #{memberId}
-             ORDER BY SCHEDULE_ID DESC
+                   A.MEMBER_ID
+                 , A.NAME
+                 , B.PROJECT_ID
+                 , B.TITLE
+                 , B.START_DATE
+                 , B.END_DATE
+                 , B.PROGRESS
+                 , B.LAST_MODIFIED_DATE
+              FROM USER A
+              JOIN SCHEDULE B ON (A.MEMBER_ID = B.MEMBER_ID)
+             WHERE A.MEMBER_ID = #{memberId}
+             ORDER BY B.SCHEDULE_ID DESC
         </select>
     </mapper>
->>>>>>> a178dcf (#14 [feat] schedule select 구현)

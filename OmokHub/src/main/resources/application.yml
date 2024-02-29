@@ -1,6 +1,6 @@
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.0.34:3306/omok
-    username: master
-    password: master
+    url: jdbc:mariadb://192.168.35.164:3306/omoksdb
+    username: root
+    password: mariadb

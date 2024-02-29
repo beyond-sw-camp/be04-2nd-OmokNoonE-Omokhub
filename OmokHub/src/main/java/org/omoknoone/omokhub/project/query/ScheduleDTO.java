@@ -12,11 +12,12 @@ public class ScheduleDTO {
     private LocalTime lastModifiedDate;
     private int projectMemberId;
     private int projectId;
+    private int memberId;
 
     public ScheduleDTO() {
     }
 
-    public ScheduleDTO(int scheduleId, LocalTime startDate, LocalTime endDate, String title, String content, double progress, LocalTime lastModifiedDate, int projectMemberId, int projectId) {
+    public ScheduleDTO(int scheduleId, LocalTime startDate, LocalTime endDate, String title, String content, double progress, LocalTime lastModifiedDate, int projectMemberId, int projectId, int memberId) {
         this.scheduleId = scheduleId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -26,6 +27,7 @@ public class ScheduleDTO {
         this.lastModifiedDate = lastModifiedDate;
         this.projectMemberId = projectMemberId;
         this.projectId = projectId;
+        this.memberId = memberId;
     }
 
     public int getScheduleId() {
@@ -100,6 +102,14 @@ public class ScheduleDTO {
         this.projectId = projectId;
     }
 
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
     @Override
     public String toString() {
         return "ScheduleDTO{" +
@@ -112,6 +122,7 @@ public class ScheduleDTO {
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", projectMemberId=" + projectMemberId +
                 ", projectId=" + projectId +
+                ", memberId=" + memberId +
                 '}';
     }
 }
