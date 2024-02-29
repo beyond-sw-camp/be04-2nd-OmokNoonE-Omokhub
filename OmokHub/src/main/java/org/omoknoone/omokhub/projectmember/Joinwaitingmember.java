@@ -5,17 +5,17 @@ import java.time.LocalTime;
 public class Joinwaitingmember {
     private int joinWaitingMemberId;
     private int projectTeamId;
-    private String userId;
+    private String memberId;
     private String category;
     private LocalTime joinDate;
 
     public Joinwaitingmember() {
     }
 
-    public Joinwaitingmember(int joinWaitingMemberId, int projectTeamId, String userId, String category, LocalTime joinDate) {
+    public Joinwaitingmember(int joinWaitingMemberId, int projectTeamId, String memberId, String category, LocalTime joinDate) {
         this.joinWaitingMemberId = joinWaitingMemberId;
         this.projectTeamId = projectTeamId;
-        this.userId = userId;
+        this.memberId = memberId;
         this.category = category;
         this.joinDate = joinDate;
     }
@@ -28,8 +28,8 @@ public class Joinwaitingmember {
         return projectTeamId;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public String getCategory() {
@@ -45,7 +45,7 @@ public class Joinwaitingmember {
         return "Joinwaitingmember{" +
                 "joinWaitingMemberId=" + joinWaitingMemberId +
                 ", projectTeamId=" + projectTeamId +
-                ", userId='" + userId + '\'' +
+                ", userId='" + memberId + '\'' +
                 ", category='" + category + '\'' +
                 ", joinDate=" + joinDate +
                 '}';

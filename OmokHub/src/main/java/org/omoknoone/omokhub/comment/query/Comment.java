@@ -7,7 +7,7 @@ public class Comment {
     private String content;
     private LocalTime postedDate;
     private LocalTime last_modifiedDate;
-    private String userId;
+    private String memberId;
     private boolean isDeleted;
     private String commentCategory;
     private int postingId;
@@ -17,12 +17,12 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(int commentId, String content, LocalTime postedDate, LocalTime last_modifiedDate, String userId, boolean isDeleted, String commentCategory, int postingId, int seekingMemberPostId, int issueId) {
+    public Comment(int commentId, String content, LocalTime postedDate, LocalTime last_modifiedDate, String memberId, boolean isDeleted, String commentCategory, int postingId, int seekingMemberPostId, int issueId) {
         this.commentId = commentId;
         this.content = content;
         this.postedDate = postedDate;
         this.last_modifiedDate = last_modifiedDate;
-        this.userId = userId;
+        this.memberId = memberId;
         this.isDeleted = isDeleted;
         this.commentCategory = commentCategory;
         this.postingId = postingId;
@@ -46,8 +46,8 @@ public class Comment {
         return last_modifiedDate;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public boolean isDeleted() {
@@ -77,7 +77,7 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", postedDate=" + postedDate +
                 ", last_modifiedDate=" + last_modifiedDate +
-                ", userId='" + userId + '\'' +
+                ", userId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 ", commentCategory='" + commentCategory + '\'' +
                 ", postingId=" + postingId +
