@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.projectmember;
+package org.omoknoone.omokhub.projectmember.query;
 
 public class ProjectMember {
     private int projectMemberId;
@@ -36,7 +36,7 @@ public class ProjectMember {
     public String toString() {
         return "ProjectMember{" +
                 "projectMemberId=" + projectMemberId +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", projectTeamId=" + projectTeamId +
                 ", memberCategory='" + memberCategory + '\'' +
                 '}';

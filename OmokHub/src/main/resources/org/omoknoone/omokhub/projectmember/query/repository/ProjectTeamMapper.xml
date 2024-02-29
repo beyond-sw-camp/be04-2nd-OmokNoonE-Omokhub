@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.ProjectTeamMapper">
+    <resultMap id="projectTeamInfo" type="org.omoknoone.omokhub.projectmember.query.ProjectTeamDTO">
+        <result property="teamName" column="TEAM_NAME"/>
+        <result property="maxMember" column="MAX_MEMBER"/>
+        <result property="currentMember" column="CURRENT_MEMBER"/>
+        <result property="addedDate" column="ADDED_DATE"/>
+    </resultMap>
+
+    <!-- 프로젝트 팀 정보 -->
+    <select id="selectProjectTeamInfo" resultMap="projectTeamInfo" parameterType="_int">
+        SELECT
+                TEAM_NAME
+              , MAX_MEMBER
+              , CURRENT_MEMBER
+              , ADDED_DATE
+          FROM PROJECT_TEAM
+         WHERE IS_ACTIVE = 1
+         AND PROJECT_TEAM_ID = #{projectTeamId}
+    </select>
+    
+    <resultMap id="selectProjectByLeftMember" type="org.omoknoone.omokhub.projectmember.query.ProjectTeamDTO">
+        <result property="teamName" column="TEAM_NAME"/>
+        <result property="maxMember" column="MAX_MEMBER"/>
+        <result property="currentMember" column="CURRENT_MEMBER"/>
+        <!-- 별칭 -->
+        <result property="left" column="MAX_MEMBER - CURRENT_MEMBER"/>
+    </resultMap>
+
+    <!-- 팀명으로 팀 검색 -->
+    <select id="selectProjectByLeftMember" resultMap="selectProjectByLeftMember">
+        SELECT
+                TEAM_NAME
+              , MAX_MEMBER
+              , CURRENT_MEMBER
+              , MAX_MEMBER - CURRENT_MEMBER AS LEFTSPACE
+          FROM PROJECT_TEAM
+         WHERE MAX_MEMBER > CURRENT_MEMBER
+    </select>
+</mapper>
