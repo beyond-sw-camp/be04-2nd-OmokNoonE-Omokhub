@@ -62,4 +62,5 @@
         WHERE MEMBER_ID = #{memberID}
         ORDER BY c.START_DATE DESC;
     </select>
+
 </mapper>

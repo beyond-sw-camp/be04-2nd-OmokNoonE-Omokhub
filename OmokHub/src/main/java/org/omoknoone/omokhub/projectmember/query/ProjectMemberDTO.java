@@ -57,4 +57,6 @@ public class ProjectMemberDTO {
                 ", memberCategory=" + memberCategory +
                 '}';
     }
+
 }
+

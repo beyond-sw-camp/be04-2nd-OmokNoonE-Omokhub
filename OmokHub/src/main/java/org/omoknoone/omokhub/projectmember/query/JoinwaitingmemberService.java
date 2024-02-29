@@ -17,15 +17,15 @@ public class JoinwaitingmemberService {
         this.joinwaitingmemberMapper = joinwaitingmemberMapper;
     }
 
-    public void searchWaitingMember(int findprojectId){
+    public void searchWaitingMember(int findprojectId) {
         List<Member> members = joinwaitingmemberMapper.selectWaitingMember(findprojectId);
     }
 
-    public void searchInviteOrApplyMember(){
+    public void searchInviteOrApplyMember() {
         List<Member> members = joinwaitingmemberMapper.selectInviteOrApplyMember();
     }
 
-    public void sesarchMyCurrentApplyStatus(){
+    public void sesarchMyCurrentApplyStatus() {
         List<JoinwaitingmemberDTO> waitingstatus = joinwaitingmemberMapper.myCurrentApplyStatus();
     }
 }

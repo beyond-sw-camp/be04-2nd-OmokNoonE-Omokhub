@@ -16,11 +16,11 @@ public class ProjectTeamService {
         this.projectTeamMapper = projectTeamMapper;
     }
 
-    public void searchProjectInfo(int projectTeamId){
+    public void searchProjectInfo(int projectTeamId) {
         List<ProjectTeamDTO> projectInfo = projectTeamMapper.selectProjectTeamInfo(projectTeamId);
     }
 
-    public void findMemberLeft(){
+    public void findMemberLeft() {
         List<ProjectTeamDTO> memberLeftProject = projectTeamMapper.selectProjectByLeftMember();
     }
 }

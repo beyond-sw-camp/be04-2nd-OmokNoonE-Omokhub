@@ -1,6 +1,13 @@
+#spring:
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://192.168.0.34:3306/omok
+#    username: master
+#    password: master
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.0.34:3306/omok
-    username: master
-    password: master
+    url: jdbc:mariadb://localhost:3306/omok
+    username: omok
+    password: omok

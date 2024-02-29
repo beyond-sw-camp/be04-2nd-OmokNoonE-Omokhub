@@ -10,4 +10,5 @@ public interface ProjectTeamMapper {
     List<ProjectTeamDTO> selectProjectTeamInfo(int projectTeamId);
 
     List<ProjectTeamDTO> selectProjectByLeftMember();
+
 }

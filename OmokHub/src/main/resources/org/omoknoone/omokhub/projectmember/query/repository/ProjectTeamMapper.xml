@@ -41,6 +41,4 @@
           FROM PROJECT_TEAM
          WHERE MAX_MEMBER > CURRENT_MEMBER
     </select>
-
-
 </mapper>
