@@ -94,7 +94,11 @@ public class SeekingMemberPost {
                 ", content='" + content + '\'' +
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", isSeeking=" + isSeeking +
+<<<<<<< HEAD:OmokHub/src/main/java/org/omoknoone/omokhub/seekingmemberpost/query/SeekingMemberPost.java
                 ", memberId='" + memberId + '\'' +
+=======
+                ", userId='" + memberId + '\'' +
+>>>>>>> a178dcf (#14 [feat] schedule select 구현):OmokHub/src/main/java/org/omoknoone/omokhub/seekingmemberpost/SeekingMemberPost.java
                 ", isDeleted=" + isDeleted +
                 ", projectId=" + projectId +
                 '}';

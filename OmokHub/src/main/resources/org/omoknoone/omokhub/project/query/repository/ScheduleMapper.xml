@@ -4,5 +4,53 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ScheduleMapper">
+<<<<<<< HEAD
 
 </mapper>
+=======
+        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.ScheduleDTO">
+            <id property="projectId" column="PROJECT_ID"/>
+            <result property="title" column="TITLE"/>
+            <result property="content" column="CONTENT"/>
+            <result property="startDate" column="START_DATE"/>
+            <result property="endDate" column="END_DATE"/>
+            <result property="progress" column="PROGRESS"/>
+        </resultMap>
+        <resultMap id="MySheduleResultMap" type="org.omoknoone.omokhub.project.query.ScheduleDTO">
+            <id property="memberId" column="MEMBER_ID"/>
+            <result property="title" column="TITLE"/>
+            <result property="startDate" column="START_DATE"/>
+            <result property="endDate" column="END_DATE"/>
+            <result property="progress" column="PROGRESS"/>
+            <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+        </resultMap>
+
+        <select id="selectScheduleByProject" parameterType="_int" resultMap="scheduleInProjectResultMap">
+            SELECT
+                   P.PROJECT_ID
+                 , A.TITLE
+                 , A.CONTENT
+                 , A.START_DATE
+                 , A.END_DATE
+                 , A.PROGRESS
+              FROM SCHEDULE A
+              JOIN PROJECT P
+             WHERE P.PROJECT_ID = #{projectId}
+        </select>
+
+        <select id="selectScheduleByUser" parameterType="string" resultMap="MySheduleResultMap">
+            SELECT
+                   PM.MEMBER_ID
+                 , S.TITLE
+                 , S.START_DATE
+                 , S.END_DATE
+                 , S.PROGRESS
+                 , S.LAST_MODIFIED_DATE
+              FROM SCHEDULE S
+              JOIN PROJECT P ON (S.PROJECT_ID = P.PROJECT_ID)
+              JOIN PROJECT_MEMBER PM ON (S.PROJECT_MEMBER_ID = PM.PROJECT_MEMBER_ID)
+             WHERE PM.MEMBER_ID = #{memberId}
+             ORDER BY SCHEDULE_ID DESC
+        </select>
+    </mapper>
+>>>>>>> a178dcf (#14 [feat] schedule select 구현)

@@ -8,18 +8,18 @@ public class Bookmark {
     private boolean isBookmark;
     private LocalTime addedDate;
     private int seeking_memberPostId;
-    private int userId;
+    private int memberId;
 
     public Bookmark() {
     }
 
-    public Bookmark(int bookmarkId, boolean isLike, boolean isBookmark, LocalTime addedDate, int seeking_memberPostId, int userId) {
+    public Bookmark(int bookmarkId, boolean isLike, boolean isBookmark, LocalTime addedDate, int seeking_memberPostId, int memberId) {
         this.bookmarkId = bookmarkId;
         this.isLike = isLike;
         this.isBookmark = isBookmark;
         this.addedDate = addedDate;
         this.seeking_memberPostId = seeking_memberPostId;
-        this.userId = userId;
+        this.memberId = memberId;
     }
 
     public int getBookmarkId() {
@@ -42,8 +42,8 @@ public class Bookmark {
         return seeking_memberPostId;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getMemberId() {
+        return memberId;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Bookmark {
                 ", isBookmark=" + isBookmark +
                 ", addedDate=" + addedDate +
                 ", seeking_memberPostId=" + seeking_memberPostId +
-                ", userId=" + userId +
+                ", userId=" + memberId +
                 '}';
     }
 }

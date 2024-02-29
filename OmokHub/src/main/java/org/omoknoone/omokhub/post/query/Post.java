@@ -9,20 +9,20 @@ public class Post {
     private LocalTime postedDate;
     private int hits;
     private LocalTime lastModifiedDate;
-    private String userId;
+    private String memberId;
     private boolean isDeleted;
 
     public Post() {
     }
 
-    public Post(int postingId, String title, String content, LocalTime postedDate, int hits, LocalTime lastModifiedDate, String userId, boolean isDeleted) {
+    public Post(int postingId, String title, String content, LocalTime postedDate, int hits, LocalTime lastModifiedDate, String memberId, boolean isDeleted) {
         this.postingId = postingId;
         this.title = title;
         this.content = content;
         this.postedDate = postedDate;
         this.hits = hits;
         this.lastModifiedDate = lastModifiedDate;
-        this.userId = userId;
+        this.memberId = memberId;
         this.isDeleted = isDeleted;
     }
 
@@ -50,8 +50,8 @@ public class Post {
         return lastModifiedDate;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public boolean isDeleted() {
@@ -67,7 +67,7 @@ public class Post {
                 ", postedDate=" + postedDate +
                 ", hits=" + hits +
                 ", lastModifiedDate=" + lastModifiedDate +
-                ", userId='" + userId + '\'' +
+                ", userId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 '}';
     }
