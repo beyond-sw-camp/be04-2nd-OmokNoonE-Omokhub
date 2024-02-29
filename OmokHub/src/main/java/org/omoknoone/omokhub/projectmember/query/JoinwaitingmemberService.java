@@ -17,8 +17,8 @@ public class JoinwaitingmemberService {
         this.joinwaitingmemberMapper = joinwaitingmemberMapper;
     }
 
-    public void searchWaitingMember(){
-        List<Member> members = joinwaitingmemberMapper.selectWaitingMember();
+    public void searchWaitingMember(int findprojectId){
+        List<Member> members = joinwaitingmemberMapper.selectWaitingMember(findprojectId);
     }
 
     public void searchInviteOrApplyMember(){

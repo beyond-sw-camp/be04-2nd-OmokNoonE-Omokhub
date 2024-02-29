@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface JoinwaitingmemberMapper {
-    List<Member> selectWaitingMember();
+    List<Member> selectWaitingMember(int projectId);
     List<Member> selectInviteOrApplyMember();
     List<JoinwaitingmemberDTO> myCurrentApplyStatus();
 }

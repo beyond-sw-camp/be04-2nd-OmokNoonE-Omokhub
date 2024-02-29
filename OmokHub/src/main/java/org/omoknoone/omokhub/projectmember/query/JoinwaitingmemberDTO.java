@@ -21,6 +21,11 @@ public class JoinwaitingmemberDTO {
         this.teamName = teamName;
     }
 
+    public JoinwaitingmemberDTO(String category, LocalTime joinDate) {
+        this.category = category;
+        this.joinDate = joinDate;
+    }
+
     public String getCategory() {
         return category;
     }

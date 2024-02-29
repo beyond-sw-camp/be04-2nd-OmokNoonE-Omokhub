@@ -3,6 +3,8 @@ package org.omoknoone.omokhub.projectmember.query;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.omoknoone.omokhub.projectmember.query.JoinwaitingmemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,11 +15,12 @@ class JoinwaitingmemberServiceTest {
     @Autowired
     private JoinwaitingmemberService joinwaitingmemberService;
 
-    @DisplayName("대기 멤버 조회 테스트")
-    @Test
-    void testSearchWaitingMember() {
+    @DisplayName("참여 대기 멤버 조회")
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
+    void testSearchWaitingMember(int projectId) {
         Assertions.assertDoesNotThrow(
-                () -> joinwaitingmemberService.searchWaitingMember()
+                () -> joinwaitingmemberService.searchWaitingMember(projectId)
         );
     }
 
