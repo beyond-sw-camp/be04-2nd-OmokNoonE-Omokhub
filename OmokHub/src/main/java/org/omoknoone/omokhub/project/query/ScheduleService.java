@@ -18,12 +18,10 @@ public class ScheduleService {
     public void scheduleInProject(int projectId){
         List<ProjectAndScheduleDTO> schedules = scheduleMapper.selectScheduleByProject(projectId);
         schedules.forEach(System.out::print);
-        System.out.println("scheduleInProject 테스트완료");
     }
 
     public void mySchedule(String memberId){
         List<UserAndScheduleDTO> scheduleDTOs = scheduleMapper.selectScheduleByUser(memberId);
         scheduleDTOs.forEach(System.out::print);
-        System.out.println("mySchedule 테스트 완료");
     }
 }
