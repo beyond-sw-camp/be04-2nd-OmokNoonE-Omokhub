@@ -20,10 +20,10 @@ class ProjectMemberServiceTest {
 //        @Test
     @DisplayName("해당 팀의 팀원 정보 조회")
     @ParameterizedTest
-    @ValueSource(strings = {"1"})
-    void testGetTeamMemberInfo(int projectMemberId) {
+    @ValueSource(strings = {"QA Team"})
+    void testGetTeamMemberInfo(String putTeamName) {
         Assertions.assertDoesNotThrow(
-                () -> projectMemberService.TeamMemberInfo(projectMemberId)
+                () -> projectMemberService.TeamMemberInfo(putTeamName)
         );
     }
 }

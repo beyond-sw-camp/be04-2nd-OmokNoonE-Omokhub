@@ -16,10 +16,10 @@ public class ProjectMemberService {
         this.projectMemberMapper = projectMemberMapper;
     }
 
-    public void TeamMemberInfo(int projectMemberId) {
+    public void TeamMemberInfo(String putTeamName) {
 
         /* 설명. 특정 프로젝트의 ID로 팀을 찾고 해당 팀의 팀원 정보 조회 */
-        List<ProjectMemberDTO> memberInfo = projectMemberMapper.getTeamMemberInfo(projectMemberId);
+        List<ProjectMemberDTO> memberInfo = projectMemberMapper.getTeamMemberInfo(putTeamName);
         memberInfo.forEach(System.out::println);
 
     }

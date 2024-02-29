@@ -11,7 +11,7 @@
         <result property="memberId" column="MEMBER_ID"/>
         <result property="memberCategory" column="MEMBER_CATEGORY"/>
     </resultMap>
-    <select id="getTeamMemberInfo" resultMap="TemMemberInfo1" parameterType="_int">
+    <select id="getTeamMemberInfo" resultMap="TemMemberInfo1" parameterType="String">
         SELECT
                B.TEAM_NAME
              , C.NICKNAME
@@ -20,6 +20,6 @@
           FROM PROJECT_MEMBER A
           JOIN PROJECT_TEAM B ON (A.PROJECT_TEAM_ID = B.PROJECT_TEAM_ID)
           JOIN MEMBER C ON (A.MEMBER_ID = C.MEMBER_ID)
-         WHERE A.PROJECT_MEMBER_ID = #{projectMemberId}
+         WHERE B.TEAM_NAME = #{putTeamName}
     </select>
 </mapper>

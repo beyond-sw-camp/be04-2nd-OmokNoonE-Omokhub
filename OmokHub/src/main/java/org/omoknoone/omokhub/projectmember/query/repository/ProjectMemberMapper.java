@@ -8,5 +8,5 @@ import java.util.List;
 @Mapper
 public interface ProjectMemberMapper {
 
-    List<ProjectMemberDTO> getTeamMemberInfo(int projectMemberId);
+    List<ProjectMemberDTO> getTeamMemberInfo(String putTeamName);
 }

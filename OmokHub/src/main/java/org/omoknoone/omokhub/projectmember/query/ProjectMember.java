@@ -2,7 +2,7 @@ package org.omoknoone.omokhub.projectmember.query;
 
 public class ProjectMember {
     private int projectMemberId;
-    private String memberId;    // 회원 엔티티로부터 가져온 pk
+    private String memberId;
     private int projectTeamId;
     private String memberCategory;
 
