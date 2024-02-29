@@ -4,6 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.IssueMapper">
+
     <resultMap id="searchProjectIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
         <id property="issueId" column="ISSUE_ID"/>
         <result property="title" column="TITLE"/>
