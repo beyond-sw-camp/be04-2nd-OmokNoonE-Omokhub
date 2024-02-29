@@ -5,4 +5,58 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.IssueMapper">
 
+    <resultMap id="searchProjectIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
+        <id property="issueId" column="ISSUE_ID"/>
+        <result property="title" column="TITLE"/>
+        <result property="isClosed" column="IS_CLOSED"/>
+        <result property="postedDate" column="POSTED_DATE"/>
+        <result property="closedDate" column="CLOSED_DATE"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+        <collection property="members" ofType="org.omoknoone.omokhub.member.query.MemberDTO">
+            <id property="memberId" column="MEMBER_ID"/>
+        </collection>
+    </resultMap>
+    <select id="searchProjectIssues" resultMap="searchProjectIssuesResultMap" parameterType="_int">
+        SELECT
+              A.ISSUE_ID
+            , A.TITLE
+            , A.IS_CLOSED
+            , A.POSTED_DATE
+            , A.CLOSED_DATE
+            , C.MEMBER_ID
+            , A.LAST_MODIFIED_DATE
+         FROM ISSUE A
+         JOIN PROJECT B ON (A.PROJECT_ID = A.PROJECT_ID)
+         JOIN PROJECT_MEMBER C ON (A.PROJECT_MEMBER_ID = C.PROJECT_MEMBER_ID)
+        WHERE A.IS_CLOSED IN (0, 1)     -- 닫힘 여부에 따라 조회도 가능
+          AND A.PROJECT_ID = #{projectId}
+
+    </select>
+
+    <resultMap id="searchProjectMemberIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
+        <id property="issueId" column="ISSUE_ID"/>
+        <result property="title" column="TITLE"/>
+        <result property="isClosed" column="IS_CLOSED"/>
+        <result property="postedDate" column="POSTED_DATE"/>
+        <result property="closedDate" column="CLOSED_DATE"/>
+        <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+        <collection property="members" ofType="org.omoknoone.omokhub.member.query.MemberDTO">
+            <id property="memberId" column="MEMBER_ID"/>
+        </collection>
+    </resultMap>
+    <select id="searchProjectMemberIssues" resultMap="searchProjectMemberIssuesResultMap" parameterType="string">
+        SELECT
+              A.ISSUE_ID
+            , A.TITLE
+            , A.IS_CLOSED
+            , A.POSTED_DATE
+            , A.CLOSED_DATE
+            , C.MEMBER_ID
+            , A.LAST_MODIFIED_DATE
+         FROM ISSUE A
+         JOIN PROJECT B ON (A.PROJECT_ID = B.PROJECT_ID)
+         JOIN PROJECT_MEMBER C ON (A.PROJECT_MEMBER_ID = C.PROJECT_MEMBER_ID)
+        WHERE C.MEMBER_ID = #{memberId}
+        ORDER BY A.ISSUE_ID DESC
+    </select>
 </mapper>

@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.seekingmemberpost;
+package org.omoknoone.omokhub.seekingmemberpost.query;
 
 import java.time.LocalTime;
 
@@ -12,14 +12,14 @@ public class SeekingMemberPost {
     private String content;
     private LocalTime lastModifiedDate;
     private boolean isSeeking;
-    private String userId;
+    private String memberId;
     private boolean isDeleted;
     private int projectId;
 
     public SeekingMemberPost() {
     }
 
-    public SeekingMemberPost(int seekingMemberPostId, String title, int seekingMember, LocalTime startDate, LocalTime endDate, String techStack, String content, LocalTime lastModifiedDate, boolean isSeeking, String userId, boolean isDeleted, int projectId) {
+    public SeekingMemberPost(int seekingMemberPostId, String title, int seekingMember, LocalTime startDate, LocalTime endDate, String techStack, String content, LocalTime lastModifiedDate, boolean isSeeking, String memberId, boolean isDeleted, int projectId) {
         this.seekingMemberPostId = seekingMemberPostId;
         this.title = title;
         this.seekingMember = seekingMember;
@@ -29,7 +29,7 @@ public class SeekingMemberPost {
         this.content = content;
         this.lastModifiedDate = lastModifiedDate;
         this.isSeeking = isSeeking;
-        this.userId = userId;
+        this.memberId = memberId;
         this.isDeleted = isDeleted;
         this.projectId = projectId;
     }
@@ -70,8 +70,8 @@ public class SeekingMemberPost {
         return isSeeking;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public boolean isDeleted() {
@@ -94,7 +94,7 @@ public class SeekingMemberPost {
                 ", content='" + content + '\'' +
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", isSeeking=" + isSeeking +
-                ", userId='" + userId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 ", projectId=" + projectId +
                 '}';
