@@ -3,8 +3,8 @@ package org.omoknoone.omokhub.user.query;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class User {
-    private String userId;
+public class Member {
+    private String memberId;
     private String name;
     private String nickname;
     private String password;
@@ -15,11 +15,11 @@ public class User {
     private LocalTime signUpDate;
     private boolean isWithdraw;
 
-    public User() {
+    public Member() {
     }
 
-    public User(String userId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalTime signUpDate, boolean isWithdraw) {
-        this.userId = userId;
+    public Member(String memberId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalTime signUpDate, boolean isWithdraw) {
+        this.memberId = memberId;
         this.name = name;
         this.nickname = nickname;
         this.password = password;
@@ -31,8 +31,8 @@ public class User {
         this.isWithdraw = isWithdraw;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public String getName() {
@@ -73,8 +73,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userId='" + userId + '\'' +
+        return "Member{" +
+                "memberId='" + memberId + '\'' +
                 ", name='" + name + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
