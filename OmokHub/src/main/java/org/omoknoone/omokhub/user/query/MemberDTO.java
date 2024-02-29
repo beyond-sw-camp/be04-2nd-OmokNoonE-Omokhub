@@ -1,4 +1,4 @@
 package org.omoknoone.omokhub.user.query;
 
-public class UserController {
+public class MemberDTO {
 }

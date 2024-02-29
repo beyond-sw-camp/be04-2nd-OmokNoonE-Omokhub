@@ -5,18 +5,18 @@ public class Profile {
     private String title;
     private String content;
     private String techStack;
-    private String userId;
+    private String memberId;
     private boolean isDeleted;
 
     public Profile() {
     }
 
-    public Profile(int profileId, String title, String content, String techStack, String userId, boolean isDeleted) {
+    public Profile(int profileId, String title, String content, String techStack, String memberId, boolean isDeleted) {
         this.profileId = profileId;
         this.title = title;
         this.content = content;
         this.techStack = techStack;
-        this.userId = userId;
+        this.memberId = memberId;
         this.isDeleted = isDeleted;
     }
 
@@ -36,8 +36,8 @@ public class Profile {
         return techStack;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     public boolean isDeleted() {
@@ -51,7 +51,7 @@ public class Profile {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", techStack='" + techStack + '\'' +
-                ", userId='" + userId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 '}';
     }

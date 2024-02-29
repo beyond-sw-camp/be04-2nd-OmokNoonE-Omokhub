@@ -9,19 +9,19 @@ public class Reply {
     private LocalTime lastModifiedDate;
     private int commentId;
     private boolean isDeleted;
-    private String userId;
+    private String memberId;
 
     public Reply() {
     }
 
-    public Reply(int replyId, String content, LocalTime postedDate, LocalTime lastModifiedDate, int commentId, boolean isDeleted, String userId) {
+    public Reply(int replyId, String content, LocalTime postedDate, LocalTime lastModifiedDate, int commentId, boolean isDeleted, String memberId) {
         this.replyId = replyId;
         this.content = content;
         this.postedDate = postedDate;
         this.lastModifiedDate = lastModifiedDate;
         this.commentId = commentId;
         this.isDeleted = isDeleted;
-        this.userId = userId;
+        this.memberId = memberId;
     }
 
     public int getReplyId() {
@@ -48,8 +48,8 @@ public class Reply {
         return isDeleted;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
     @Override
@@ -61,7 +61,7 @@ public class Reply {
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", commentId=" + commentId +
                 ", isDeleted=" + isDeleted +
-                ", userId='" + userId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 '}';
     }
 }

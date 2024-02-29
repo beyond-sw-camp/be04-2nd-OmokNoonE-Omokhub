@@ -8,7 +8,7 @@ public class Bookmark {
     private boolean isBookmark;
     private LocalTime addedDate;
     private int seeking_memberPostId;
-    private int userId;
+    private int memberId;
 
     public Bookmark() {
     }
@@ -19,7 +19,7 @@ public class Bookmark {
         this.isBookmark = isBookmark;
         this.addedDate = addedDate;
         this.seeking_memberPostId = seeking_memberPostId;
-        this.userId = userId;
+        this.memberId = memberId;
     }
 
     public int getBookmarkId() {
@@ -43,7 +43,7 @@ public class Bookmark {
     }
 
     public int getUserId() {
-        return userId;
+        return memberId;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Bookmark {
                 ", isBookmark=" + isBookmark +
                 ", addedDate=" + addedDate +
                 ", seeking_memberPostId=" + seeking_memberPostId +
-                ", userId=" + userId +
+                ", memberId=" + memberId +
                 '}';
     }
 }
