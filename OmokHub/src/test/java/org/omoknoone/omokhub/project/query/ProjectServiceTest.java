@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.project;
+package org.omoknoone.omokhub.project.query;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
