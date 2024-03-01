@@ -51,7 +51,7 @@ public class Profile {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", techStack='" + techStack + '\'' +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 '}';
     }

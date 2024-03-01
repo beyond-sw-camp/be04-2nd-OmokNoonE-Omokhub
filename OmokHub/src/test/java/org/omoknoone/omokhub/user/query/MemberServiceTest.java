@@ -41,7 +41,7 @@ public class MemberServiceTest {
         profileInfo.setTitle("제목1");
         profileInfo.setContent("내용1");
         profileInfo.setTechStack("자바, 스프링");
-        profileInfo.setUserId("user1");
+        profileInfo.setMemberId("user1");
 
         return Stream.of(
                 Arguments.of(profileInfo)

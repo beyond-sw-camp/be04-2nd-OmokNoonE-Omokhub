@@ -31,7 +31,7 @@ public class PersonalLink {
         return "PersonalLink{" +
                 "personalLinkId=" + personalLinkId +
                 ", url='" + url + '\'' +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 '}';
     }
 }

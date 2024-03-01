@@ -54,7 +54,7 @@ public class Bookmark {
                 ", isBookmark=" + isBookmark +
                 ", addedDate=" + addedDate +
                 ", seeking_memberPostId=" + seeking_memberPostId +
-                ", userId=" + memberId +
+                ", memberId=" + memberId +
                 '}';
     }
 }
