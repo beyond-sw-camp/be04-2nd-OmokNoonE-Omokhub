@@ -61,7 +61,7 @@ public class Reply {
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", commentId=" + commentId +
                 ", isDeleted=" + isDeleted +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 '}';
     }
 }

@@ -6,18 +6,18 @@ public class ProfileDTO {
     private String title;
     private String content;
     private String techStack;
-    private String userId;
+    private String memberId;
     private boolean isDeleted;
 
     public ProfileDTO() {
     }
 
-    public ProfileDTO(int profileId, String title, String content, String techStack, String userId, boolean isDeleted) {
+    public ProfileDTO(int profileId, String title, String content, String techStack, String memberId, boolean isDeleted) {
         this.profileId = profileId;
         this.title = title;
         this.content = content;
         this.techStack = techStack;
-        this.userId = userId;
+        this.memberId = memberId;
         this.isDeleted = isDeleted;
     }
 
@@ -53,12 +53,12 @@ public class ProfileDTO {
         this.techStack = techStack;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
     public boolean isDeleted() {
@@ -76,7 +76,7 @@ public class ProfileDTO {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", techStack='" + techStack + '\'' +
-                ", userId='" + userId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 '}';
     }

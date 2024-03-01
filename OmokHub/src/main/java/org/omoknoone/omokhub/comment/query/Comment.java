@@ -77,7 +77,7 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", postedDate=" + postedDate +
                 ", last_modifiedDate=" + last_modifiedDate +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 ", commentCategory='" + commentCategory + '\'' +
                 ", postingId=" + postingId +

@@ -67,7 +67,7 @@ public class Post {
                 ", postedDate=" + postedDate +
                 ", hits=" + hits +
                 ", lastModifiedDate=" + lastModifiedDate +
-                ", userId='" + memberId + '\'' +
+                ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +
                 '}';
     }
