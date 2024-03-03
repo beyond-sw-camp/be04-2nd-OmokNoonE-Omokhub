@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.project.query;
 
-import org.omoknoone.omokhub.member.query.MemberDTO;
+import org.omoknoone.omokhub.user.query.MemberDTO;
 
 import java.time.LocalTime;
 import java.util.List;
