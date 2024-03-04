@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.user.query.controller;
 
-import org.omoknoone.omokhub.user.query.entity.dto.MemberDTO;
+import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.omoknoone.omokhub.user.query.service.MemberService;
 
 public class MemberController {

@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.seekingmemberpost.query.service;
 
-import org.omoknoone.omokhub.seekingmemberpost.query.entity.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
 import org.omoknoone.omokhub.seekingmemberpost.query.repository.SeekingMemberPostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

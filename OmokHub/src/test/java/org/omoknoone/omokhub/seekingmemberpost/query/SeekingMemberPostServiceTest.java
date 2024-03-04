@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.provider.Arguments;
-import org.omoknoone.omokhub.seekingmemberpost.query.entity.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
 import org.omoknoone.omokhub.seekingmemberpost.query.service.SeekingMemberPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

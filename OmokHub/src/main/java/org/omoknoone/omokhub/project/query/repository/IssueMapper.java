@@ -1,7 +1,7 @@
 package org.omoknoone.omokhub.project.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.project.query.entity.dto.IssueAndMemberDTO;
+import org.omoknoone.omokhub.project.query.dto.IssueAndMemberDTO;
 
 import java.util.List;
 

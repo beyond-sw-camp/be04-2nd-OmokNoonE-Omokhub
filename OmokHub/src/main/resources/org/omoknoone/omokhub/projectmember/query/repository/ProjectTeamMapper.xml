@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.ProjectTeamMapper">
-    <resultMap id="projectTeamInfo" type="org.omoknoone.omokhub.projectmember.query.entity.dto.ProjectTeamDTO">
+    <resultMap id="projectTeamInfo" type="org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO">
         <result property="teamName" column="TEAM_NAME"/>
         <result property="maxMember" column="MAX_MEMBER"/>
         <result property="currentMember" column="CURRENT_MEMBER"/>
@@ -23,7 +23,7 @@
          AND PROJECT_TEAM_ID = #{projectTeamId}
     </select>
     
-    <resultMap id="selectProjectByLeftMember" type="org.omoknoone.omokhub.projectmember.query.entity.dto.ProjectTeamDTO">
+    <resultMap id="selectProjectByLeftMember" type="org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO">
         <result property="teamName" column="TEAM_NAME"/>
         <result property="maxMember" column="MAX_MEMBER"/>
         <result property="currentMember" column="CURRENT_MEMBER"/>

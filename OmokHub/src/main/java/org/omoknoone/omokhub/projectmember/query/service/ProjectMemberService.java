@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
-import org.omoknoone.omokhub.projectmember.query.entity.dto.ProjectMemberDTO;
+import org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.repository.ProjectMemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

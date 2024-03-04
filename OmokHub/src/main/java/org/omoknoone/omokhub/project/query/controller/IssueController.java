@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.project.query.controller;
 
-import org.omoknoone.omokhub.project.query.entity.dto.IssueAndMemberDTO;
+import org.omoknoone.omokhub.project.query.dto.IssueAndMemberDTO;
 import org.omoknoone.omokhub.project.query.service.IssueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

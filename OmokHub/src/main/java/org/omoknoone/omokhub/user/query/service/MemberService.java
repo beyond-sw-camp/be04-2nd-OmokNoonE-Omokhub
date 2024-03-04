@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.user.query.service;
 
-import org.omoknoone.omokhub.user.query.entity.dto.MemberDTO;
+import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.omoknoone.omokhub.user.query.repository.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package org.omoknoone.omokhub.project.query.service;
 
-import org.omoknoone.omokhub.project.query.entity.dto.ProjectAndScheduleDTO;
-import org.omoknoone.omokhub.project.query.entity.dto.UserAndScheduleDTO;
+import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
+import org.omoknoone.omokhub.project.query.dto.UserAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.repository.ScheduleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
