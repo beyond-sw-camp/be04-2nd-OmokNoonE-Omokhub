@@ -2,7 +2,7 @@ package org.omoknoone.omokhub.user.query.repository;
 
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.user.query.MemberDTO;
+import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 
 @Mapper
 public interface MemberMapper {

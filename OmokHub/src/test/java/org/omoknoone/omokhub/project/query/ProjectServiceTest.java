@@ -3,7 +3,7 @@ package org.omoknoone.omokhub.project.query;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.omoknoone.omokhub.project.query.ProjectService;
+import org.omoknoone.omokhub.project.query.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
