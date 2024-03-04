@@ -5,7 +5,7 @@
 
 <mapper namespace="org.omoknoone.omokhub.user.query.repository.MemberMapper">
 
-    <resultMap id="memberResultMap" type="org.omoknoone.omokhub.user.query.MemberDTO">
+    <resultMap id="memberResultMap" type="org.omoknoone.omokhub.user.query.entity.dto.MemberDTO">
         <id property="memberId" column="MEMBER_ID"/>
         <result property="name" column="NAME"/>
         <result property="nickname" column="NICKNAME"/>

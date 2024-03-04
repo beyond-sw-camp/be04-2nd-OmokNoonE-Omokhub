@@ -5,11 +5,11 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ScheduleMapper">
 
-        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.ProjectAndScheduleDTO">
+        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.entity.dto.ProjectAndScheduleDTO">
             <id property="projectId" column="PROJECT_ID"/>
             <result property="title" column="TITLE"/>
             <result property="status" column="STATUS"/>
-            <collection property="list" ofType="org.omoknoone.omokhub.project.query.ScheduleDTO">
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.entity.dto.ScheduleDTO">
                 <id property="scheduleId" column="SCHEDULE_ID"/>
                 <result property="startDate" column="START_DATE"/>
                 <result property="endDate" column="END_DATE"/>
@@ -19,10 +19,10 @@
                 <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
             </collection>
         </resultMap>
-        <resultMap id="MyScheduleResultMap" type="org.omoknoone.omokhub.project.query.UserAndScheduleDTO">
+        <resultMap id="MyScheduleResultMap" type="org.omoknoone.omokhub.project.query.entity.dto.UserAndScheduleDTO">
             <id property="memberId" column="MEMBER_ID"/>
             <result property="name" column="NAME"/>
-            <collection property="list" ofType="org.omoknoone.omokhub.project.query.ScheduleDTO">
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.entity.dto.ScheduleDTO">
                 <id property="scheduleId" column="SCHEDULE_ID"/>
                 <result property="title" column="TITLE"/>
                 <result property="startDate" column="START_DATE"/>

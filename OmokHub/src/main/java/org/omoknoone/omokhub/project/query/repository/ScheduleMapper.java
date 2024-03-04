@@ -1,10 +1,8 @@
 package org.omoknoone.omokhub.project.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.project.query.ProjectAndScheduleDTO;
-import org.omoknoone.omokhub.project.query.Schedule;
-import org.omoknoone.omokhub.project.query.ScheduleDTO;
-import org.omoknoone.omokhub.project.query.UserAndScheduleDTO;
+import org.omoknoone.omokhub.project.query.entity.dto.ProjectAndScheduleDTO;
+import org.omoknoone.omokhub.project.query.entity.dto.UserAndScheduleDTO;
 
 import java.util.List;
 @Mapper

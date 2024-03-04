@@ -5,7 +5,7 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.IssueMapper">
 
-    <resultMap id="searchProjectIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
+    <resultMap id="searchProjectIssuesResultMap" type="org.omoknoone.omokhub.project.query.entity.dto.IssueAndMemberDTO">
         <id property="issueId" column="ISSUE_ID"/>
         <result property="title" column="TITLE"/>
         <result property="isClosed" column="IS_CLOSED"/>
@@ -33,7 +33,7 @@
 
     </select>
 
-    <resultMap id="searchProjectMemberIssuesResultMap" type="org.omoknoone.omokhub.project.query.IssueAndMemberDTO">
+    <resultMap id="searchProjectMemberIssuesResultMap" type="org.omoknoone.omokhub.project.query.entity.dto.IssueAndMemberDTO">
         <id property="issueId" column="ISSUE_ID"/>
         <result property="title" column="TITLE"/>
         <result property="isClosed" column="IS_CLOSED"/>

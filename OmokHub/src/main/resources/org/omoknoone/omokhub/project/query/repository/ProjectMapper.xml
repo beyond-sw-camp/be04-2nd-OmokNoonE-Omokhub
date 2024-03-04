@@ -5,7 +5,7 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ProjectMapper">
     <!--설명. 프로젝트 id 기준 조회 -->
-    <resultMap id="projectAndTeamAndMemberResultMap" type="org.omoknoone.omokhub.project.query.ProjectAndTeamAndMemberDTO">
+    <resultMap id="projectAndTeamAndMemberResultMap" type="org.omoknoone.omokhub.project.query.entity.dto.ProjectAndTeamAndMemberDTO">
         <id property="projectId" column="PROJECT_ID"/>
         <result property="title" column="TITLE"/>
         <result property="startDate" column="START_DATE"/>

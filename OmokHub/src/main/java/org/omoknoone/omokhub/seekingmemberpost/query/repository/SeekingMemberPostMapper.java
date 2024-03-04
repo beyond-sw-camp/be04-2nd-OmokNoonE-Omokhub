@@ -1,7 +1,7 @@
 package org.omoknoone.omokhub.seekingmemberpost.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.seekingmemberpost.query.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.seekingmemberpost.query.entity.dto.SeekingMemberPostDTO;
 
 import java.util.List;
 import java.util.Map;
