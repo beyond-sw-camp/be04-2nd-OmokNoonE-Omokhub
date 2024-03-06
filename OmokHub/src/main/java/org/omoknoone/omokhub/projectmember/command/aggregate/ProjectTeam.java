@@ -4,6 +4,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "PROJECT_TEAM")
@@ -23,7 +30,7 @@ public class ProjectTeam {
     private String teamName;
 
     @Column(name = "ADDED_DATE")
-    private String addedDate;
+    private LocalDateTime addedDate;
 
     @Column(name = "IS_ACTIVE")
     private boolean isActive;
@@ -31,7 +38,8 @@ public class ProjectTeam {
     public ProjectTeam() {
     }
 
-    public ProjectTeam(int projectTeamId, int maxMember, int currentMember, String teamName, String addedDate, boolean isActive) {
+    public ProjectTeam(int projectTeamId, int maxMember, int currentMember,
+                       String teamName, LocalDateTime addedDate, boolean isActive) {
         this.projectTeamId = projectTeamId;
         this.maxMember = maxMember;
         this.currentMember = currentMember;
@@ -44,24 +52,48 @@ public class ProjectTeam {
         return projectTeamId;
     }
 
+    public void setProjectTeamId(int projectTeamId) {
+        this.projectTeamId = projectTeamId;
+    }
+
     public int getMaxMember() {
         return maxMember;
+    }
+
+    public void setMaxMember(int maxMember) {
+        this.maxMember = maxMember;
     }
 
     public int getCurrentMember() {
         return currentMember;
     }
 
+    public void setCurrentMember(int currentMember) {
+        this.currentMember = currentMember;
+    }
+
     public String getTeamName() {
         return teamName;
     }
 
-    public String getAddedDate() {
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public LocalDateTime getAddedDate() {
         return addedDate;
     }
 
-    public boolean isActive() {
+    public void setAddedDate(LocalDateTime addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public boolean getIsActive() {
         return isActive;
+    }
+
+    public void setIsActive(boolean active) {
+        isActive = active;
     }
 
     @Override
