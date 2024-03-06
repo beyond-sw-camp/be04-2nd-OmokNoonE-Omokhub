@@ -1,9 +1,7 @@
 package org.omoknoone.omokhub.projectmember.command.aggregate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalTime;
 
@@ -12,8 +10,9 @@ import java.time.LocalTime;
 public class JoinwaitingMember {
 
     @Id
-    @Column(name = "JOIN_WAITING_MEMBER")
-    private int joinwaitingMember;
+    @Column(name = "JOIN_WAITING_MEMBER_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int joinwaitingMemberId;
 
     @Column(name = "PROJECT_TEAM_ID")
     private int projectTeamId;
@@ -25,43 +24,64 @@ public class JoinwaitingMember {
     private String category;
 
     @Column(name = "JOIN_DATE")
+    @CreationTimestamp
     private LocalTime joinDate;
 
     public JoinwaitingMember() {
     }
 
-    public JoinwaitingMember(int joinwaitingMember, int projectTeamId, String memberId, String category, LocalTime joinDate) {
-        this.joinwaitingMember = joinwaitingMember;
+    public JoinwaitingMember(int joinwaitingMemberId, int projectTeamId, String memberId, String category, LocalTime joinDate) {
+        this.joinwaitingMemberId = joinwaitingMemberId;
         this.projectTeamId = projectTeamId;
         this.memberId = memberId;
         this.category = category;
         this.joinDate = joinDate;
     }
 
-    public int getJoinwaitingMember() {
-        return joinwaitingMember;
+    public int getJoinwaitingMemberId() {
+        return joinwaitingMemberId;
+    }
+
+    public void setJoinwaitingMemberId(int joinwaitingMemberId) {
+        this.joinwaitingMemberId = joinwaitingMemberId;
     }
 
     public int getProjectTeamId() {
         return projectTeamId;
     }
 
+    public void setProjectTeamId(int projectTeamId) {
+        this.projectTeamId = projectTeamId;
+    }
+
     public String getMemberId() {
         return memberId;
+    }
+
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
     public String getCategory() {
         return category;
     }
 
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public LocalTime getJoinDate() {
         return joinDate;
+    }
+
+    public void setJoinDate(LocalTime joinDate) {
+        this.joinDate = joinDate;
     }
 
     @Override
     public String toString() {
         return "JoinwaitingMember{" +
-                "joinwaitingMember=" + joinwaitingMember +
+                "joinwaitingMemberId=" + joinwaitingMemberId +
                 ", projectTeamId=" + projectTeamId +
                 ", memberId='" + memberId + '\'' +
                 ", category='" + category + '\'' +
