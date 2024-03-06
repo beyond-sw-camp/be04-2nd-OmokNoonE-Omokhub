@@ -12,9 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("commandIssueController")
 @RequestMapping("/project/issue")
-public class CommandIssueController {
+public class IssueController {
 
     private final IssueService issueService;
     private final ModelMapper modelMapper;
