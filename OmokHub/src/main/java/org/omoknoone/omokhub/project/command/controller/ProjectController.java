@@ -10,9 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("commandProjectController")
 @RequestMapping("/project/project")
-public class CommandProjectController {
+public class ProjectController {
     private final ModelMapper modelMapper;
     private final ProjectService projectService;
 
