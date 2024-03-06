@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.project.query.dto;
 
-import org.omoknoone.omokhub.user.query.UserDTO;
+import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 
 import java.util.List;
 
