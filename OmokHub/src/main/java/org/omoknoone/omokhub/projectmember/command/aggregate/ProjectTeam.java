@@ -8,7 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -30,7 +32,8 @@ public class ProjectTeam {
     private String teamName;
 
     @Column(name = "ADDED_DATE")
-    private LocalDateTime addedDate;
+    @CreationTimestamp
+    private LocalDate addedDate;
 
     @Column(name = "IS_ACTIVE")
     private boolean isActive;
@@ -39,7 +42,7 @@ public class ProjectTeam {
     }
 
     public ProjectTeam(int projectTeamId, int maxMember, int currentMember,
-                       String teamName, LocalDateTime addedDate, boolean isActive) {
+                       String teamName, LocalDate addedDate, boolean isActive) {
         this.projectTeamId = projectTeamId;
         this.maxMember = maxMember;
         this.currentMember = currentMember;
@@ -80,11 +83,11 @@ public class ProjectTeam {
         this.teamName = teamName;
     }
 
-    public LocalDateTime getAddedDate() {
+    public LocalDate getAddedDate() {
         return addedDate;
     }
 
-    public void setAddedDate(LocalDateTime addedDate) {
+    public void setAddedDate(LocalDate addedDate) {
         this.addedDate = addedDate;
     }
 

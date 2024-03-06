@@ -1,5 +1,6 @@
 package org.omoknoone.omokhub.projectmember.command.dto;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -9,14 +10,14 @@ public class ProjectTeamDTO {
     private int maxMember;
     private int currentMember;
     private String teamName;
-    private LocalDateTime addedDate;
+    private LocalDate addedDate;
     private boolean isActive;
 
     public ProjectTeamDTO() {
     }
 
     public ProjectTeamDTO(int projectTeamId, int maxMember,
-                          int currentMember, String teamName, LocalDateTime addedDate, boolean isActive) {
+                          int currentMember, String teamName, LocalDate addedDate, boolean isActive) {
         this.projectTeamId = projectTeamId;
         this.maxMember = maxMember;
         this.currentMember = currentMember;
@@ -57,11 +58,11 @@ public class ProjectTeamDTO {
         this.teamName = teamName;
     }
 
-    public LocalDateTime getAddedDate() {
+    public LocalDate getAddedDate() {
         return addedDate;
     }
 
-    public void setAddedDate(LocalDateTime addedDate) {
+    public void setAddedDate(LocalDate addedDate) {
         this.addedDate = addedDate;
     }
 
