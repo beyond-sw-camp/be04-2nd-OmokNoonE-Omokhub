@@ -12,7 +12,7 @@
         <result property="postedDate" column="POSTED_DATE"/>
         <result property="closedDate" column="CLOSED_DATE"/>
         <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
-        <collection property="members" ofType="org.omoknoone.omokhub.member.query.MemberDTO">
+        <collection property="members" ofType="org.omoknoone.omokhub.user.query.dto.MemberDTO">
             <id property="memberId" column="MEMBER_ID"/>
         </collection>
     </resultMap>
@@ -40,7 +40,7 @@
         <result property="postedDate" column="POSTED_DATE"/>
         <result property="closedDate" column="CLOSED_DATE"/>
         <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
-        <collection property="members" ofType="org.omoknoone.omokhub.member.query.MemberDTO">
+        <collection property="members" ofType="org.omoknoone.omokhub.user.query.dto.MemberDTO">
             <id property="memberId" column="MEMBER_ID"/>
         </collection>
     </resultMap>

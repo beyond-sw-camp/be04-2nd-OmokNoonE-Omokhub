@@ -7,7 +7,7 @@
         <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
         <result property="category" column="CATEGORY"/>
         <result property="joinDate" column="JOIN_DATE"/>
-        <collection property="members" ofType="org.omoknoone.omokhub.member.query.MemberDTO">
+        <collection property="members" javaType="org.omoknoone.omokhub.user.query.dto.MemberDTO">
             <id property="memberId" column="MEMBER_ID"/>
             <result property="nickName" column="NICKNAME"/>
         </collection>
