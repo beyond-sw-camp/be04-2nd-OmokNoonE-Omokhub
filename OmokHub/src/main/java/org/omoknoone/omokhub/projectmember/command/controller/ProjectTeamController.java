@@ -7,7 +7,6 @@ import org.omoknoone.omokhub.projectmember.command.dto.ProjectTeamDTO;
 import org.omoknoone.omokhub.projectmember.command.service.ProjectTeamService;
 import org.omoknoone.omokhub.projectmember.command.vo.RequestTeam;
 import org.omoknoone.omokhub.projectmember.command.vo.ResponseTeam;
-import org.omoknoone.omokhub.projectmember.command.vo.ResponseTeam2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,16 +49,14 @@ public class ProjectTeamController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<ResponseTeam2> deleteTeam(@RequestBody RequestTeam selectedTeam) {
+    public ResponseEntity<ResponseTeam> deleteTeam(@RequestBody RequestTeam selectedTeam) {
         ProjectTeamDTO projectTeamDTO = modelMapper.map(selectedTeam, ProjectTeamDTO.class);
 
         /* 설명. 비즈니스 로직 시작 */
         projectTeamService.deleteTeam(projectTeamDTO);
 
-        ResponseTeam responseTeam = modelMapper.map(projectTeamDTO, ResponseTeam2.class);
-        return ResponseEntity.status(HttpStatus.CREATED).body(responseTeam2);
+        ResponseTeam responseTeam = modelMapper.map(projectTeamDTO, ResponseTeam.class);
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseTeam);
     }
 
-
-    /* 필기. 삭제.*/
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-@Controller
+@Controller("QueryIssueController")
 public class IssueController {
 
     private IssueService issueService;
