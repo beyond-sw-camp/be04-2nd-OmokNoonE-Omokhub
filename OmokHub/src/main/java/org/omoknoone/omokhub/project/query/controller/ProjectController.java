@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-@Controller
+@Controller("QueryProjectController")
 public class ProjectController {
 
     private ProjectService projectService;
