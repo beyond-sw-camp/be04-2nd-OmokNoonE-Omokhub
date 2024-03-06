@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "MEMBER")
@@ -27,6 +28,7 @@ public class Member {
     @Column
     private String birthday;
     @Column
+    @CreationTimestamp
     private String signUpDate;
     @Column(name = "IS_WITHDRAW")
     private boolean isWithdraw;

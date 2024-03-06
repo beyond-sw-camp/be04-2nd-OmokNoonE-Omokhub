@@ -32,12 +32,7 @@ public class MemberServiceImpl implements MemberService {
     public void signUp(MemberDTO newMember) {
         logger.info("[LOGGER] newMember: {}", newMember);
 
-        LocalDateTime now = LocalDateTime.now();
-
-        newMember.setSignUpDate(now);
-
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         memberRepository.save(modelMapper.map(newMember, Member.class));
-
     }
 }
