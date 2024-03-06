@@ -3,6 +3,7 @@ package org.omoknoone.omokhub.projectmember.command.aggregate;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
@@ -25,12 +26,12 @@ public class JoinwaitingMember {
 
     @Column(name = "JOIN_DATE")
     @CreationTimestamp
-    private LocalTime joinDate;
+    private LocalDateTime joinDate;
 
     public JoinwaitingMember() {
     }
 
-    public JoinwaitingMember(int joinwaitingMemberId, int projectTeamId, String memberId, String category, LocalTime joinDate) {
+    public JoinwaitingMember(int joinwaitingMemberId, int projectTeamId, String memberId, String category, LocalDateTime joinDate) {
         this.joinwaitingMemberId = joinwaitingMemberId;
         this.projectTeamId = projectTeamId;
         this.memberId = memberId;
@@ -70,11 +71,11 @@ public class JoinwaitingMember {
         this.category = category;
     }
 
-    public LocalTime getJoinDate() {
+    public LocalDateTime getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(LocalTime joinDate) {
+    public void setJoinDate(LocalDateTime joinDate) {
         this.joinDate = joinDate;
     }
 
