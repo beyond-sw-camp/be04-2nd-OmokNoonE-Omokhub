@@ -1,7 +1,6 @@
 package org.omoknoone.omokhub.project.command.controller;
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
 import org.omoknoone.omokhub.project.command.dto.IssueDTO;
 import org.omoknoone.omokhub.project.command.service.IssueService;
 import org.omoknoone.omokhub.project.command.vo.RequestIssue;
@@ -15,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/project/issue")
-public class IssueController {
+public class CommandIssueController {
 
     private final IssueService issueService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public IssueController(IssueService issueService, ModelMapper modelMapper) {
+    public CommandIssueController(IssueService issueService, ModelMapper modelMapper) {
         this.issueService = issueService;
         this.modelMapper = modelMapper;
     }

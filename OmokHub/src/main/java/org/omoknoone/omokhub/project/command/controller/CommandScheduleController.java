@@ -5,22 +5,20 @@ import org.omoknoone.omokhub.project.command.dto.ScheduleDTO;
 import org.omoknoone.omokhub.project.command.service.ScheduleService;
 import org.omoknoone.omokhub.project.command.vo.RequestSchedule;
 import org.omoknoone.omokhub.project.command.vo.ResponseSchedule;
-import org.omoknoone.omokhub.project.command.vo.ResponseSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/project/schedule")
-public class ScheduleController {
+public class CommandScheduleController {
     private ModelMapper modelMapper;
     private ScheduleService scheduleService;
 
     @Autowired
-    public ScheduleController(ModelMapper modelMapper,
-                              ScheduleService scheduleService) {
+    public CommandScheduleController(ModelMapper modelMapper,
+                                     ScheduleService scheduleService) {
         this.modelMapper = modelMapper;
         this.scheduleService = scheduleService;
     }
