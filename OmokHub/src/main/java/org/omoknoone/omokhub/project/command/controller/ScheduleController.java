@@ -10,9 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("commandScheduleController")
 @RequestMapping("/project/schedule")
-public class CommandScheduleController {
+public class ScheduleController {
     private ModelMapper modelMapper;
     private ScheduleService scheduleService;
 
