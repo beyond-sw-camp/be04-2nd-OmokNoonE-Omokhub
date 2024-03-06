@@ -27,34 +27,39 @@ public class IssueServiceImpl implements IssueService{
     @Override
     public void registIssue(IssueDTO issueDTO) {
 
-        /* 설명. default값 설정 */
-//        issueDTO.setClosed(false);
-//        issueDTO.setPostedDate(LocalDateTime.now());
-//        issueDTO.setLastModifiedDate(LocalDateTime.now());
-
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         Issue issue = modelMapper.map(issueDTO,Issue.class);
 
+        /* 설명. default값 설정 */
+        issue.setIsClosed(false);
+        issue.setPostedDate(LocalDateTime.now());
+        issue.setLastModifiedDate(LocalDateTime.now());
+
         issueRepository.save(issue);
     }
 
+    @Transactional
     @Override
     public void modifyIssue(IssueDTO issueDTO) {
 
         Issue foundIssue = issueRepository.findById(issueDTO.getIssueId()).orElseThrow(IllegalArgumentException::new);
         foundIssue.setTitle(issueDTO.getTitle());
         foundIssue.setContent(issueDTO.getContent());
-        foundIssue.setClosed(issueDTO.isClosed());
-        foundIssue.setPostedDate(issueDTO.getPostedDate());
-        foundIssue.setClosedDate(issueDTO.getClosedDate());
-        foundIssue.setLastModifiedDate(issueDTO.getLastModifiedDate());
+        foundIssue.setIsClosed(issueDTO.getIsClosed());
+
+        if(foundIssue.getIsClosed()) {
+            foundIssue.setClosedDate(LocalDateTime.now());
+        }
+
+        foundIssue.setLastModifiedDate(LocalDateTime.now());
+
         foundIssue.setProjectMemberId(issueDTO.getProjectMemberId());
         foundIssue.setProjectId(issueDTO.getProjectId());
 
-        issueRepository.save(foundIssue);
     }
 
+    @Transactional
     @Override
     public void deleteIssue(int issueId) {
         issueRepository.deleteById(issueId);

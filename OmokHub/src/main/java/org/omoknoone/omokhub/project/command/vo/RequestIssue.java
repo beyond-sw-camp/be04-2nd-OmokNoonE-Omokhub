@@ -4,75 +4,6 @@ package org.omoknoone.omokhub.project.command.vo;
 import java.time.LocalDateTime;
 
 public class RequestIssue {
-//
-//    private String title;
-//    private String content;
-//    private LocalDateTime closedDate;
-//    private int projectMemberId;
-//    private int projectId;
-//
-//    public RequestIssue() {
-//    }
-//
-//    public RequestIssue(String title, String content, LocalDateTime closedDate, int projectMemberId, int projectId) {
-//        this.title = title;
-//        this.content = content;
-//        this.closedDate = closedDate;
-//        this.projectMemberId = projectMemberId;
-//        this.projectId = projectId;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public void setTitle(String title) {
-//        this.title = title;
-//    }
-//
-//    public String getContent() {
-//        return content;
-//    }
-//
-//    public void setContent(String content) {
-//        this.content = content;
-//    }
-//
-//    public LocalDateTime getClosedDate() {
-//        return closedDate;
-//    }
-//
-//    public void setClosedDate(LocalDateTime closedDate) {
-//        this.closedDate = closedDate;
-//    }
-//
-//    public int getProjectMemberId() {
-//        return projectMemberId;
-//    }
-//
-//    public void setProjectMemberId(int projectMemberId) {
-//        this.projectMemberId = projectMemberId;
-//    }
-//
-//    public int getProjectId() {
-//        return projectId;
-//    }
-//
-//    public void setProjectId(int projectId) {
-//        this.projectId = projectId;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "RequestIssue{" +
-//                "title='" + title + '\'' +
-//                ", content='" + content + '\'' +
-//                ", closedDate=" + closedDate +
-//                ", projectMemberId=" + projectMemberId +
-//                ", projectId=" + projectId +
-//                '}';
-//    }
-
 
     private int issueId;
     private String title;
@@ -123,12 +54,12 @@ public class RequestIssue {
         this.content = content;
     }
 
-    public boolean isClosed() {
+    public boolean getIsClosed() {
         return isClosed;
     }
 
-    public void setClosed(boolean closed) {
-        isClosed = closed;
+    public void setIsClosed(boolean isClosed) {
+        this.isClosed = isClosed;
     }
 
     public LocalDateTime getPostedDate() {

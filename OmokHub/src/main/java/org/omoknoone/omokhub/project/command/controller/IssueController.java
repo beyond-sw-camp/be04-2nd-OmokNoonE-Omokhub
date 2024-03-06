@@ -6,6 +6,8 @@ import org.omoknoone.omokhub.project.command.dto.IssueDTO;
 import org.omoknoone.omokhub.project.command.service.IssueService;
 import org.omoknoone.omokhub.project.command.vo.RequestIssue;
 import org.omoknoone.omokhub.project.command.vo.ResponseIssue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,7 @@ public class IssueController {
     public ResponseEntity<ResponseIssue> registIssue(@RequestBody RequestIssue issue){
 
         IssueDTO issueDTO = modelMapper.map(issue, IssueDTO.class);
+        Logger logger = LoggerFactory.getLogger(getClass());
 
         issueService.registIssue(issueDTO);
 
@@ -50,7 +53,7 @@ public class IssueController {
 
     }
 
-    @PostMapping("/delete")
+    @DeleteMapping("/delete")
     public ResponseEntity<ResponseIssue> deleteIssue(@RequestBody RequestIssue issue){
         IssueDTO issueDTO = modelMapper.map(issue, IssueDTO.class);
 

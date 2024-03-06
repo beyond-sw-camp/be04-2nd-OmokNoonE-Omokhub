@@ -53,12 +53,12 @@ public class IssueDTO {
         this.content = content;
     }
 
-    public boolean isClosed() {
+    public boolean getIsClosed() {
         return isClosed;
     }
 
-    public void setClosed(boolean closed) {
-        isClosed = closed;
+    public void setIsClosed(boolean isClosed) {
+        this.isClosed = isClosed;
     }
 
     public LocalDateTime getPostedDate() {
