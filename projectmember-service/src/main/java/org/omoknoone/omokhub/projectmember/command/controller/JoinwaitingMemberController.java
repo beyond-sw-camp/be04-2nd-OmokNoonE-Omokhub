@@ -1,21 +1,16 @@
 package org.omoknoone.omokhub.projectmember.command.controller;
 
-import org.hibernate.mapping.Join;
 import org.modelmapper.ModelMapper;
 import org.omoknoone.omokhub.projectmember.command.dto.JoinwaitingMemberDTO;
 import org.omoknoone.omokhub.projectmember.command.service.JoinwaitingMemberService;
 import org.omoknoone.omokhub.projectmember.command.vo.RequestProjectJoinUser;
 import org.omoknoone.omokhub.projectmember.command.vo.ResponseProjectJoinUser;
-import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO;
-import org.omoknoone.omokhub.user.query.dto.MemberDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("commandJoinwaitingMemberController")
 @RequestMapping("/projectmember/joinwaitingmember")
 public class JoinwaitingMemberController {
 

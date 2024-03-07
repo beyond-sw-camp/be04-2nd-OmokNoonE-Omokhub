@@ -2,7 +2,6 @@ package org.omoknoone.omokhub.projectmember.command.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.omoknoone.omokhub.projectmember.command.aggregate.ProjectTeam;
 import org.omoknoone.omokhub.projectmember.command.dto.ProjectTeamDTO;
 import org.omoknoone.omokhub.projectmember.command.service.ProjectTeamService;
 import org.omoknoone.omokhub.projectmember.command.vo.RequestTeam;
@@ -12,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@RestController("commandProjectTeamController")
 @RequestMapping(("/projectmember/teams"))
 @Slf4j
 public class ProjectTeamController {

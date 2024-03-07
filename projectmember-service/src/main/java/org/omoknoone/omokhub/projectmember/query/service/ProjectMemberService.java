@@ -1,5 +1,6 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
+import org.omoknoone.omokhub.projectmember.command.client.MemberServiceClient;
 import org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.repository.ProjectMemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,12 @@ import java.util.List;
 @Service
 public class ProjectMemberService {
 
+    private final MemberServiceClient memberServiceClient;
     private ProjectMemberMapper projectMemberMapper;
 
     @Autowired
-    public ProjectMemberService(ProjectMemberMapper projectMemberMapper) {
+    public ProjectMemberService(MemberServiceClient memberServiceClient, ProjectMemberMapper projectMemberMapper) {
+        this.memberServiceClient = memberServiceClient;
         this.projectMemberMapper = projectMemberMapper;
     }
 
