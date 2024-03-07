@@ -100,12 +100,12 @@ public class SeekingMemberPostDTO {
         this.lastModifiedDate = lastModifiedDate;
     }
 
-    public boolean isSeeking() {
+    public boolean getIsSeeking() {
         return isSeeking;
     }
 
-    public void setSeeking(boolean seeking) {
-        isSeeking = seeking;
+    public void setIsSeeking(boolean isSeeking) {
+        this.isSeeking = isSeeking;
     }
 
     public String getMemberId() {
@@ -116,12 +116,12 @@ public class SeekingMemberPostDTO {
         this.memberId = memberId;
     }
 
-    public boolean isDeleted() {
+    public boolean getIsDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public int getProjectId() {
