@@ -1,22 +1,13 @@
 package org.omoknoone.omokhub.projectmember.command.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.omoknoone.omokhub.projectmember.command.aggregate.JoinwaitingMember;
 import org.omoknoone.omokhub.projectmember.command.dto.JoinwaitingMemberDTO;
 import org.omoknoone.omokhub.projectmember.command.repository.JoinwaitingMemberRepository;
-import org.omoknoone.omokhub.projectmember.command.vo.ProjectMemberVO;
-import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO;
-import org.omoknoone.omokhub.user.query.dto.MemberDTO;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.SQLException;
-import java.sql.SQLSyntaxErrorException;
 
 @Service
 public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService{

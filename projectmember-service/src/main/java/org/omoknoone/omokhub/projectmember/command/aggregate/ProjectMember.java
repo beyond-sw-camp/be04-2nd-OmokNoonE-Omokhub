@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.time.LocalTime;
-
 @Entity
 @Table(name = "PROJECT_MEMBER")
 public class ProjectMember {
