@@ -1,17 +1,17 @@
 package org.omoknoone.omokhub.projectmember.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO;
+import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO;
 
 import java.lang.reflect.Member;
 import java.util.List;
 
 @Mapper
-public interface JoinwaitingmemberMapper {
+public interface JoinwaitingMemberMapper {
     List<Member> selectWaitingMember(int projectId);
 
     List<Member> selectInviteOrApplyMember();
 
-    List<JoinwaitingmemberDTO> myCurrentApplyStatus();
+    List<JoinwaitingMemberDTO> myCurrentApplyStatus();
 
 }

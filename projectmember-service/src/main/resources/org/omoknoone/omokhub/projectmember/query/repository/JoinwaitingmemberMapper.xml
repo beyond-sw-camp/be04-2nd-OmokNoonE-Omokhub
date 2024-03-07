@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingmemberMapper">
-    <resultMap id="joinWaitingMemberMap" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO">
+<mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingMemberMapper">
+    <resultMap id="joinWaitingMemberMap" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO">
         <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
         <result property="category" column="CATEGORY"/>
         <result property="joinDate" column="JOIN_DATE"/>
@@ -40,7 +40,7 @@
         WHERE a.CATEGORY IN ('초대', '신청')
     </select>
 
-    <resultMap id="myCurrentApplyStatus" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO">
+    <resultMap id="myCurrentApplyStatus" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO">
         <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
         <association property="project" javaType="org.omoknoone.omokhub.project.query.dto.ProjectDTO">
             <id property="projectID" column="PROJECT_ID"/>
