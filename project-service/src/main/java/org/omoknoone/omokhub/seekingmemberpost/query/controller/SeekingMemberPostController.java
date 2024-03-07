@@ -2,6 +2,7 @@ package org.omoknoone.omokhub.seekingmemberpost.query.controller;
 
 import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostCriteriaDTO;
 import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.seekingmemberpost.query.entity.SeekingMemberPost;
 import org.omoknoone.omokhub.seekingmemberpost.query.service.SeekingMemberPostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,20 +38,20 @@ public class SeekingMemberPostController {
         return ResponseEntity.status(HttpStatus.OK).body(seekingMemberPostList);
     }
 
-//    @GetMapping("/member-post-id/{memberPostId}")
-//    public ResponseEntity<SeekingMemberPostDTO> searchSeekingMemberPostDetail(@PathVariable int memberPostId) {
-//
-//        SeekingMemberPostDTO seekingMemberPostDTO = seekingMemberPostService.searchSeekingMemberPostDetail(memberPostId);
-//
-//        return ResponseEntity.status(HttpStatus.OK).body(seekingMemberPostDTO);
-//    }
-//
-//    @GetMapping("/member-id/{memberId}")
-//    public ResponseEntity<List<SeekingMemberPostDTO>> searchSeekingMemberMyPost (@PathVariable String memberId) {
-//
-//        List<SeekingMemberPostDTO> seekingMemberPostDTO = seekingMemberPostService.searchSeekingMemberMyPost(memberId);
-//
-//        return ResponseEntity.status(HttpStatus.OK).body(seekingMemberPostDTO);
-//    }
+    @GetMapping("/member-post-id/{memberPostId}")
+    public ResponseEntity<SeekingMemberPost> searchSeekingMemberPostDetail(@PathVariable int memberPostId) {
+
+        SeekingMemberPost seekingMemberPost = seekingMemberPostService.searchSeekingMemberPostDetail(memberPostId);
+
+        return ResponseEntity.status(HttpStatus.OK).body(seekingMemberPost);
+    }
+
+    @GetMapping("/member-id/{memberId}")
+    public ResponseEntity<List<SeekingMemberPost>> searchSeekingMemberMyPost (@PathVariable String memberId) {
+
+        List<SeekingMemberPost> seekingMemberPost = seekingMemberPostService.searchSeekingMemberMyPost(memberId);
+
+        return ResponseEntity.status(HttpStatus.OK).body(seekingMemberPost);
+    }
 
 }
