@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,7 +19,6 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
     private final ModelMapper modelMapper;
     private final SeekingMemberPostRepository seekingMemberPostRepository;
 
-    Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     public SeekingMemberPostServiceImpl(ModelMapper modelMapper, SeekingMemberPostRepository seekingMemberPostRepository) {
         this.modelMapper = modelMapper;
@@ -28,12 +26,55 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
     }
 
     @Override
+    @Transactional
     public int newPost(SeekingMemberPostDTO seekingMemberPostDTO) {
-        logger.info("[LOGGER] newSeekingMemberPost techStack: {}", seekingMemberPostDTO.getTechStack());
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         SeekingMemberPost seekingMemberPost = modelMapper.map(seekingMemberPostDTO, SeekingMemberPost.class);
 
+        techStackToString(seekingMemberPostDTO, seekingMemberPost);
+
+        seekingMemberPostRepository.save(seekingMemberPost);
+
+
+        return seekingMemberPost.getSeekingMemberPostId();
+    }
+
+    @Override
+    @Transactional
+    public int modify(SeekingMemberPostDTO seekingMemberPostDTO) {
+
+        SeekingMemberPost seekingMemberPost = seekingMemberPostRepository
+                .findById(seekingMemberPostDTO.getSeekingMemberPostId())
+                .orElseThrow(IllegalArgumentException::new);
+
+        if(!seekingMemberPostDTO.getTechStack().isEmpty()) {
+            techStackToString(seekingMemberPostDTO, seekingMemberPost);
+        }
+        seekingMemberPost.setTitle(seekingMemberPostDTO.getTitle());
+        seekingMemberPost.setSeekingMember(seekingMemberPostDTO.getSeekingMember());
+        seekingMemberPost.setStartDate(seekingMemberPostDTO.getStartDate());
+        seekingMemberPost.setEndDate(seekingMemberPostDTO.getEndDate());
+        seekingMemberPost.setContent(seekingMemberPostDTO.getContent());
+        seekingMemberPost.setIsSeeking(seekingMemberPostDTO.getIsSeeking());
+
+        seekingMemberPostRepository.save(seekingMemberPost);
+
+        return seekingMemberPost.getSeekingMemberPostId();
+    }
+
+    @Override
+    public void removeSeekingMemberPost(int seekingMemberPostId) {
+
+        SeekingMemberPost seekingMemberPost
+                = seekingMemberPostRepository.findById(seekingMemberPostId).orElseThrow(IllegalArgumentException::new);
+
+        seekingMemberPost.setIsDeleted(true);
+
+        seekingMemberPostRepository.flush();
+    }
+
+    private void techStackToString(SeekingMemberPostDTO seekingMemberPostDTO, SeekingMemberPost seekingMemberPost) {
         List<String> techStackList = seekingMemberPostDTO.getTechStack();
 
         StringBuilder sb = new StringBuilder();
@@ -44,21 +85,6 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
         String techStack = sb.toString();
 
         seekingMemberPost.setTechStack(techStack);
-
-
-        seekingMemberPostRepository.save(seekingMemberPost);
-
-        logger.info("[LOGGER] after 모집글 생성 후 ID 값: {}", seekingMemberPost.getSeekingMemberPostId());
-
-        return seekingMemberPost.getSeekingMemberPostId();
     }
 
-
-//    @Transactional
-//    public void signUp(SeekingMemberPostDTO newMember) {
-//        logger.info("[LOGGER] newMember: {}", newMember);
-//
-//        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-//        memberRepository.save(modelMapper.map(newMember, SeekingMemberPost.class));
-//    }
 }
