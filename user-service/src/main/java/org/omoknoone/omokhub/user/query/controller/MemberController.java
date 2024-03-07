@@ -1,6 +1,7 @@
 package org.omoknoone.omokhub.user.query.controller;
 
 import org.omoknoone.omokhub.user.query.dto.MemberDTO;
+import org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO;
 import org.omoknoone.omokhub.user.query.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController("QueryMemberController")
 @RequestMapping("/user/members")
@@ -29,11 +33,12 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.OK).body(member);
     }
 
+    @GetMapping("/nickname/{nickname}")
+    public ResponseEntity<MemberNicknameDTO> searchMemberIdByNickname(@PathVariable String nickname) {
 
-    public void searchMemberIdByNickname(String nickname) {
+        MemberNicknameDTO member = memberService.searchMemberIdByNickname(nickname);
 
-        MemberDTO member = memberService.searchMemberIdByNickname(nickname);
-
+        return ResponseEntity.status(HttpStatus.OK).body(member);
     }
 
     public void searchProfileCount(String memberId) {

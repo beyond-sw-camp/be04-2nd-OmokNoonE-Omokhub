@@ -16,6 +16,11 @@
         <result property="profileCount" column="PROFILE_COUNT"/>
     </resultMap>
 
+    <resultMap id="memberNicknameResultMap" type="org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO">
+        <id property="memberId" column="MEMBER_ID"/>
+        <result property="nickname" column="NICKNAME"/>
+    </resultMap>
+
     <select id="selectMemberInfoByMemberId" parameterType="string" resultMap="memberResultMap">
         SELECT
             MEMBER_ID ,
@@ -32,12 +37,12 @@
             AND MEMBER_ID = #{memberId}
     </select>
 
-    <select id="selectMemberIdByNickname" parameterType="string" resultMap="memberResultMap">
+    <select id="selectMemberIdByNickname" parameterType="string" resultMap="memberNicknameResultMap">
         SELECT
-            NICKNAME ,
-            MEMBER_ID
+            MEMBER_ID,
+            NICKNAME
         FROM
-            MEMBER
+            member
         WHERE
             IS_WITHDRAW = 0
             AND NICKNAME = #{nickname}
@@ -47,7 +52,7 @@
         SELECT
             COUNT(*) AS 'PROFILE_COUNT'
         FROM
-            MEMBER A
+            member A
         JOIN PROFILE B ON (A.MEMBER_ID = B.MEMBER_ID)
         WHERE
             A.MEMBER_ID = #{memberId}
