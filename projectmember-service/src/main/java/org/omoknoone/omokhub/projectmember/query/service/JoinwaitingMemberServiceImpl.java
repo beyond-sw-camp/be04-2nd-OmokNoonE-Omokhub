@@ -1,20 +1,20 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
-import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingmemberDTO;
-import org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingmemberMapper;
+import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO;
+import org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingMemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Member;
 import java.util.List;
 
-@Service
-public class JoinwaitingmemberService {
+@Service("QeuryJoinwaitingMemberServiceImpl")
+public class JoinwaitingMemberServiceImpl {
 
-    private JoinwaitingmemberMapper joinwaitingmemberMapper;
+    private JoinwaitingMemberMapper joinwaitingmemberMapper;
 
     @Autowired
-    public JoinwaitingmemberService(JoinwaitingmemberMapper joinwaitingmemberMapper) {
+    public JoinwaitingMemberServiceImpl(JoinwaitingMemberMapper joinwaitingmemberMapper) {
         this.joinwaitingmemberMapper = joinwaitingmemberMapper;
     }
 
@@ -27,6 +27,6 @@ public class JoinwaitingmemberService {
     }
 
     public void sesarchMyCurrentApplyStatus() {
-        List<JoinwaitingmemberDTO> waitingstatus = joinwaitingmemberMapper.myCurrentApplyStatus();
+        List<JoinwaitingMemberDTO> waitingstatus = joinwaitingmemberMapper.myCurrentApplyStatus();
     }
 }

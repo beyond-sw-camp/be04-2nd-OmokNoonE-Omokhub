@@ -5,22 +5,22 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.omoknoone.omokhub.projectmember.query.service.JoinwaitingmemberService;
+import org.omoknoone.omokhub.projectmember.query.service.JoinwaitingMemberServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JoinwaitingmemberServiceTest {
+class JoinwaitingMemberServiceImplTest {
 
     @Autowired
-    private JoinwaitingmemberService joinwaitingmemberService;
+    private JoinwaitingMemberServiceImpl joinwaitingmemberServiceImpl;
 
     @DisplayName("참여 대기 멤버 조회")
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
     void testSearchWaitingMember(int projectId) {
         Assertions.assertDoesNotThrow(
-                () -> joinwaitingmemberService.searchWaitingMember(projectId)
+                () -> joinwaitingmemberServiceImpl.searchWaitingMember(projectId)
         );
     }
 
@@ -28,7 +28,7 @@ class JoinwaitingmemberServiceTest {
     @Test
     void testSearchInviteOrApplyMember(){
         Assertions.assertDoesNotThrow(
-                ()-> joinwaitingmemberService.searchInviteOrApplyMember()
+                ()-> joinwaitingmemberServiceImpl.searchInviteOrApplyMember()
         );
     }
 
@@ -36,7 +36,7 @@ class JoinwaitingmemberServiceTest {
     @Test
     void testMyCurrentApplyStatus(){
         Assertions.assertDoesNotThrow(
-                ()->joinwaitingmemberService.sesarchMyCurrentApplyStatus()
+                ()-> joinwaitingmemberServiceImpl.sesarchMyCurrentApplyStatus()
         );
     }
 }

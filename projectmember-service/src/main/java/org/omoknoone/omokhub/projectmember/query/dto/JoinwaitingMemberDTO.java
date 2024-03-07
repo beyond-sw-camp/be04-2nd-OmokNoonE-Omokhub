@@ -2,7 +2,7 @@ package org.omoknoone.omokhub.projectmember.query.dto;
 
 import java.time.LocalTime;
 
-public class JoinwaitingmemberDTO {
+public class JoinwaitingMemberDTO {
 
     private String category;
     private LocalTime joinDate;
@@ -10,10 +10,10 @@ public class JoinwaitingmemberDTO {
     private int projectId;
     private String teamName;
 
-    public JoinwaitingmemberDTO() {
+    public JoinwaitingMemberDTO() {
     }
 
-    public JoinwaitingmemberDTO(String category, LocalTime joinDate, int joinWaitingMemberId, int projectId, String teamName) {
+    public JoinwaitingMemberDTO(String category, LocalTime joinDate, int joinWaitingMemberId, int projectId, String teamName) {
         this.category = category;
         this.joinDate = joinDate;
         this.joinWaitingMemberId = joinWaitingMemberId;
@@ -21,7 +21,7 @@ public class JoinwaitingmemberDTO {
         this.teamName = teamName;
     }
 
-    public JoinwaitingmemberDTO(String category, LocalTime joinDate) {
+    public JoinwaitingMemberDTO(String category, LocalTime joinDate) {
         this.category = category;
         this.joinDate = joinDate;
     }
