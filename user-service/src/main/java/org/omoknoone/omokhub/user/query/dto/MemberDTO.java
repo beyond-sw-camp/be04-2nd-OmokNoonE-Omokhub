@@ -10,12 +10,11 @@ public class MemberDTO {
     private String phoneNum;
     private String address;
     private LocalDate birthday;
-    private Integer profileCount;
 
     public MemberDTO() {
     }
 
-    public MemberDTO(String memberId, String name, String nickname, String email, String phoneNum, String address, LocalDate birthday, int profileCount) {
+    public MemberDTO(String memberId, String name, String nickname, String email, String phoneNum, String address, LocalDate birthday) {
         this.memberId = memberId;
         this.name = name;
         this.nickname = nickname;
@@ -23,7 +22,6 @@ public class MemberDTO {
         this.phoneNum = phoneNum;
         this.address = address;
         this.birthday = birthday;
-        this.profileCount = profileCount;
     }
 
     public String getMemberId() {
@@ -82,14 +80,6 @@ public class MemberDTO {
         this.birthday = birthday;
     }
 
-    public int getProfileCount() {
-        return profileCount;
-    }
-
-    public void setProfileCount(int profileCount) {
-        this.profileCount = profileCount;
-    }
-
     @Override
     public String toString() {
         return "MemberDTO{" +
@@ -100,7 +90,6 @@ public class MemberDTO {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", address='" + address + '\'' +
                 ", birthday=" + birthday +
-                ", profileCount=" + profileCount +
                 '}';
     }
 }
