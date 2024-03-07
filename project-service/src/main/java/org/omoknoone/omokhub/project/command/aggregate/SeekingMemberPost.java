@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.aggregate;
+package org.omoknoone.omokhub.project.command.aggregate;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.UpdateTimestamp;

@@ -1,12 +1,11 @@
-package org.omoknoone.omokhub.seekingmemberpost.query.repository;
+package org.omoknoone.omokhub.project.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostCriteriaDTO;
-import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
-import org.omoknoone.omokhub.seekingmemberpost.query.entity.SeekingMemberPost;
+import org.omoknoone.omokhub.project.query.dto.SeekingMemberPostCriteriaDTO;
+import org.omoknoone.omokhub.project.query.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.project.query.entity.SeekingMemberPost;
 
 import java.util.List;
-import java.util.Map;
 
 @Mapper
 public interface SeekingMemberPostMapper {

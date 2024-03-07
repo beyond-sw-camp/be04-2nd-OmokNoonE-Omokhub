@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.vo;
+package org.omoknoone.omokhub.project.command.vo;
 
 import java.time.LocalDate;
 import java.util.List;

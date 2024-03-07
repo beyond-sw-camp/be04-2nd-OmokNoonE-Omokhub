@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.omoknoone.omokhub.seekingmemberpost.query.repository.SeekingMemberPostMapper">
+<mapper namespace="org.omoknoone.omokhub.project.query.repository.SeekingMemberPostMapper">
 
-    <resultMap id="seekingMemberPostResultMap" type="org.omoknoone.omokhub.seekingmemberpost.query.entity.SeekingMemberPost">
+    <resultMap id="seekingMemberPostResultMap" type="org.omoknoone.omokhub.project.query.entity.SeekingMemberPost">
         <id property="seekingMemberPostId" column="SEEKING_MEMBER_POST_ID"/>
         <result property="title" column="TITLE"/>
         <result property="seekingMember" column="SEEKING_MEMBER"/>
@@ -15,7 +15,7 @@
         <result property="content" column="CONTENT"/>
         <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
         <result property="memberId" column="MEMBER_ID"/>
-        <association property="projectTeam" javaType="org.omoknoone.omokhub.seekingmemberpost.query.dto.ProjectTeamDTO">
+        <association property="projectTeam" javaType="org.omoknoone.omokhub.project.query.dto.ProjectTeamDTO">
             <id property="projectTeamId" column="PROJECT_TEAM_ID"/>
             <result property="maxMember" column="MAX_MEMBER"/>
             <result property="currentMember" column="CURRENT_MEMBER"/>
@@ -25,7 +25,7 @@
 
     <!-- 조건에 따른 모집글 목록 검색 -->
     <select id="selectSeekingMemberPostList"
-            parameterType="org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostCriteriaDTO"
+            parameterType="org.omoknoone.omokhub.project.query.dto.SeekingMemberPostCriteriaDTO"
             resultMap="seekingMemberPostResultMap">
         SELECT
               SEEKING_MEMBER_POST_ID

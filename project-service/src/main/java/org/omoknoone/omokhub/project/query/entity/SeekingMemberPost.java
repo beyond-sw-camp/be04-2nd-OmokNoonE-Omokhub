@@ -1,6 +1,6 @@
-package org.omoknoone.omokhub.seekingmemberpost.query.entity;
+package org.omoknoone.omokhub.project.query.entity;
 
-import org.omoknoone.omokhub.seekingmemberpost.query.dto.ProjectTeamDTO;
+import org.omoknoone.omokhub.project.query.dto.ProjectTeamDTO;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

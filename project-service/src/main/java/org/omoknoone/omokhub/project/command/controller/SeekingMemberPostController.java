@@ -1,11 +1,9 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.controller;
+package org.omoknoone.omokhub.project.command.controller;
 
 import org.modelmapper.ModelMapper;
-import org.omoknoone.omokhub.seekingmemberpost.command.dto.SeekingMemberPostDTO;
-import org.omoknoone.omokhub.seekingmemberpost.command.service.SeekingMemberPostService;
-import org.omoknoone.omokhub.seekingmemberpost.command.vo.RequestSeekingMemberPost;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.omoknoone.omokhub.project.command.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.project.command.service.SeekingMemberPostService;
+import org.omoknoone.omokhub.project.command.vo.RequestSeekingMemberPost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

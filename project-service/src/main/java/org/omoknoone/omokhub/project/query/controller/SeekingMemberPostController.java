@@ -1,9 +1,9 @@
-package org.omoknoone.omokhub.seekingmemberpost.query.controller;
+package org.omoknoone.omokhub.project.query.controller;
 
-import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostCriteriaDTO;
-import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
-import org.omoknoone.omokhub.seekingmemberpost.query.entity.SeekingMemberPost;
-import org.omoknoone.omokhub.seekingmemberpost.query.service.SeekingMemberPostService;
+import org.omoknoone.omokhub.project.query.dto.SeekingMemberPostCriteriaDTO;
+import org.omoknoone.omokhub.project.query.entity.SeekingMemberPost;
+import org.omoknoone.omokhub.project.query.service.SeekingMemberPostService;
+import org.omoknoone.omokhub.project.query.dto.SeekingMemberPostDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

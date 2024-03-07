@@ -1,12 +1,10 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.service;
+package org.omoknoone.omokhub.project.command.service;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
-import org.omoknoone.omokhub.seekingmemberpost.command.aggregate.SeekingMemberPost;
-import org.omoknoone.omokhub.seekingmemberpost.command.dto.SeekingMemberPostDTO;
-import org.omoknoone.omokhub.seekingmemberpost.command.repository.SeekingMemberPostRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.omoknoone.omokhub.project.command.aggregate.SeekingMemberPost;
+import org.omoknoone.omokhub.project.command.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.project.command.repository.SeekingMemberPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

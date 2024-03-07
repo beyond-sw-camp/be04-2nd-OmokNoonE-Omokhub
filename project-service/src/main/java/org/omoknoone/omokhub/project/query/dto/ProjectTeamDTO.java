@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.seekingmemberpost.query.dto;
+package org.omoknoone.omokhub.project.query.dto;
 
 public class ProjectTeamDTO {
 
