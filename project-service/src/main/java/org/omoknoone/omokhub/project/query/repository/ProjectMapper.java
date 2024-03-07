@@ -1,6 +1,7 @@
 package org.omoknoone.omokhub.project.query.repository;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface ProjectMapper {
     List<ProjectAndTeamAndMemberDTO> searchProjectByTeamName(String teamName);
 
     List<ProjectAndTeamAndMemberDTO> searchMyProjects(String memberId);
+
+    List<ProjectAndScheduleDTO> searchSchedulesByProjectId(int projectId);
 }

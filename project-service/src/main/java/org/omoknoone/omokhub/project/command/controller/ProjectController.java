@@ -5,14 +5,13 @@ import org.omoknoone.omokhub.project.command.dto.ProjectDTO;
 import org.omoknoone.omokhub.project.command.service.ProjectService;
 import org.omoknoone.omokhub.project.command.vo.RequestProject;
 import org.omoknoone.omokhub.project.command.vo.ResponseProject;
-import org.omoknoone.omokhub.project.command.vo.ResponseSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/project/project")
+@RequestMapping("/project/projects")
 public class ProjectController {
     private final ModelMapper modelMapper;
     private final ProjectService projectService;
