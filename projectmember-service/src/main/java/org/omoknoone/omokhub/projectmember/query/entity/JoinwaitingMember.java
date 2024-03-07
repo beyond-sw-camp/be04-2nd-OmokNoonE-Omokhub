@@ -1,18 +1,20 @@
 package org.omoknoone.omokhub.projectmember.query.entity;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class JoinwaitingMember {
+
     private int joinWaitingMemberId;
     private int projectTeamId;
     private String memberId;
     private String category;
-    private LocalTime joinDate;
+    private LocalDateTime joinDate;
 
     public JoinwaitingMember() {
     }
 
-    public JoinwaitingMember(int joinWaitingMemberId, int projectTeamId, String memberId, String category, LocalTime joinDate) {
+    public JoinwaitingMember(int joinWaitingMemberId, int projectTeamId, String memberId, String category, LocalDateTime joinDate) {
         this.joinWaitingMemberId = joinWaitingMemberId;
         this.projectTeamId = projectTeamId;
         this.memberId = memberId;
@@ -36,7 +38,7 @@ public class JoinwaitingMember {
         return category;
     }
 
-    public LocalTime getJoinDate() {
+    public LocalDateTime getJoinDate() {
         return joinDate;
     }
 

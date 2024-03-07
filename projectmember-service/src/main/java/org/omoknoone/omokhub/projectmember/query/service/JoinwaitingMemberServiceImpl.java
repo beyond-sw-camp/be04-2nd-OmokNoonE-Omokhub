@@ -1,32 +1,44 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
 import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO;
+import org.omoknoone.omokhub.projectmember.query.dto.WaitingAndMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingMemberMapper;
+import org.omoknoone.omokhub.user.query.dto.MemberDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Member;
 import java.util.List;
 
-@Service("QeuryJoinwaitingMemberServiceImpl")
+@Service("QueryJoinwaitingMemberServiceImpl")
 public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
 
-    private JoinwaitingMemberMapper joinwaitingmemberMapper;
+    private final JoinwaitingMemberMapper joinwaitingMemberMapper;
+    Logger logger = LoggerFactory.getLogger(getClass());
+
 
     @Autowired
-    public JoinwaitingMemberServiceImpl(JoinwaitingMemberMapper joinwaitingmemberMapper) {
-        this.joinwaitingmemberMapper = joinwaitingmemberMapper;
+    public JoinwaitingMemberServiceImpl(JoinwaitingMemberMapper joinwaitingMemberMapper) {
+        this.joinwaitingMemberMapper = joinwaitingMemberMapper;
     }
 
-    public void searchWaitingMember(int findprojectId) {
-        List<Member> members = joinwaitingmemberMapper.selectWaitingMember(findprojectId);
+    @Override
+    public List<WaitingAndMemberDTO> searchWaitingMember(int findprojectId) {
+
+        List<WaitingAndMemberDTO> memberList = joinwaitingMemberMapper.selectWaitingMember(findprojectId);
+        logger.info("waitingMember 서비스 전 {} : ", memberList);
+
+        return memberList;
     }
 
+    @Override
     public void searchInviteOrApplyMember() {
-        List<Member> members = joinwaitingmemberMapper.selectInviteOrApplyMember();
+        List<MemberDTO> members = joinwaitingMemberMapper.selectInviteOrApplyMember();
     }
 
+    @Override
     public void sesarchMyCurrentApplyStatus() {
-        List<JoinwaitingMemberDTO> waitingstatus = joinwaitingmemberMapper.myCurrentApplyStatus();
+        List<JoinwaitingMemberDTO> waitingstatus = joinwaitingMemberMapper.myCurrentApplyStatus();
     }
 }
