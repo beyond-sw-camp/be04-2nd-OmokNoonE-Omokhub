@@ -3,64 +3,67 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingMemberMapper">
-    <resultMap id="joinWaitingMemberMap" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO">
-        <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
+
+    <resultMap id="joinWaitingMemberMap1" type="org.omoknoone.omokhub.projectmember.query.entity.JoinwaitingMember">
         <result property="category" column="CATEGORY"/>
         <result property="joinDate" column="JOIN_DATE"/>
-        <collection property="members" javaType="org.omoknoone.omokhub.user.query.dto.MemberDTO">
+        <collection property="waitingMember" ofType="org.omoknoone.omokhub.projectmember.query.dto.MemberDTO" javaType="java.util.List">
             <id property="memberId" column="MEMBER_ID"/>
-            <result property="nickName" column="NICKNAME"/>
+            <result property="nickname" column="NICKNAME"/>
         </collection>
     </resultMap>
-
-    <!-- 프로젝트 참여 대기인원 조회 -->
-    <select id="selectWaitingMember" resultMap="joinWaitingMemberMap">
-        SELECT
-                c.NICKNAME
-              , c.MEMBER_ID
-              , a.CATEGORY
-              , a.JOIN_DATE
-              , a.JOIN_WAITING_MEMBER_ID
-          FROM JOIN_WAITING_MEMBER a
-          JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
-          JOIN MEMBER c ON (a.MEMBER_ID = c.MEMBER_ID)
-          WHERE b.PROJECT_ID = #{projectId}
-    </select>
+    <resultMap id="joinWaitingMemberMap2" type="org.omoknoone.omokhub.projectmember.query.dto.WaitingAndMemberDTO" extends="joinWaitingMemberMap1">
+        <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
+    </resultMap>
 
     <!-- 팀장이 보는 초대받은 or 신청한 프로젝트 참여 대기인원 -->
-    <select id="selectInviteOrApplyMember" resultMap="joinWaitingMemberMap">
+    <select id="selectInviteOrApplyMember" resultMap="joinWaitingMemberMap1">
         SELECT
-                c.NICKNAME
-              , c.MEMBER_ID
-              , a.CATEGORY
-              , a.JOIN_DATE
-        FROM JOIN_WAITING_MEMBER a
-        JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
-        JOIN MEMBER c ON (a.MEMBER_ID = c.MEMBER_ID)
+        c.NICKNAME
+        , c.MEMBER_ID
+        , a.CATEGORY
+        , a.JOIN_DATE
+        FROM join_waiting_member a
+        JOIN project_team b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+        JOIN member c ON (a.MEMBER_ID = c.MEMBER_ID)
         WHERE a.CATEGORY IN ('초대', '신청')
     </select>
 
-    <resultMap id="myCurrentApplyStatus" type="org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO">
+    <!-- 프로젝트 참여 대기인원 조회 (완) -->
+    <select id="selectWaitingMember" resultMap="joinWaitingMemberMap2" parameterType="int">
+        SELECT
+        c.NICKNAME
+        , c.MEMBER_ID
+        , a.CATEGORY
+        , a.JOIN_DATE
+        , a.JOIN_WAITING_MEMBER_ID
+        FROM join_waiting_member a
+        JOIN project_team b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+        JOIN member c ON (a.MEMBER_ID = c.MEMBER_ID)
+        WHERE b.PROJECT_TEAM_ID = #{projectTeamId}
+    </select>
+
+
+    <resultMap id="myCurrentApplyStatus" type="org.omoknoone.omokhub.projectmember.query.dto.WaitingAndProjectDTO">
         <id property="joinWaitingMemberId" column="JOIN_WAITING_MEMBER_ID"/>
-        <association property="project" javaType="org.omoknoone.omokhub.project.query.dto.ProjectDTO">
+        <collection property="project" ofType="org.omoknoone.omokhub.project.query.dto.ProjectDTO" javaType="java.util.List">
             <id property="projectID" column="PROJECT_ID"/>
-        </association>
-        <association property="projectTeam" javaType="org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO">
+        </collection>
+        <collection property="projectTeam" ofType="org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO" javaType="java.util.List">
             <result property="teamName" column="TEAM_NAME"/>
-        </association>
+        </collection>
     </resultMap>
 
     <!-- 내가 신청한 프로젝트 참여 대기 현황 -->
-    <select id="myCurrentApplyStatus" resultMap="myCurrentApplyStatus">
+    <select id="myCurrentApplyStatus" resultMap="myCurrentApplyStatus" parameterType="int">
         SELECT
-          a.JOIN_WAITING_MEMBER_ID
+        a.JOIN_WAITING_MEMBER_ID
         , c.PROJECT_ID
         , b.TEAM_NAME
-        FROM JOIN_WAITING_MEMBER a
-        JOIN PROJECT_TEAM b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
-        JOIN PROJECT c ON (b.PROJECT_TEAM_ID = c.PROJECT_TEAM_ID)
+        FROM join_waiting_member a
+        JOIN project_team b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
+        JOIN project c ON (b.PROJECT_TEAM_ID = c.PROJECT_TEAM_ID)
         WHERE MEMBER_ID = #{memberID}
         ORDER BY c.START_DATE DESC;
     </select>
-
 </mapper>
