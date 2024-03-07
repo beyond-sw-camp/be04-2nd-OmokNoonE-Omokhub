@@ -6,4 +6,6 @@ public interface SeekingMemberPostService {
     int newPost(SeekingMemberPostDTO seekingMemberPostDTO);
 
     int modify(SeekingMemberPostDTO seekingMemberPostDTO);
+
+    void removeSeekingMemberPost(int seekingMemberPostId);
 }

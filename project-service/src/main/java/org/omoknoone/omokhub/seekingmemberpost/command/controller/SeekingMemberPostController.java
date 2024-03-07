@@ -55,4 +55,12 @@ public class SeekingMemberPostController {
                     put("seekingMemberId", postId);
                 }});
     }
+
+    @PutMapping("/remove/{seekingMemberPostId}")
+    public ResponseEntity<?> removeSeekingMemberPost(@PathVariable int seekingMemberPostId) {
+
+        seekingMemberPostService.removeSeekingMemberPost(seekingMemberPostId);
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }

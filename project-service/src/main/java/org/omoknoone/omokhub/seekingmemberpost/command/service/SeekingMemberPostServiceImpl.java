@@ -63,6 +63,17 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
         return seekingMemberPost.getSeekingMemberPostId();
     }
 
+    @Override
+    public void removeSeekingMemberPost(int seekingMemberPostId) {
+
+        SeekingMemberPost seekingMemberPost
+                = seekingMemberPostRepository.findById(seekingMemberPostId).orElseThrow(IllegalArgumentException::new);
+
+        seekingMemberPost.setIsDeleted(true);
+
+        seekingMemberPostRepository.flush();
+    }
+
     private void techStackToString(SeekingMemberPostDTO seekingMemberPostDTO, SeekingMemberPost seekingMemberPost) {
         List<String> techStackList = seekingMemberPostDTO.getTechStack();
 

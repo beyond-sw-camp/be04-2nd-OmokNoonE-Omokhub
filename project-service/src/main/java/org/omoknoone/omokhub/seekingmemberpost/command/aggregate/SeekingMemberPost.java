@@ -139,6 +139,10 @@ public class SeekingMemberPost {
         this.isSeeking = isSeeking;
     }
 
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
     @Override
     public String toString() {
         return "SeekingMemberPost{" +
