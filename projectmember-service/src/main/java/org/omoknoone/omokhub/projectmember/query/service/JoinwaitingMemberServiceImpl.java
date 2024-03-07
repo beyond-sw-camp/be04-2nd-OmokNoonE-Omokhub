@@ -9,7 +9,7 @@ import java.lang.reflect.Member;
 import java.util.List;
 
 @Service("QeuryJoinwaitingMemberServiceImpl")
-public class JoinwaitingMemberServiceImpl {
+public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
 
     private JoinwaitingMemberMapper joinwaitingmemberMapper;
 
