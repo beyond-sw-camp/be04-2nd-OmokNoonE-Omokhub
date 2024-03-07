@@ -1,6 +1,8 @@
 package org.omoknoone.omokhub.seekingmemberpost.query.service;
 
+import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostCriteriaDTO;
 import org.omoknoone.omokhub.seekingmemberpost.query.dto.SeekingMemberPostDTO;
+import org.omoknoone.omokhub.seekingmemberpost.query.entity.SeekingMemberPost;
 import org.omoknoone.omokhub.seekingmemberpost.query.repository.SeekingMemberPostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,28 +10,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 
-@Service
-public class SeekingMemberPostService {
+public interface SeekingMemberPostService {
 
-    private SeekingMemberPostMapper seekingMemberPostMapper;
+    List<SeekingMemberPostDTO> searchSeekingMemberPostByCriteria(SeekingMemberPostCriteriaDTO seekingMemberPostCriteriaDTO);
 
-    @Autowired
-    public SeekingMemberPostService(SeekingMemberPostMapper seekingMemberPostMapper) {
-        this.seekingMemberPostMapper = seekingMemberPostMapper;
-    }
+    SeekingMemberPost searchSeekingMemberPostDetail(int memberPostId);
 
-    public List<SeekingMemberPostDTO> findSeekingMemberPostList(Map<String, Object> criteria) {
-
-        return seekingMemberPostMapper.selectSeekingMemberPostList(criteria);
-    }
-
-    public SeekingMemberPostDTO findSeekingMemberPostDetail(int seekingMemberPostId) {
-
-        return seekingMemberPostMapper.selectSeekingMemberPostDetail(seekingMemberPostId);
-    }
-
-    public List<SeekingMemberPostDTO> findSeekingMemberPostByMyPost(String memberId) {
-
-        return seekingMemberPostMapper.selectSeekingMemberPostByMyPost(memberId);
-    }
+    List<SeekingMemberPost> searchSeekingMemberMyPost(String memberId);
 }

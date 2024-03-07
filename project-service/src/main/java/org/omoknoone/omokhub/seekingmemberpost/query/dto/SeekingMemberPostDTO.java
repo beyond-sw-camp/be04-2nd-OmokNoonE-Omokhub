@@ -3,7 +3,7 @@ package org.omoknoone.omokhub.seekingmemberpost.query.dto;
 import org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class SeekingMemberPostDTO {
     private int seekingMemberPostId;
@@ -12,37 +12,33 @@ public class SeekingMemberPostDTO {
     private LocalDate startDate;
     private LocalDate endDate;
     private String techStack;
-    private boolean isSeeking;
-    private boolean isDeleted;
     private String content;
-    private LocalTime lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
     private String memberId;
     private ProjectTeamDTO projectTeam;
 
     public SeekingMemberPostDTO() {
     }
 
-    public SeekingMemberPostDTO(int seekingMemberId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, String techStack, boolean isSeeking, boolean isDeleted, String content, LocalTime lastModifiedDate, String memberId, ProjectTeamDTO projectTeam) {
-        this.seekingMemberPostId = seekingMemberId;
+    public SeekingMemberPostDTO(int seekingMemberPostId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, String techStack, String content, LocalDateTime lastModifiedDate, String memberId, ProjectTeamDTO projectTeam) {
+        this.seekingMemberPostId = seekingMemberPostId;
         this.title = title;
         this.seekingMember = seekingMember;
         this.startDate = startDate;
         this.endDate = endDate;
         this.techStack = techStack;
-        this.isSeeking = isSeeking;
-        this.isDeleted = isDeleted;
         this.content = content;
         this.lastModifiedDate = lastModifiedDate;
         this.memberId = memberId;
         this.projectTeam = projectTeam;
     }
 
-    public int getSeekingMemberId() {
+    public int getSeekingMemberPostId() {
         return seekingMemberPostId;
     }
 
-    public void setSeekingMemberId(int seekingMemberId) {
-        this.seekingMemberPostId = seekingMemberId;
+    public void setSeekingMemberPostId(int seekingMemberPostId) {
+        this.seekingMemberPostId = seekingMemberPostId;
     }
 
     public String getTitle() {
@@ -85,22 +81,6 @@ public class SeekingMemberPostDTO {
         this.techStack = techStack;
     }
 
-    public boolean isSeeking() {
-        return isSeeking;
-    }
-
-    public void setSeeking(boolean seeking) {
-        isSeeking = seeking;
-    }
-
-    public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
-    }
-
     public String getContent() {
         return content;
     }
@@ -109,11 +89,11 @@ public class SeekingMemberPostDTO {
         this.content = content;
     }
 
-    public LocalTime getLastModifiedDate() {
+    public LocalDateTime getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(LocalTime lastModifiedDate) {
+    public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 
@@ -136,14 +116,12 @@ public class SeekingMemberPostDTO {
     @Override
     public String toString() {
         return "SeekingMemberPostDTO{" +
-                "seekingMemberId=" + seekingMemberPostId +
+                "seekingMemberPostId=" + seekingMemberPostId +
                 ", title='" + title + '\'' +
                 ", seekingMember=" + seekingMember +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", techStack='" + techStack + '\'' +
-                ", isSeeking=" + isSeeking +
-                ", isDeleted=" + isDeleted +
                 ", content='" + content + '\'' +
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", memberId='" + memberId + '\'' +
