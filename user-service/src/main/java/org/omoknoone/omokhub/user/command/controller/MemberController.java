@@ -53,4 +53,14 @@ public class MemberController {
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @PostMapping("/modify")
+    public ResponseEntity<ResponseMember> modify(@RequestBody RequestMember member) {
+
+        MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
+
+        ResponseMember responseMember = memberService.modify(memberDTO);
+
+        return ResponseEntity.status(HttpStatus.OK).body(responseMember);
+    }
 }
