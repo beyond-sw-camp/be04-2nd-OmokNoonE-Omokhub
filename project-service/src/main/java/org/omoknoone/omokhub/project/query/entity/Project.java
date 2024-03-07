@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.project.query.entity;
+package org.omoknoone.omokhub1.project.query.entity;
 
 import java.time.LocalTime;
 

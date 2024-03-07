@@ -5,6 +5,7 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ScheduleMapper">
 
+    <!-- 프로젝트 ID를 통한 프로젝트에 해당하는 일정 검색 -->
         <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO">
             <id property="projectId" column="PROJECT_ID"/>
             <result property="title" column="TITLE"/>
@@ -19,6 +20,8 @@
                 <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
             </collection>
         </resultMap>
+
+    <!-- 회원 ID를 통한 회원이 작성한 일정 검색 -->
         <resultMap id="MyScheduleResultMap" type="org.omoknoone.omokhub.project.query.dto.UserAndScheduleDTO">
             <id property="memberId" column="MEMBER_ID"/>
             <result property="name" column="NAME"/>
@@ -44,9 +47,9 @@
                  , B.CONTENT
                  , B.PROGRESS
                  , B.LAST_MODIFIED_DATE
-              FROM PROJECT A
-              JOIN SCHEDULE B ON (A.PROJECT_ID = B.PROJECT_ID)
-             WHERE A.PROJECT_ID = #{projectId}
+              FROM project A
+              JOIN schedule B ON (A.project_id = B.project_id)
+             WHERE A.project_id = #{projectId}
         </select>
 
         <select id="selectScheduleByUser" parameterType="string" resultMap="MyScheduleResultMap">
@@ -59,10 +62,10 @@
                  , C.END_DATE
                  , C.PROGRESS
                  , C.LAST_MODIFIED_DATE
-              FROM MEMBER A
-              JOIN PROJECT_MEMBER B ON (A.MEMBER_ID = B.MEMBER_ID)
-              JOIN SCHEDULE C ON (B.PROJECT_MEMBER_ID = C.PROJECT_MEMBER_ID)
-             WHERE A.MEMBER_ID = #{memberId}
-             ORDER BY C.SCHEDULE_ID DESC
+              FROM member A
+              JOIN project_member B ON (A.member_id = B.member_id)
+              JOIN schedule C ON (B.project_member_id = C.project_member_id)
+             WHERE A.member_id = #{memberId}
+             ORDER BY C.schedule_id DESC
         </select>
     </mapper>

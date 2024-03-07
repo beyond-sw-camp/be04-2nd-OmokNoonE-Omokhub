@@ -2,7 +2,6 @@ package org.omoknoone.omokhub.project.command.service;
 
 import org.modelmapper.ModelMapper;
 import org.omoknoone.omokhub.project.command.aggregate.Project;
-import org.omoknoone.omokhub.project.command.aggregate.Schedule;
 import org.omoknoone.omokhub.project.command.dto.ProjectDTO;
 import org.omoknoone.omokhub.project.command.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,7 +3,7 @@ package org.omoknoone.omokhub.project.query;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.omoknoone.omokhub.project.query.service.ScheduleService;
+import org.omoknoone.omokhub.project.query.service.ScheduleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ScheduleServiceTest {
 
     @Autowired
-    private ScheduleService scheduleService;
+    private ScheduleServiceImpl scheduleService;
     @Test
     @DisplayName("프로젝트아이디로 프로젝트일정 조회")
     void scheduleInProject(){
