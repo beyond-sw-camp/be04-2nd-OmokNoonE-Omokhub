@@ -10,11 +10,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController("queryProjectTeamController")
+@RequestMapping("/")
 @Slf4j
 public class ProjectTeamController {
     Logger logger = LoggerFactory.getLogger(getClass());
@@ -25,13 +27,15 @@ public class ProjectTeamController {
         this.projectTeamService = projectTeamService;
     }
 
-    @GetMapping("projectmember/projectteams/projectteam-id/{projectTeamId}")
+    @GetMapping("/project-teams/project-team-id/{projectTeamId}")
     public ResponseEntity<List<ProjectTeamDTO>> searchProjectInfo(@PathVariable("projectTeamId") int projectTeamId) {
-        logger.info("컨트롤러에서 서비스 호출전 {}",projectTeamId);
+//        logger.info("컨트롤러에서 서비스 호출전 {}",projectTeamId);
         List<ProjectTeamDTO> projectTeamDTOList = projectTeamService.searchProjectTeam(projectTeamId);
-        logger.info("컨트롤러에서 서비스 호출후 {}",projectTeamId);
+//        logger.info("컨트롤러에서 서비스 호출후 {}",projectTeamId);
 
         return ResponseEntity.status(HttpStatus.OK).body(projectTeamDTOList);
     }
+
+
 
 }

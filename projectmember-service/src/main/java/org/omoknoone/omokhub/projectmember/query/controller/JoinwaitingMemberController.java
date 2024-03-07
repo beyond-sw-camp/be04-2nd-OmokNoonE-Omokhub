@@ -11,12 +11,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController("QueryJoinwaitingMemberController")
+@RequestMapping("/")
 public class JoinwaitingMemberController {
 
     private final JoinwaitingMemberService joinwaitingMemberService;
@@ -30,7 +32,7 @@ public class JoinwaitingMemberController {
         this.mapper = mapper;
     }
 
-    @GetMapping("/projectmember/joinwaitingmembers/get_waiting_members/project-team-id/{projectTeamId}")
+    @GetMapping("/project-member/join-waiting-members/get-waiting-members/project-team-id/{projectTeamId}")
     public ResponseEntity<List<WaitingAndMemberDTO>> getWaitingMembers(@PathVariable("projectTeamId") int projectTeamId){
 
         List<WaitingAndMemberDTO> waitingMemberList = joinwaitingMemberService.searchWaitingMember(projectTeamId);
