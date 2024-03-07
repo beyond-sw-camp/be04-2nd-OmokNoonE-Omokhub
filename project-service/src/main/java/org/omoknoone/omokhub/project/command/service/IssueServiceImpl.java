@@ -47,14 +47,12 @@ public class IssueServiceImpl implements IssueService{
         foundIssue.setContent(issueDTO.getContent());
         foundIssue.setIsClosed(issueDTO.getIsClosed());
 
+        /* 설명. 이슈가 닫히면, 현재 시간으로 종료날짜를 변경 */
         if(foundIssue.getIsClosed()) {
             foundIssue.setClosedDate(LocalDateTime.now());
         }
 
         foundIssue.setLastModifiedDate(LocalDateTime.now());
-
-        foundIssue.setProjectMemberId(issueDTO.getProjectMemberId());
-        foundIssue.setProjectId(issueDTO.getProjectId());
 
         issueRepository.flush();
 
