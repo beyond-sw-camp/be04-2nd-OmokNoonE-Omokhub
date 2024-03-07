@@ -56,6 +56,7 @@ public class SeekingMemberPostController {
                 }});
     }
 
+    /* 설명. 실제로 DB값을 삭제하는 것이 아닌, 값의 상태를 삭제로 설정하는 것. (즉 업데이트이므로 Put 사용)*/
     @PutMapping("/remove/{seekingMemberPostId}")
     public ResponseEntity<?> removeSeekingMemberPost(@PathVariable int seekingMemberPostId) {
 

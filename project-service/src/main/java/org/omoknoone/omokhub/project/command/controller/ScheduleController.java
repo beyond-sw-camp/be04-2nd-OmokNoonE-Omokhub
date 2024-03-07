@@ -38,7 +38,7 @@ public class ScheduleController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseSchedule);
     }
 
-    @PostMapping("/modify")
+    @PutMapping("/modify")
     public ResponseEntity<ResponseSchedule> modifySchedule(@RequestBody RequestSchedule schedule){
 
         /* 설명. RequestUser -> UserDTO */

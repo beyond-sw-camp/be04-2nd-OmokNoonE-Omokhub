@@ -32,7 +32,7 @@ public class ProjectController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseProject);
     }
 
-    @PostMapping("/modify")
+    @PutMapping("/modify")
     public ResponseEntity<ResponseProject> modifyProject(@RequestBody RequestProject requestProject){
         ProjectDTO modifyProject = modelMapper.map(requestProject, ProjectDTO.class);
 
