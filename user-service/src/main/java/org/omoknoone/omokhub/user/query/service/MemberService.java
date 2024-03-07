@@ -7,6 +7,4 @@ public interface MemberService {
     MemberDTO searchMemberInfoByMemberId(String memberId);
 
     MemberNicknameDTO searchMemberIdByNickname(String nickname);
-
-    Integer searchProfileCountByMemberId(String memberId);
 }

@@ -41,8 +41,4 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.OK).body(member);
     }
 
-    public void searchProfileCount(String memberId) {
-
-        int profileCount = memberService.searchProfileCountByMemberId(memberId);
-    }
 }

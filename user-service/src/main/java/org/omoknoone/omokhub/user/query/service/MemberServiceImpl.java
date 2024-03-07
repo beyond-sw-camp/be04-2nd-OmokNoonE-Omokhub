@@ -31,10 +31,4 @@ public class MemberServiceImpl implements MemberService {
 
         return memberMapper.selectMemberIdByNickname(nickname);
     }
-
-    @Override
-    public Integer searchProfileCountByMemberId(String memberId) {
-
-        return memberMapper.selectProfileCountByMemberId(memberId);
-    }
 }

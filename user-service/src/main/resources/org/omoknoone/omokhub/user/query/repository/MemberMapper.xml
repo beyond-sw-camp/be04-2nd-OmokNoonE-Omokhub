@@ -23,18 +23,21 @@
 
     <select id="selectMemberInfoByMemberId" parameterType="string" resultMap="memberResultMap">
         SELECT
-            MEMBER_ID ,
-            NAME ,
-            NICKNAME ,
-            EMAIL ,
-            PHONE_NUM ,
-            ADDRESS ,
-            BIRTHDAY
+            A.MEMBER_ID ,
+            A.NAME ,
+            A.NICKNAME ,
+            A.EMAIL ,
+            A.PHONE_NUM ,
+            A.ADDRESS ,
+            A.BIRTHDAY,
+            COUNT(*) AS 'PROFILE_COUNT'
         FROM
-            member
+            member A
+        JOIN profile B ON (A.MEMBER_ID = B.MEMBER_ID)
         WHERE
-            IS_WITHDRAW = 0
-            AND MEMBER_ID = #{memberId}
+            A.IS_WITHDRAW = 0
+            AND A.MEMBER_ID = #{memberId}
+        GROUP BY A.MEMBER_ID
     </select>
 
     <select id="selectMemberIdByNickname" parameterType="string" resultMap="memberNicknameResultMap">
@@ -48,14 +51,4 @@
             AND NICKNAME = #{nickname}
     </select>
 
-    <select id="selectProfileCountByMemberId" parameterType="string" resultType="_int">
-        SELECT
-            COUNT(*) AS 'PROFILE_COUNT'
-        FROM
-            member A
-        JOIN PROFILE B ON (A.MEMBER_ID = B.MEMBER_ID)
-        WHERE
-            A.MEMBER_ID = #{memberId}
-        GROUP BY A.MEMBER_ID
-    </select>
 </mapper>
