@@ -1,11 +1,8 @@
 package org.omoknoone.omokhub.project.query.service;
 
-import lombok.extern.slf4j.Slf4j;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO;
 import org.omoknoone.omokhub.project.query.repository.ProjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,14 +11,12 @@ import java.util.List;
 @Service("QueryProjectServiceImpl")
 public class ProjectServiceImpl implements ProjectService {
 
+    private final ProjectMapper projectMapper;
+
     @Autowired
     public ProjectServiceImpl(ProjectMapper projectMapper) {
         this.projectMapper = projectMapper;
     }
-
-    private final ProjectMapper projectMapper;
-    Logger logger = LoggerFactory.getLogger(getClass());
-
 
     /* 설명. 프로젝트 id로 프로젝트 조회 */
     @Override
