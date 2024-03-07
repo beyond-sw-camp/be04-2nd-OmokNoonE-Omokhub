@@ -11,10 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -30,9 +26,17 @@ public class MemberServiceImpl implements MemberService {
 
     @Transactional
     public void signUp(MemberDTO newMember) {
-        logger.info("[LOGGER] newMember: {}", newMember);
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         memberRepository.save(modelMapper.map(newMember, Member.class));
+    }
+
+    @Override
+    public void withdraw(MemberDTO memberDTO) {
+
+        Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
+        member.setIsWithdraw(true);     // 회원 탈퇴 상태값 true
+
+        memberRepository.flush();
     }
 }

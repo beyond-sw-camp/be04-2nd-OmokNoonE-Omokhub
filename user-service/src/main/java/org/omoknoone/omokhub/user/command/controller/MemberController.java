@@ -43,4 +43,14 @@ public class MemberController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseMember);
     }
+
+    @PostMapping("/withdraw")
+    public ResponseEntity<?> withdraw(@RequestBody RequestMember member) {
+
+        MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
+
+        memberService.withdraw(memberDTO);
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
 }
