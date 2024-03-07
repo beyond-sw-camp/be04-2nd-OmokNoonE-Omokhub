@@ -1,19 +1,20 @@
 package org.omoknoone.omokhub.projectmember.query.entity;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class ProjectTeam {
     private int projectTeamId;
     private int maxMember;
     private int currentMember;
     private String teamName;
-    private LocalTime addedDate;
+    private LocalDateTime addedDate;
     private boolean isActive;
 
     public ProjectTeam() {
     }
 
-    public ProjectTeam(int projectTeamId, int maxMember, int currentMember, String teamName, LocalTime addedDate, boolean isActive) {
+    public ProjectTeam(int projectTeamId, int maxMember, int currentMember,
+                       String teamName, LocalDateTime addedDate, boolean isActive) {
         this.projectTeamId = projectTeamId;
         this.maxMember = maxMember;
         this.currentMember = currentMember;
@@ -26,24 +27,48 @@ public class ProjectTeam {
         return projectTeamId;
     }
 
+    public void setProjectTeamId(int projectTeamId) {
+        this.projectTeamId = projectTeamId;
+    }
+
     public int getMaxMember() {
         return maxMember;
+    }
+
+    public void setMaxMember(int maxMember) {
+        this.maxMember = maxMember;
     }
 
     public int getCurrentMember() {
         return currentMember;
     }
 
+    public void setCurrentMember(int currentMember) {
+        this.currentMember = currentMember;
+    }
+
     public String getTeamName() {
         return teamName;
     }
 
-    public LocalTime getAddedDate() {
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    public LocalDateTime getAddedDate() {
         return addedDate;
+    }
+
+    public void setAddedDate(LocalDateTime addedDate) {
+        this.addedDate = addedDate;
     }
 
     public boolean isActive() {
         return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 
     @Override
