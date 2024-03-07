@@ -1,6 +1,5 @@
 package org.omoknoone.omokhub.project.query.dto;
 
-import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 
 import java.time.LocalTime;
 import java.util.List;
@@ -17,15 +16,12 @@ public class IssueAndMemberDTO {
     private int projectMemberId;
     private int projectId;
 
-    /* 설명. MemberDTO에 다음 속성을 추가할 것
-        private String memberId;
-     */
-    private List<MemberDTO> members;
+    private String memberId;
 
     public IssueAndMemberDTO() {
     }
 
-    public IssueAndMemberDTO(int issueId, String title, String content, boolean isClosed, LocalTime postedDate, LocalTime closedDate, LocalTime lastModifiedDate, int projectMemberId, int projectId, List<MemberDTO> members) {
+    public IssueAndMemberDTO(int issueId, String title, String content, boolean isClosed, LocalTime postedDate, LocalTime closedDate, LocalTime lastModifiedDate, int projectMemberId, int projectId, String memberId) {
         this.issueId = issueId;
         this.title = title;
         this.content = content;
@@ -35,7 +31,7 @@ public class IssueAndMemberDTO {
         this.lastModifiedDate = lastModifiedDate;
         this.projectMemberId = projectMemberId;
         this.projectId = projectId;
-        this.members = members;
+        this.memberId = memberId;
     }
 
     public int getIssueId() {
@@ -110,12 +106,12 @@ public class IssueAndMemberDTO {
         this.projectId = projectId;
     }
 
-    public List<MemberDTO> getMembers() {
-        return members;
+    public String getMemberId() {
+        return memberId;
     }
 
-    public void setMembers(List<MemberDTO> members) {
-        this.members = members;
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
     }
 
     @Override
@@ -130,7 +126,7 @@ public class IssueAndMemberDTO {
                 ", lastModifiedDate=" + lastModifiedDate +
                 ", projectMemberId=" + projectMemberId +
                 ", projectId=" + projectId +
-                ", members=" + members +
+                ", memberId='" + memberId + '\'' +
                 '}';
     }
 }

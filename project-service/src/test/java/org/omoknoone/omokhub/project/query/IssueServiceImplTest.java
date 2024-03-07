@@ -2,23 +2,23 @@ package org.omoknoone.omokhub.project.query;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.omoknoone.omokhub.project.query.service.IssueService;
+import org.omoknoone.omokhub.project.query.service.IssueServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
 @Transactional
-class IssueServiceTest {
+class IssueServiceImplTest {
 
     @Autowired
-    private IssueService issueService;
+    private IssueServiceImpl issueServiceImpl;
 
     /* 설명. searchProjectIssues */
     @Test
     void searchProjectIssues() {
         Assertions.assertDoesNotThrow(
-                () -> issueService.searchProjectIssues(1)
+                () -> issueServiceImpl.searchProjectIssuesById(1)
         );
     }
 
@@ -26,7 +26,7 @@ class IssueServiceTest {
     @Test
     void searchProjectMyIssues() {
         Assertions.assertDoesNotThrow(
-                () -> issueService.searchProjectMemberIssues("user1")
+                () -> issueServiceImpl.searchProjectIssuesByMemberId("mem1")
         );
     }
 }

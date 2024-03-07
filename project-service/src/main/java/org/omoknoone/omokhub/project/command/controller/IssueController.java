@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/project/issue")
+@RequestMapping("/project/issues")
 public class IssueController {
 
     private final IssueService issueService;
@@ -40,7 +40,7 @@ public class IssueController {
 
     }
 
-    @PostMapping("/modify")
+    @PutMapping("/modify")
     public ResponseEntity<ResponseIssue> modifyIssue(@RequestBody RequestIssue issue){
 
         IssueDTO issueDTO = modelMapper.map(issue, IssueDTO.class);

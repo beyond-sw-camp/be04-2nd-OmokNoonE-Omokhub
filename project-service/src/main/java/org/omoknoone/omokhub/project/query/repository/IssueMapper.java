@@ -8,7 +8,7 @@ import java.util.List;
 @Mapper
 public interface IssueMapper {
 
-    List<IssueAndMemberDTO> searchProjectIssues(int projectId);
+    List<IssueAndMemberDTO> searchProjectIssuesById(int projectId);
 
-    List<IssueAndMemberDTO> searchProjectMemberIssues(String memberId);
+    List<IssueAndMemberDTO> searchProjectIssuesByMemberId(String memberId);
 }
