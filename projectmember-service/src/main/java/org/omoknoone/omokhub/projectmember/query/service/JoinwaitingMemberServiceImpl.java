@@ -26,8 +26,9 @@ public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
     @Override
     public List<WaitingAndMemberDTO> searchWaitingMember(int findprojectId) {
 
+        logger.info("waitingMember 서비스 매개변수 {}  ", findprojectId);
         List<WaitingAndMemberDTO> memberList = joinwaitingMemberMapper.selectWaitingMember(findprojectId);
-        logger.info("waitingMember 서비스 전 {} : ", memberList);
+        logger.info("waitingMember 서비스 전 {}  ", memberList);
 
         return memberList;
     }
