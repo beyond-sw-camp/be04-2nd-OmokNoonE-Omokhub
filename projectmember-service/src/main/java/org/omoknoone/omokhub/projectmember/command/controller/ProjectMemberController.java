@@ -1,21 +1,22 @@
 package org.omoknoone.omokhub.projectmember.command.controller;
 
 import org.modelmapper.ModelMapper;
-import org.mybatis.logging.Logger;
-import org.mybatis.logging.LoggerFactory;
-import org.omoknoone.omokhub.projectmember.query.service.ProjectMemberService;
+import org.omoknoone.omokhub.projectmember.command.service.ProjectMemberService;
+import org.omoknoone.omokhub.projectmember.command.vo.ChangeLeaderResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController("commandProjectMemberController")
-@RequestMapping("/project_member/project_member")
+@RequestMapping("/project-member")
 public class ProjectMemberController {
 
     private final ProjectMemberService projectMemberService;
     private final ModelMapper modelMapper;
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     public ProjectMemberController(ProjectMemberService projectMemberService, ModelMapper modelMapper) {
@@ -23,10 +24,9 @@ public class ProjectMemberController {
         this.modelMapper = modelMapper;
     }
 
-    @PutMapping("/change_leader/{projectTeamId}/{newLeaderId}")
-    public ResponseEntity<?> changeLeader(int projectTeamId, int newLeaderId) {
-        projectMemberService.updateAuthority(projectTeamId, newLeaderId);
-        return new ResponseEntity<>(HttpStatus.OK);
-
+    @PutMapping("/change-leader/{projectTeamId}/{newLeaderId}")
+    public ResponseEntity<ChangeLeaderResponseVO> changeLeader(@PathVariable Integer projectTeamId, @PathVariable Integer newLeaderId) {
+        projectMemberService.changeLeader(projectTeamId, newLeaderId);
+        return new ResponseEntity<>(new ChangeLeaderResponseVO("팀장 변경이 성공적으로 완료되었습니다."), HttpStatus.OK);
     }
 }
