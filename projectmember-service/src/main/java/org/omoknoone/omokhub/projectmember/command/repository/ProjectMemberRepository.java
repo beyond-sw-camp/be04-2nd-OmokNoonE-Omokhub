@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface ProjectMemberRepository extends JpaRepository<ProjectMember, Object> {
 
-    @Query("select m from ProjectMember m where m.projectTeamId = :projectTeamId and m.memberCategory = \"팀장\"")
+    @Query("select m from ProjectMember m where m.projectTeamId = :projectTeamId and m.memberCategory = '팀장'")
     ProjectMember findLeader(@Param("projectTeamId")int projectTeamId);
 }

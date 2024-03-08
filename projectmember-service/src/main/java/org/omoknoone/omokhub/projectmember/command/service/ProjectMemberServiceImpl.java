@@ -25,15 +25,18 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
 
     @Override
     @Transactional
-    public void updateAuthority(String memberId, int projectTeamId){
+    public void updateAuthority(int projectTeamId, int newLeaderId) {
+        // 기존 팀장을 팀원으로 변경
+        ProjectMember currentLeader = projectMemberRepository.findLeader(projectTeamId);
+        if (currentLeader != null) {
+            currentLeader.setMemberCategory("팀원");
+            projectMemberRepository.save(currentLeader);
+        }
 
-        ProjectMember foundLeader = projectMemberRepository.findLeader(projectTeamId);
-        logger.info("팀장 찾기 {} ", foundLeader);
-        foundLeader.setMemberCategory("팀원");
-
-        ProjectMember newLeader = projectMemberRepository.findById(memberId).orElseThrow(IllegalArgumentException::new);
-        logger.info("새 팀장 {} ", newLeader);
+        // 새로운 팀장을 지정
+        ProjectMember newLeader = projectMemberRepository.findById(newLeaderId)
+                .orElseThrow(() -> new RuntimeException("멤버를 찾을 수 없습니다."));
         newLeader.setMemberCategory("팀장");
-
+        projectMemberRepository.save(newLeader);
     }
 }
