@@ -27,4 +27,8 @@ public class ProjectMemberService {
         memberInfo.forEach(System.out::println);
 
     }
+
+    public void updateAuthority(String memberId) {
+
+    }
 }

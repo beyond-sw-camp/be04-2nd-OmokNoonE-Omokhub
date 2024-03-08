@@ -35,6 +35,7 @@ public class JoinwaitingMemberController {
     @GetMapping("/project-member/join-waiting-members/get-waiting-members/project-team-id/{projectTeamId}")
     public ResponseEntity<List<WaitingAndMemberDTO>> getWaitingMembers(@PathVariable("projectTeamId") int projectTeamId){
 
+        logger.info("waitingMember 컨트롤러 매개변수 {}  ", projectTeamId);
         List<WaitingAndMemberDTO> waitingMemberList = joinwaitingMemberService.searchWaitingMember(projectTeamId);
         logger.info("waitingMember 컨트롤러 전 {} : ", waitingMemberList);
 
