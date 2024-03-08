@@ -35,4 +35,10 @@ public class ProjectMemberServiceImpl implements ProjectMemberService {
         newLeader.setMemberCategory("팀장");
         projectMemberRepository.save(newLeader);
     }
+
+    @Override
+    @Transactional
+    public void deleteProjectMember(Integer projectMemberId) {
+        projectMemberRepository.deleteById(projectMemberId);
+    }
 }

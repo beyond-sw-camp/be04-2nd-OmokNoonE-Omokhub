@@ -23,7 +23,7 @@ public class JoinwaitingMemberController {
         this.modelMapper = modelMapper;
     }
 
-    @PostMapping("/regist_waiting")        // joinwaitingMember에 멤버 추가
+    @PostMapping("/regist-waiting")        // joinwaitingMember에 멤버 추가
     public ResponseEntity<ResponseProjectJoinUser> registWaiting(@RequestBody RequestProjectJoinUser user){
 
         JoinwaitingMemberDTO joinwaitingMemberDTO = modelMapper.map(user, JoinwaitingMemberDTO.class);
@@ -36,7 +36,7 @@ public class JoinwaitingMemberController {
 
     }
 
-    @GetMapping("/delete_waiting/{joinwaitingMemberId}")
+    @DeleteMapping("/delete-waiting/{joinwaitingMemberId}")
     public ResponseEntity<?> deleteWaiting(@PathVariable("joinwaitingMemberId") int joinwaitingMemberId){
 
         joinwaitingMemberService.deleteWaiting(joinwaitingMemberId);
