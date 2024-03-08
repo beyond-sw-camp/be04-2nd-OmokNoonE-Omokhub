@@ -61,14 +61,12 @@ public class MemberServiceImpl implements MemberService {
         memberId.put("memberId", memberDTO.getMemberId());
 
         /* 설명. client를 통해 project 모듈에게 모집글 삭제 요청 */
-        Boolean result = projectServiceClient.removeSeekingMemberPostByMemberId(memberId);
+        projectServiceClient.removeSeekingMemberPostByMemberId(memberId);
 
-        if(result){
-            Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
-            member.setIsWithdraw(true);     // 회원 탈퇴 상태값 true
+        Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
+        member.setIsWithdraw(true);     // 회원 탈퇴 상태값 true
 
-            memberRepository.flush();
-        }
+        memberRepository.flush();
     }
 
     @Override

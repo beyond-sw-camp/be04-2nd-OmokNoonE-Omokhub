@@ -29,7 +29,6 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
 
     @Override
     public int newPost(SeekingMemberPostDTO seekingMemberPostDTO) {
-        logger.info("[LOGGER] newSeekingMemberPost techStack: {}", seekingMemberPostDTO.getTechStack());
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         SeekingMemberPost seekingMemberPost = modelMapper.map(seekingMemberPostDTO, SeekingMemberPost.class);
@@ -48,7 +47,6 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
 
         seekingMemberPostRepository.save(seekingMemberPost);
 
-        logger.info("[LOGGER] after 모집글 생성 후 ID 값: {}", seekingMemberPost.getSeekingMemberPostId());
 
         return seekingMemberPost.getSeekingMemberPostId();
     }

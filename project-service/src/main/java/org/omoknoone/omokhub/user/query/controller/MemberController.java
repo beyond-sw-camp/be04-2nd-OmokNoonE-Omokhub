@@ -15,7 +15,6 @@ public class MemberController {
 
         MemberDTO member = memberService.searchMemberInfoByMemberId(memberId);
 
-        System.out.println("member = " + member);
     }
 
     public void searchMemberIdByNickname(String nickname) {

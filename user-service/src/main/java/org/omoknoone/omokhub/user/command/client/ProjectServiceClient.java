@@ -11,6 +11,6 @@ import java.util.Map;
 public interface ProjectServiceClient {
 
     @PutMapping("/project-service/project/seekingmemberposts/remove/member-id")
-    Boolean removeSeekingMemberPostByMemberId(Map<String, String> memberId);
+    Object removeSeekingMemberPostByMemberId(Map<String, String> memberId);
 
 }

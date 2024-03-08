@@ -30,7 +30,6 @@ public class MemberServiceImpl implements MemberService {
 
     @Transactional
     public void signUp(MemberDTO newMember) {
-        logger.info("[LOGGER] newMember: {}", newMember);
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         memberRepository.save(modelMapper.map(newMember, Member.class));
