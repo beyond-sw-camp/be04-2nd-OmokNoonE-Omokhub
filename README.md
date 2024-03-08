@@ -36,9 +36,9 @@
 ##  🧑‍💻 기술스택
 <div align="center">
 
-|DA#|ubuntu|mariaDB|Mybatis|JPA|
+|DA#|ubuntu|mariaDB|JPA|Mybatis|
 |---|---|---|---|---|
-|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/edit/feature/project/schedule/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/edit/feature/project/schedule/JPA.png" height="150" />
+|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/mybatis.jpg" height="150" />
 
 </div>
 
@@ -61,10 +61,10 @@
 ##  📋 DDD
 
 ### 1. Event Stroming
-이벤트 스토밍 사진
+<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/evnet-stroming.jpg"/>
 
 ### 2. Context Map
-컨텍스트 맵 사진
+<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/context-map.jpg"/>
 
 ##  📗 DB 모델링
 
@@ -72,7 +72,7 @@
 <p align="center"><img src="개념모델링 사진"/></p>
 
 ### 2. 논리 모델링(Barker 표기법)
-<p align="center"><img src="논리모델링 사진"/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/logic-model.png"/></p>
 
 ### 3. 물리 모델링
 <p align="center"><img src="물리모델링 사진"/></p>
