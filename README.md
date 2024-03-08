@@ -1,10 +1,10 @@
-# OMOKNOONE
+# 🐦 OMOKNOONE
 
 오목눈이 사이트 간단 소개
 
-###  팀명 : 오목눈이
+##  🐦 팀명 : 오목눈이
 
-###  팀원
+##  🙂 팀원
 
 - 팀원 : **최종찬**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/CJC0512)
@@ -18,7 +18,7 @@
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jihyeongeun)
 
 
-##  프로젝트 개요
+##  📝 프로젝트 개요
 
 ### 1. 프로젝트 소개
 
@@ -33,7 +33,7 @@
 
 프로젝트 주요 기능
 
-##  기술스택
+##  🧑‍💻 기술스택
 <div align="center">
 
 |DA#|ubuntu|mariaDB|Mybatis|JPA|
@@ -42,12 +42,12 @@
 
 </div>
 
-##  WBS
+##  📃 WBS
 
 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1027017419)
 <p align="center"><img src=""/></p>
 
-##  요구사항
+##  📖 요구사항
 <details>
 <summary><b>Omok 세부정책</b></summary>
     
@@ -58,7 +58,7 @@
 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=0)
 <p align="center"><img src=""/></p>
 
-## DDD
+##  📋 DDD
 
 ### 1. Event Stroming
 이벤트 스토밍 사진
@@ -66,7 +66,7 @@
 ### 2. Context Map
 컨텍스트 맵 사진
 
-##  DB 모델링
+##  📗 DB 모델링
 
 ### 1. 개념 모델링
 <p align="center"><img src="개념모델링 사진"/></p>
@@ -77,7 +77,7 @@
 ### 3. 물리 모델링
 <p align="center"><img src="물리모델링 사진"/></p>
 
-##  DDL
+##  📁 DDL
 <details>
 <summary><b>Omok DDL</b></summary>
     
@@ -396,13 +396,13 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 
 
 
-## Mybatis 
+## 📒 Mybatis 
 
 ### 1. 회원 조회
 <details>
 	<summary><b>회원 조회 기능</b></summary>
-         <p><img src=""/></p>
-	 <p><img src=""/></p>
+        <p><img src=""/></p>
+	<p><img src=""/></p>
 	</details>
 </details> 
 
@@ -435,18 +435,161 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 
 
 
-## JPA
+## 📙 JPA
 
 ### 1. 회원
 
+#### INSERT
+<details>
+	<summary><b>회원 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### UPDATE
+<details>
+	<summary><b>회원 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### DELETE
+<details>
+	<summary><b>회원 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+### 2. 프로젝트
+
+#### INSERT
+<details>
+	<summary><b>프로젝트 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>모집글 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### UPDATE
+<details>
+	<summary><b>프로젝트 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>모집글 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### DELETE
+<details>
+	<summary><b>프로젝트 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>일정 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>모집글 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+### 3. 프로젝트 팀
+
+#### INSERT
+<details>
+	<summary><b>프로젝트 팀 INSERT 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### UPDATE
+<details>
+	<summary><b>프로젝트 팀 UPDATE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+#### DELETE
+<details>
+	<summary><b>프로젝트 팀 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+<details>
+	<summary><b>프로젝트 팀팀 구성원 DELETE 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
+
+### eurekaServer
+
+### Gateway
+
+### JWT
+
+### FeignClient
 
 
-## 단위테스트 결과 보고서
+## 📃 단위테스트 결과 보고서
 
 [단위테스트 결과보고서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1417392135)
 <p align="center"><img src=""/></p>
 
-## 주요 테스트 결과
+## 📑주요 테스트 결과
 <details>
 	<summary><b>회원 ID로 회원이 작성한 이슈 조회</b></summary>
          <p><img src=""/></p>
@@ -454,7 +597,14 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 	</details>
 </details> 
 
+## 📰 Project Architecture
+<p align="center"><img src=""/></p>
+
 ## 👫 회고
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
 |:---:|---|
-|작성자|내용|
+|최종찬|내용|
+|이재원|내용|
+|장민석|내용|
+|조예린|내용|
+|지현근|내용|
