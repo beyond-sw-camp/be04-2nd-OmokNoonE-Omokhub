@@ -7,7 +7,7 @@
     <resultMap id="joinWaitingMemberMap1" type="org.omoknoone.omokhub.projectmember.query.entity.JoinwaitingMember">
         <result property="category" column="CATEGORY"/>
         <result property="joinDate" column="JOIN_DATE"/>
-        <collection property="waitingMember" ofType="org.omoknoone.omokhub.projectmember.query.dto.ResponseMemberDTO" javaType="java.util.List">
+        <collection property="nicknameAndId" ofType="org.omoknoone.omokhub.projectmember.query.dto.ResponseMemberDTO" javaType="java.util.List">
             <id property="memberId" column="MEMBER_ID"/>
             <result property="nickname" column="NICKNAME"/>
         </collection>
@@ -30,10 +30,10 @@
     </select>
 
     <!-- 프로젝트 참여 대기인원 조회 (완) -->
-    <select id="selectWaitingMember" resultMap="joinWaitingMemberMap2" parameterType="int">
+    <select id="selectWaitingMember" resultMap="joinWaitingMemberMap2" parameterType="_int">
         SELECT
 <!--        c.NICKNAME-->
-        , a.MEMBER_ID
+          a.MEMBER_ID
         , a.CATEGORY
         , a.JOIN_DATE
         , a.JOIN_WAITING_MEMBER_ID

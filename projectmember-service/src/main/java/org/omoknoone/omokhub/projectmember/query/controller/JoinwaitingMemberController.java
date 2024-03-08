@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController("QueryJoinwaitingMemberController")
-@RequestMapping("/")
+@RequestMapping("/project-member/join-waiting-members")
 public class JoinwaitingMemberController {
 
     private final JoinwaitingMemberService joinwaitingMemberService;
@@ -32,7 +32,7 @@ public class JoinwaitingMemberController {
         this.mapper = mapper;
     }
 
-    @GetMapping("/project-member/join-waiting-members/get-waiting-members/project-team-id/{projectTeamId}")
+    @GetMapping("/get-waiting-members/project-team-id/{projectTeamId}")
     public ResponseEntity<List<WaitingAndMemberDTO>> getWaitingMembers(@PathVariable("projectTeamId") int projectTeamId){
 
         logger.info("waitingMember 컨트롤러 매개변수 {}  ", projectTeamId);

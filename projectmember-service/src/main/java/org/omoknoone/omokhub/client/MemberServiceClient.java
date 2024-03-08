@@ -7,12 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-/* 메모. 서비스 이름 및 url 맞추어서 수정 */
-@FeignClient(name = "omok-user-service", url = "localhost:58900")
+@FeignClient(name = "omok-user-service", url = "192.168.0.21:58000")
 public interface MemberServiceClient {
 
-    /* 메모. 민석님께 받으면 맞추어서 수정 */
-    @GetMapping("/<gateway 경로 적기>></{memberId}")
-    List<ResponseMemberDTO> getMemberById(@PathVariable("memberId") String memberId);
+    @GetMapping("/user-service/user/members/api-member-id/{memberId}")
+    List<ResponseMemberDTO> getUserInfos(@PathVariable("memberId") String memberId);
 
 }
