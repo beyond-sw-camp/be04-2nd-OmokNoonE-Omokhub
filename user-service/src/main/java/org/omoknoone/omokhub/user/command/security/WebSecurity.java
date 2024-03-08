@@ -10,8 +10,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.expression.WebExpressionAuthorizationManager;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
@@ -19,17 +22,20 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class WebSecurity {
 
-    MemberService memberService;
-    BCryptPasswordEncoder bCryptPasswordEncoder;
-    Environment environment;
+    private final MemberService memberService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final Environment environment;
+    private final JwtUtil jwtUtil;
 
     @Autowired
     public WebSecurity(MemberService memberService,
                        BCryptPasswordEncoder bCryptPasswordEncoder,
-                       Environment environment) {
+                       Environment environment,
+                       JwtUtil jwtUtil) {
         this.memberService = memberService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.environment = environment;
+        this.jwtUtil = jwtUtil;
     }
 
     /* 설명. 인가(Authorization)용 메소드 */
@@ -49,10 +55,16 @@ public class WebSecurity {
 
         http.authorizeHttpRequests((auth) -> auth
                 .requestMatchers(new AntPathRequestMatcher("/user/members/**")).permitAll()
+                .requestMatchers("/**").access(
+                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('192.168.0.21') or hasIpAddress('192.168.0.250')"))
+                .anyRequest().authenticated()
         )
-                .authenticationManager(authenticationManager);
+                .authenticationManager(authenticationManager)
+                .sessionManagement((session) -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.addFilter(getAuthenticationFilter(authenticationManager));
+        http.addFilterBefore(new JwtFilter(memberService, jwtUtil), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
