@@ -63,7 +63,7 @@ public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
                     .collect(Collectors.toList());
 
             // 배치 요청으로 멤버 정보 조회
-            List<ResponseMemberDTO> membersInfo = memberServiceClient.getMemberById(memberIds.toString());
+            List<ResponseMemberDTO> membersInfo = memberServiceClient.getUserInfos(memberIds.toString());
 
             // memberId를 키로 하고 ResponseMemberDTO를 값으로 하는 맵 생성
             Map<String, ResponseMemberDTO> membersInfoMap = membersInfo.stream()
