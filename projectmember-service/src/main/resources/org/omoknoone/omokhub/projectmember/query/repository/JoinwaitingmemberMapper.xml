@@ -7,7 +7,7 @@
     <resultMap id="joinWaitingMemberMap1" type="org.omoknoone.omokhub.projectmember.query.entity.JoinwaitingMember">
         <result property="category" column="CATEGORY"/>
         <result property="joinDate" column="JOIN_DATE"/>
-        <collection property="waitingMember" ofType="org.omoknoone.omokhub.projectmember.query.dto.MemberDTO" javaType="java.util.List">
+        <collection property="waitingMember" ofType="org.omoknoone.omokhub.projectmember.query.dto.ResponseMemberDTO" javaType="java.util.List">
             <id property="memberId" column="MEMBER_ID"/>
             <result property="nickname" column="NICKNAME"/>
         </collection>
