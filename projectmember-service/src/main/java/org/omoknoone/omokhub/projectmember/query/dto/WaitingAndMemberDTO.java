@@ -9,16 +9,16 @@ public class WaitingAndMemberDTO {
 
     private String category;
     private LocalDateTime joinDate;
-    private List<ResponseMemberDTO> waitingMember;
+    private List<ResponseMemberDTO> nicknameAndId;
     private int joinWaitingMemberId;
 
     public WaitingAndMemberDTO() {
     }
 
-    public WaitingAndMemberDTO(String category, LocalDateTime joinDate, List<ResponseMemberDTO> waitingMember, int joinWaitingMemberId) {
+    public WaitingAndMemberDTO(String category, LocalDateTime joinDate, List<ResponseMemberDTO> nicknameAndId, int joinWaitingMemberId) {
         this.category = category;
         this.joinDate = joinDate;
-        this.waitingMember = waitingMember;
+        this.nicknameAndId = nicknameAndId;
         this.joinWaitingMemberId = joinWaitingMemberId;
     }
 
@@ -38,12 +38,12 @@ public class WaitingAndMemberDTO {
         this.joinDate = joinDate;
     }
 
-    public List<ResponseMemberDTO> getWaitingMember() {
-        return waitingMember;
+    public List<ResponseMemberDTO> getNicknameAndId() {
+        return nicknameAndId;
     }
 
-    public void setWaitingMember(List<ResponseMemberDTO> waitingMember) {
-        this.waitingMember = waitingMember;
+    public void setNicknameAndId(List<ResponseMemberDTO> nicknameAndId) {
+        this.nicknameAndId = nicknameAndId;
     }
 
     public int getJoinWaitingMemberId() {
@@ -59,7 +59,7 @@ public class WaitingAndMemberDTO {
         return "WaitingAndMemberDTO{" +
                 "category='" + category + '\'' +
                 ", joinDate=" + joinDate +
-                ", waitingMember=" + waitingMember +
+                ", nicknameAndId=" + nicknameAndId +
                 ", joinWaitingMemberId=" + joinWaitingMemberId +
                 '}';
     }

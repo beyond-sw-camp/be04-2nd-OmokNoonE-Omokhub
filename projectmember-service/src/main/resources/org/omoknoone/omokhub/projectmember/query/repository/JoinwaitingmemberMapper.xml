@@ -32,14 +32,14 @@
     <!-- 프로젝트 참여 대기인원 조회 (완) -->
     <select id="selectWaitingMember" resultMap="joinWaitingMemberMap2" parameterType="int">
         SELECT
-        c.NICKNAME
-        , c.MEMBER_ID
+<!--        c.NICKNAME-->
+        , a.MEMBER_ID
         , a.CATEGORY
         , a.JOIN_DATE
         , a.JOIN_WAITING_MEMBER_ID
         FROM join_waiting_member a
         JOIN project_team b ON (a.PROJECT_TEAM_ID = b.PROJECT_TEAM_ID)
-        JOIN member c ON (a.MEMBER_ID = c.MEMBER_ID)
+<!--        JOIN member c ON (a.MEMBER_ID = c.MEMBER_ID)-->
         WHERE b.PROJECT_TEAM_ID = #{projectTeamId}
     </select>
 
