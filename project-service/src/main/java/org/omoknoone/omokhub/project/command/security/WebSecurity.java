@@ -26,6 +26,8 @@ public class WebSecurity {
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
+        System.out.println("http = " + http);
+        System.out.println("http.toString() = " + http.toString());
         /* 설명. JWT 로그인 처리를 할 것이므로 csrf는 신경쓸 필요가 없다. */
         http.csrf((csrf) -> csrf.disable());
 
@@ -33,8 +35,7 @@ public class WebSecurity {
                 .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/project/seekingmemberposts/**")).permitAll()
-                .requestMatchers("/**").access(
-                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('192.168.0.*')"))
+
                 .anyRequest().authenticated()
         );
 //                .sessionManagement((session) -> session
