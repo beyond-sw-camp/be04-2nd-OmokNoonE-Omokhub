@@ -28,7 +28,4 @@ public class ProjectMemberService {
 
     }
 
-    public void updateAuthority(int memberId, int projectTeamId) {
-
-    }
 }
