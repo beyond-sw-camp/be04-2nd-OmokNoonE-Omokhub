@@ -1,7 +1,6 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.aggregate;
+package org.omoknoone.omokhub.project.command.aggregate;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
@@ -27,7 +26,7 @@ public class SeekingMemberPost {
     @Column
     private String content;
     @Column
-    @CreationTimestamp
+    @UpdateTimestamp
     private LocalDateTime lastModifiedDate;
     @Column
     private boolean isSeeking;
@@ -88,7 +87,7 @@ public class SeekingMemberPost {
         return lastModifiedDate;
     }
 
-    public boolean isSeeking() {
+    public boolean getIsSeeking() {
         return isSeeking;
     }
 
@@ -130,6 +129,18 @@ public class SeekingMemberPost {
 
     public void setProjectId(int projectId) {
         this.projectId = projectId;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setIsSeeking(boolean isSeeking) {
+        this.isSeeking = isSeeking;
+    }
+
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     @Override

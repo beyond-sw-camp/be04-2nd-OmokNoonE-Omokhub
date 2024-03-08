@@ -27,14 +27,13 @@ public class IssueServiceImpl implements IssueService{
     @Override
     public void registIssue(IssueDTO issueDTO) {
 
+        /* 설명. default값 설정 */
+        issueDTO.setIsClosed(false);
+        issueDTO.setPostedDate(LocalDateTime.now());
+        issueDTO.setLastModifiedDate(LocalDateTime.now());
 
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
         Issue issue = modelMapper.map(issueDTO,Issue.class);
-
-        /* 설명. default값 설정 */
-        issue.setIsClosed(false);
-        issue.setPostedDate(LocalDateTime.now());
-        issue.setLastModifiedDate(LocalDateTime.now());
 
         issueRepository.save(issue);
     }
@@ -48,14 +47,14 @@ public class IssueServiceImpl implements IssueService{
         foundIssue.setContent(issueDTO.getContent());
         foundIssue.setIsClosed(issueDTO.getIsClosed());
 
+        /* 설명. 이슈가 닫히면, 현재 시간으로 종료날짜를 변경 */
         if(foundIssue.getIsClosed()) {
             foundIssue.setClosedDate(LocalDateTime.now());
         }
 
         foundIssue.setLastModifiedDate(LocalDateTime.now());
 
-        foundIssue.setProjectMemberId(issueDTO.getProjectMemberId());
-        foundIssue.setProjectId(issueDTO.getProjectId());
+        issueRepository.flush();
 
     }
 

@@ -1,10 +1,9 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.dto;
+package org.omoknoone.omokhub.project.command.vo;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
-public class SeekingMemberPostDTO {
+public class RequestSeekingMemberPost {
     private int seekingMemberPostId;
     private String title;
     private int seekingMember;
@@ -12,16 +11,15 @@ public class SeekingMemberPostDTO {
     private LocalDate endDate;
     private List<String> techStack;
     private String content;
-    private LocalDateTime lastModifiedDate;
     private boolean isSeeking;
     private String memberId;
     private boolean isDeleted;
     private int projectId;
 
-    public SeekingMemberPostDTO() {
+    public RequestSeekingMemberPost() {
     }
 
-    public SeekingMemberPostDTO(int seekingMemberPostId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, List<String> techStack, String content, LocalDateTime lastModifiedDate, boolean isSeeking, String memberId, boolean isDeleted, int projectId) {
+    public RequestSeekingMemberPost(int seekingMemberPostId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, List<String> techStack, String content, boolean isSeeking, String memberId, boolean isDeleted, int projectId) {
         this.seekingMemberPostId = seekingMemberPostId;
         this.title = title;
         this.seekingMember = seekingMember;
@@ -29,7 +27,6 @@ public class SeekingMemberPostDTO {
         this.endDate = endDate;
         this.techStack = techStack;
         this.content = content;
-        this.lastModifiedDate = lastModifiedDate;
         this.isSeeking = isSeeking;
         this.memberId = memberId;
         this.isDeleted = isDeleted;
@@ -92,20 +89,12 @@ public class SeekingMemberPostDTO {
         this.content = content;
     }
 
-    public LocalDateTime getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
-
-    public boolean isSeeking() {
+    public boolean getIsSeeking() {
         return isSeeking;
     }
 
-    public void setSeeking(boolean seeking) {
-        isSeeking = seeking;
+    public void setIsSeeking(boolean isSeeking) {
+        this.isSeeking = isSeeking;
     }
 
     public String getMemberId() {
@@ -116,12 +105,12 @@ public class SeekingMemberPostDTO {
         this.memberId = memberId;
     }
 
-    public boolean isDeleted() {
+    public boolean getIsDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
     }
 
     public int getProjectId() {
@@ -134,7 +123,7 @@ public class SeekingMemberPostDTO {
 
     @Override
     public String toString() {
-        return "SeekingMemberPostDTO{" +
+        return "RequestSeekingMemberPost{" +
                 "seekingMemberPostId=" + seekingMemberPostId +
                 ", title='" + title + '\'' +
                 ", seekingMember=" + seekingMember +
@@ -142,7 +131,6 @@ public class SeekingMemberPostDTO {
                 ", endDate=" + endDate +
                 ", techStack=" + techStack +
                 ", content='" + content + '\'' +
-                ", lastModifiedDate=" + lastModifiedDate +
                 ", isSeeking=" + isSeeking +
                 ", memberId='" + memberId + '\'' +
                 ", isDeleted=" + isDeleted +

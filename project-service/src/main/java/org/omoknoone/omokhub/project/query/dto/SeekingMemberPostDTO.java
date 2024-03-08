@@ -1,25 +1,26 @@
-package org.omoknoone.omokhub.seekingmemberpost.command.vo;
+package org.omoknoone.omokhub.project.query.dto;
+
+import org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 
-public class RequestSeekingMemberPost {
+public class SeekingMemberPostDTO {
     private int seekingMemberPostId;
     private String title;
     private int seekingMember;
     private LocalDate startDate;
     private LocalDate endDate;
-    private List<String> techStack;
+    private String techStack;
     private String content;
-    private boolean isSeeking;
+    private LocalDateTime lastModifiedDate;
     private String memberId;
-    private boolean isDeleted;
-    private int projectId;
+    private ProjectTeamDTO projectTeam;
 
-    public RequestSeekingMemberPost() {
+    public SeekingMemberPostDTO() {
     }
 
-    public RequestSeekingMemberPost(int seekingMemberPostId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, List<String> techStack, String content, boolean isSeeking, String memberId, boolean isDeleted, int projectId) {
+    public SeekingMemberPostDTO(int seekingMemberPostId, String title, int seekingMember, LocalDate startDate, LocalDate endDate, String techStack, String content, LocalDateTime lastModifiedDate, String memberId, ProjectTeamDTO projectTeam) {
         this.seekingMemberPostId = seekingMemberPostId;
         this.title = title;
         this.seekingMember = seekingMember;
@@ -27,10 +28,9 @@ public class RequestSeekingMemberPost {
         this.endDate = endDate;
         this.techStack = techStack;
         this.content = content;
-        this.isSeeking = isSeeking;
+        this.lastModifiedDate = lastModifiedDate;
         this.memberId = memberId;
-        this.isDeleted = isDeleted;
-        this.projectId = projectId;
+        this.projectTeam = projectTeam;
     }
 
     public int getSeekingMemberPostId() {
@@ -73,11 +73,11 @@ public class RequestSeekingMemberPost {
         this.endDate = endDate;
     }
 
-    public List<String> getTechStack() {
+    public String getTechStack() {
         return techStack;
     }
 
-    public void setTechStack(List<String> techStack) {
+    public void setTechStack(String techStack) {
         this.techStack = techStack;
     }
 
@@ -89,12 +89,12 @@ public class RequestSeekingMemberPost {
         this.content = content;
     }
 
-    public boolean isSeeking() {
-        return isSeeking;
+    public LocalDateTime getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void setSeeking(boolean seeking) {
-        isSeeking = seeking;
+    public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 
     public String getMemberId() {
@@ -105,36 +105,27 @@ public class RequestSeekingMemberPost {
         this.memberId = memberId;
     }
 
-    public boolean isDeleted() {
-        return isDeleted;
+    public ProjectTeamDTO getProjectTeam() {
+        return projectTeam;
     }
 
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
-    }
-
-    public int getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setProjectTeam(ProjectTeamDTO projectTeam) {
+        this.projectTeam = projectTeam;
     }
 
     @Override
     public String toString() {
-        return "RequestSeekingMemberPost{" +
+        return "SeekingMemberPostDTO{" +
                 "seekingMemberPostId=" + seekingMemberPostId +
                 ", title='" + title + '\'' +
                 ", seekingMember=" + seekingMember +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", techStack=" + techStack +
+                ", techStack='" + techStack + '\'' +
                 ", content='" + content + '\'' +
-                ", isSeeking=" + isSeeking +
+                ", lastModifiedDate=" + lastModifiedDate +
                 ", memberId='" + memberId + '\'' +
-                ", isDeleted=" + isDeleted +
-                ", projectId=" + projectId +
+                ", projectTeam=" + projectTeam +
                 '}';
     }
 }
