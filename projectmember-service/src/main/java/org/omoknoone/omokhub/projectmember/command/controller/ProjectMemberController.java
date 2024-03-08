@@ -7,10 +7,7 @@ import org.omoknoone.omokhub.projectmember.query.service.ProjectMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController("commandProjectMemberController")
 @RequestMapping("/project_member/project_member")
@@ -26,15 +23,10 @@ public class ProjectMemberController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/update_authority/{memberId}")
-    public ResponseEntity<?> updateAuthority(@PathVariable("memberId") String memberId){
+    @PutMapping("/change_leader/{projectTeamId}/{newLeaderId}")
+    public ResponseEntity<?> changeLeader(int projectTeamId, int newLeaderId) {
+        projectMemberService.updateAuthority(projectTeamId, newLeaderId);
+        return new ResponseEntity<>(HttpStatus.OK);
 
-        projectMemberService.updateAuthority(memberId);
-
-        return ResponseEntity.status(HttpStatus.OK).build();
     }
-
-
-
-
 }
