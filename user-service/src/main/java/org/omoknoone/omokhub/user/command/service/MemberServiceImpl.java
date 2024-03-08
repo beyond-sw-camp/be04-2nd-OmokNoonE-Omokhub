@@ -3,6 +3,7 @@ package org.omoknoone.omokhub.user.command.service;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.omoknoone.omokhub.user.command.aggregate.Member;
+import org.omoknoone.omokhub.user.command.client.ProjectServiceClient;
 import org.omoknoone.omokhub.user.command.dto.MemberDTO;
 import org.omoknoone.omokhub.user.command.repository.MemberRepository;
 import org.omoknoone.omokhub.user.command.vo.ResponseMember;
@@ -17,6 +18,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -24,15 +27,18 @@ public class MemberServiceImpl implements MemberService {
     private final ModelMapper modelMapper;
     private final MemberRepository memberRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final ProjectServiceClient projectServiceClient;
 
     Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     public MemberServiceImpl(ModelMapper modelMapper,
                              MemberRepository memberRepository,
-                             BCryptPasswordEncoder bCryptPasswordEncoder) {
+                             BCryptPasswordEncoder bCryptPasswordEncoder,
+                             ProjectServiceClient projectServiceClient) {
         this.modelMapper = modelMapper;
         this.memberRepository = memberRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.projectServiceClient = projectServiceClient;
     }
 
     @Override
@@ -51,15 +57,23 @@ public class MemberServiceImpl implements MemberService {
     @Transactional
     public void withdraw(MemberDTO memberDTO) {
 
-        Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
-        member.setIsWithdraw(true);     // 회원 탈퇴 상태값 true
+        Map<String, String> memberId = new HashMap<>();
+        memberId.put("memberId", memberDTO.getMemberId());
 
-        memberRepository.flush();
+        /* 설명. client를 통해 project 모듈에게 모집글 삭제 요청 */
+        Boolean result = projectServiceClient.removeSeekingMemberPostByMemberId(memberId);
+
+        if(result){
+            Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
+            member.setIsWithdraw(true);     // 회원 탈퇴 상태값 true
+
+            memberRepository.flush();
+        }
     }
 
     @Override
     @Transactional
-    public ResponseMember modify(MemberDTO memberDTO) {
+    public MemberDTO modify(MemberDTO memberDTO) {
 
         Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(IllegalArgumentException::new);
         member.setNickname(memberDTO.getNickname());
@@ -70,7 +84,7 @@ public class MemberServiceImpl implements MemberService {
         
         memberRepository.flush();
 
-        return modelMapper.map(member, ResponseMember.class);
+        return modelMapper.map(member, MemberDTO.class);
     }
 
     @Override

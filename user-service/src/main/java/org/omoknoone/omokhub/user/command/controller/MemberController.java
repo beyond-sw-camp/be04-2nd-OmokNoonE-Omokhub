@@ -41,13 +41,19 @@ public class MemberController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseMember);
     }
 
-    @PostMapping("/withdraw")
+    /* 설명. 탈퇴 요청 들어온 경우 */
+    @PutMapping("/withdraw")
     public ResponseEntity<?> withdraw(@RequestBody RequestMember member) {
 
+        /* 설명.
+         *  1. 탈퇴할 회원이 작성한 모집글 목록의 진행여부 종료를 위해 memberId를 전달
+         *  2. soft delete 된 경우 회원의 탈퇴 여부 True로 변경
+        * */
         MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
 
         memberService.withdraw(memberDTO);
 
+        /* 설명. 3. 탈퇴 회원에게 NO_CONTENT return */
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
@@ -56,7 +62,7 @@ public class MemberController {
 
         MemberDTO memberDTO = modelMapper.map(member, MemberDTO.class);
 
-        ResponseMember responseMember = memberService.modify(memberDTO);
+        ResponseMember responseMember = modelMapper.map(memberService.modify(memberDTO), ResponseMember.class);
 
         return ResponseEntity.status(HttpStatus.OK).body(responseMember);
     }

@@ -10,7 +10,7 @@ public interface MemberService extends UserDetailsService {
 
     void withdraw(MemberDTO memberDTO);
 
-    ResponseMember modify(MemberDTO memberDTO);
+    MemberDTO modify(MemberDTO memberDTO);
 
     MemberDTO getMemberDetailsByMemberId(String memberId);
 }
