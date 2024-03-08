@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.projectmember.command.client;
+package org.omoknoone.omokhub.client;
 
 import org.omoknoone.omokhub.projectmember.command.vo.ResponseMember;
 import org.springframework.stereotype.Component;
