@@ -1,955 +1,452 @@
 # OMOKNOONE
 
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/로고_수정.png"/></p>
+오목눈이 사이트 간단 소개
 
-바이트는 데이터 처리, 저장, 전송의 기본적인 단위로 널리 사용되며, 이러한 개념이 이벤트 처리, 저장, 전송과 관련된 기능을 통합한 VITE 플랫폼과 유사하게 연결됩니다. 또한, 초대하다는 의미를 가진 INVITE에서 VITE를 채용함으로써, 두 가지 의미를 동시에 담고 있습니다.
+###  팀명 : 오목눈이
 
-### 🐕‍🦺 팀명 : 사고뭉치
-
-### 🐶 팀원
+###  팀원
 
 <div align="center">
     
-|[박고은](https://github.com/goeunpark123) | [배성민](https://github.com/mini-xi) | [이예원](https://github.com/onelee521) | [장민석](https://github.com/ms1011) | [정우진](https://github.com/Wrinkk) | [한소혜](https://github.com/Sosohy)|
-|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|-------------------------------------|------------------------------------------|
+|[장민석](https://github.com/ms1011) | [최종찬] | [이재원] | [조예린] | [지현근] |
 
 </div>
 
-## 🎈 프로젝트 개요
+##  프로젝트 개요
 
 ### 1. 프로젝트 소개
 
-바이트는 이벤트에 대한 `초대장 발송 서비스`를 제공하는 플랫폼입니다.  이벤트 정보를 담은 초대장을 원하는 디자인의 템플릿으로 게스트들에게 이메일 또는 SMS로 전송하고, 이벤트 페이지를 통해 소통할 수 있습니다. 특별한 날을 기념하여 호스트가 원하는 선물을 등록할 경우, 게스트들이 펀딩 형식으로 선물을 구매할 수도 있습니다. 특별한 날을 더욱 특별하게 만들어줄 초대장을 통해 기억에 남을 즐거운 이벤트를 진행할 수 있습니다.
+프로젝트 소개
 
 ### 2. 프로젝트 필요성
 
-멀리 사는 지인에게 평범한 이메일이나 문자가 아닌 특별한 초대장을 보낼 수 있습니다.
+프로젝트 필요성
 
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/news1.png" width="50%" height="50%"/></p>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/news2.png" width="50%" height="50%"/></p>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/news3.png" width="50%" height="50%"/></p>
-
-
-
-최근 뉴스에 따르면 모바일 초대장이 개인 행사뿐만 아니라 지역 행사나 회사에서도 널리 사용되고 있습니다. 모임 통장의 보편화로 소규모 모임이 늘어나고 있으며, 연말, 연시 등 다양한 개인 및 인간 관계의 기념일이 다양화되고 있어서 초대장의 역할이 더욱 중요해졌습니다.
-
-초대장 발송은 더 이상 단순한 의사소통 수단을 넘어서 새로운 경험의 수단으로 강조되고 있습니다. 이러한 흐름에 따라 초대장은 모임의 품질을 높일 수 있는 방안으로 강조되고 있습니다. 초대장을 통해 이벤트 참여자들과 소통할 수 있는 커뮤니티 기능이나 선물 교환 기능 등을 활용하면, 초대장이 단순한 통보 수단에서 벗어나 상호작용의 중심지로서 강조될 수 있습니다. 이는 사용자들에게 참여 동기를 부여하고, 이벤트 참여와 즐거움 공유의 기회를 제공합니다.
-
-초대장은 이제 행사의 시작점에 머물러 있지 않고, 새로운 인연의 시작을 의미하는 중요한 역할을 합니다. 이에 따라, 미래에는 더 다양하고 흥미로운 초대장 서비스의 등장이 기대되고 있습니다.
-
-</aside>
 
 ### 3. 프로젝트 주요 기능
 
-1. 이벤트 초대하기/RSVP(초대 확인)
-    - 이메일 또는 전화번호로 다른 사람에게 이벤트를 발송한다.
-    - 초대받은 게스트는 이벤트 정보를 확인하고 참석 여부를 등록할 수 있다.
-    - 이벤트의 호스트와 초대받은 회원은 이벤트 페이지에서 댓글을 통해 소통할 수 있다.
+프로젝트 주요 기능
 
-2. 초대장템플릿 구매/적용
-    - 회원은 이벤트에 적용할 초대장템플릿을 구매할 수 있다.
-    - 이벤트 생성 시, 호스트는 보유한 템플릿을 이벤트에 적용할 수 있다.
-
-3. 선물/펀딩
-    - 호스트는 이벤트에 받고 싶은 선물을 등록할 수 있다.
-    - 회원인 게스트들은 호스트가 등록한 선물에 원하는 만큼 결제하여 선물할 수 있다.
-
-4. 다른 이벤트 확인하기
-    - 이벤트 공유 페이지를 통해 다른 사람의 이벤트를 참고할 수 있다.
-    - 현재 인기가 많은 이벤트 형식이 무엇인지 확인할 수 있다.
-
-## 📟 기술스택
+##  기술스택
 <div align="center">
 
-|DA#|ubuntu|mariaDB|
-|---|---|---|
+|DA#|ubuntu|mariaDB|Mybatis|JPA|
+|---|---|---|---|---|
 |<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|   
 
 </div>
 
-## 📝 WBS
+##  WBS
 
-[WBS 바로가기](https://docs.google.com/spreadsheets/d/1tX0TRsPvECfPtoJETw0iKIp1Ami4aau9lG6vSYuidu4/edit#gid=1531810588)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/wbs_수정2.png"/></p>
+[WBS 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1027017419)
+<p align="center"><img src=""/></p>
 
-## 📘 요구사항
+##  요구사항
 <details>
-<summary><b>VITE 상세정책</b></summary>
+<summary><b>Omok 세부정책</b></summary>
     
-- 회원등급 관련
-    - 일반: 할인 혜택 없음
-    - VIP : 3% 할인 (누적결제금액 3만원 이상)
-    - VVIP : 5% 할인 (누적결제금액  5만원 이상)
-    - 운영자
-    
-- 운영자 권한
-    - 회원의 게시물 및 댓글 수정/삭제
-    - 회원 관리 및 계정 정지
-    - 공지사항 작성
-    - 문의사항 답변
-    - 초대장 템플릿 등록
-    
-- 회원 권한
-    - 이벤트/이벤트댓글/게시글 작성
-    - 이벤트 초대 받기/RSVP
-    - 선물 결제
-    - 템플릿 결제
-    
-- 비회원 권한
-    - 이벤트 초대 받기/RSVP
-    
-- 결제 및 환불 관련 정책
-    - 템플릿 환불
-        - 템플릿 사용 전 환불 100%
-        - 템플릿 사용 후 환불 불가
-    - 선물 펀딩 환불
-        - 금액을 달성하지 못하면 참여 게스트 전액 환불(은행API의 기능)
-    - 선물 펀딩 성공 시
-        - 호스트에게 모인 금액 전송(은행API의 기능)
+- 세부정책
+  
 </details>
 
-[요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1tX0TRsPvECfPtoJETw0iKIp1Ami4aau9lG6vSYuidu4/edit#gid=1162915854)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/요구사항 명세서.png"/></p>
+[요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=0)
+<p align="center"><img src=""/></p>
 
+## DDD
 
-## 💭 DB 모델링
+### 1. Event Stroming
+이벤트 스토밍 사진
+
+### 2. Context Map
+컨텍스트 맵 사진
+
+##  DB 모델링
 
 ### 1. 개념 모델링
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/개념 모델링.png"/></p>
+<p align="center"><img src="개념모델링 사진"/></p>
 
 ### 2. 논리 모델링(Barker 표기법)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/바커수정.PNG"/></p>
-<details>
-<summary><b>논리모델링 확대(L/R)</b></summary>
-(L)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/바커수정1.PNG"/></p>
-(R)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/바커수정2.PNG"/></p>
-</details>
+<p align="center"><img src="논리모델링 사진"/></p>
 
 ### 3. 물리 모델링
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/물리모델링_수정.PNG"/></p>
-<details>
-<summary><b>물리모델링 확대(L/R)</b></summary>
-(L)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/물리모델링_수정1.PNG"/></p>
-(R)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/물리모델링_수정2.PNG"/></p>
-</details>
+<p align="center"><img src="물리모델링 사진"/></p>
 
-## 💾 Replication
-> Master-slave replication은 데이터베이스에서 사용되는 기술로, 하나의 중앙 서버(마스터)가 있고 여러 복제 서버(슬레이브)가 마스터의 사본을 가지는 것입니다. 이는 시스템이 고장나거나 성능이 떨어져도 서비스가 계속되게 하며, 읽기 작업을 분산해 더 빠르게 응답하고 데이터를 안전하게 보관할 수 있습니다. 또한, 여러 지리적 위치에 데이터를 분산하여 전체 시스템의 성능과 안정성을 향상시킬 수 있습니다.
-
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/master_slave_structure.png"/></p>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/master_slave_connection.png"/></p>
-
+##  DDL
 <details>
-<summary><b>Log</b></summary>
-<b>mariaDB general.log 상태 확인</b>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/general_log_status.png"/></p>
-<b>general.log 파일 확인</b>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/general_log.png"/></p>
-</details>
-<details>
-<summary><b>DB서버 공유</b></summary>
-<b>우분투 네트워크 설정</b>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/network_setting.png"/></p>
-<b>다른 PC에서 mariaDB 서버에 접속하는 화면</b>
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/remote_master.png"/></p>
-</details>
-
-## 📖 DDL
-<details>
-<summary><b>VITE DDL</b></summary>
+<summary><b>Omok DDL</b></summary>
     
 ```
--- 이벤트(event) 테이블 생성
-CREATE TABLE `event` (
-    `event_id`  INT NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '이메일 형식',             -- 이벤트ID
-    `event_title`   VARCHAR(100)    NOT NULL,                                           -- 이벤트제목
-    `event_date`    DATETIME    NOT NULL,                                               -- 시작날짜및시간
-    `event_place`   VARCHAR(30),                                                        -- 장소
-    `dress_code`    VARCHAR(20),                                                        -- 드레스코드
-    `event_contents`    TEXT,                                                           -- 이벤트내용
-    `event_category_id` INT NOT NULL COMMENT '이벤트카테고리의 카테고리ID',                    -- 카테고리ID
-    `user_id`   VARCHAR(50) NOT NULL COMMENT '회원의 회원ID',                              -- 회원ID(호스트)
-    `invitation_template_id`    INT NOT NULL COMMENT '초대장템플릿의 초대장템플릿ID',           -- 초대장템플릿ID
-    `is_public` BOOLEAN NOT NULL    DEFAULT false   COMMENT 'true(공개), false(비공개)',   -- 이벤트공개여부
-    `event_like_cnt`    INT NOT NULL    DEFAULT 0,                                      -- 좋아요수
-    `event_delete`  BOOLEAN NOT NULL    DEFAULT false                                   -- 이벤트삭제여부
-);
-
--- 이벤트댓글(comment) 테이블 생성
-CREATE TABLE `comment` (
-    `comment_id`    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,        -- 이벤트댓글ID
-    `comment_contents`  TEXT    NOT NULL,                           -- 댓글내용
-    `comment_time`  DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,    -- 댓글작성시간
-    `event_id`  INT NOT NULL COMMENT '이벤트의 이벤트ID',               -- 이벤트ID
-    `user_id`   VARCHAR(50) NOT NULL COMMENT '회원의 회원ID',          -- 회원ID
-    `image_id`  INT COMMENT '이미지의 이미지ID',                        -- 이미지ID
-    `comment_delete`    BOOLEAN NOT NULL    DEFAULT false           -- 댓글삭제여부
-);
-
--- 결제(payment) 테이블 생성
-CREATE TABLE `payment` (
-    `payment_id`    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,                    -- 결제ID
-    `payment_date`  DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP(),           -- 결제일자
-    `payment_amount`    INT NOT NULL    DEFAULT 0,                              -- 결제금액
-    `payment_method`    VARCHAR(30) NOT NULL    COMMENT '카드, 무통장입금 등',       -- 결제수단
-    `user_id`   VARCHAR(50) NOT NULL COMMENT '회원의 회원ID'                       -- 회원ID
-);
-
--- 초대장템플릿(invitation_template) 테이블 생성
-CREATE TABLE `invitation_template` (
-    `invitation_template_id`    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,    -- 초대장템플릿ID
-    `invitation_template_name`  VARCHAR(100)    NOT NULL UNIQUE,            -- 초대장템플릿이름
-    `invitation_font`   VARCHAR(30) NOT NULL,                               -- 초대장글씨체
-    `invitation_price`  INT NOT NULL    DEFAULT 0,                          -- 초대장가격
-    `image_id`  INT NOT NULL COMMENT '회원의 회원ID',                          -- 이미지ID
-    `invitation_like_cnt`   INT NOT NULL    DEFAULT 0,                      -- 좋아요수
-    `template_delete`   BOOLEAN NOT NULL    DEFAULT false                   -- 초대장템플릿삭제여부
-);
-
--- 선물(present) 테이블 생성
-CREATE TABLE `present` (
-    `present_id`    INT NULL AUTO_INCREMENT PRIMARY KEY,                            -- 선물ID
-    `present_name`  VARCHAR(100)    NOT NULL,                                       -- 선물이름
-    `present_price` INT NOT NULL,                                                   -- 선물가격
-    `present_total` INT NOT NULL    DEFAULT 0   COMMENT '게스트들이 결제해서 모인 돈',     -- 모인금액
-    `event_id`  INT NOT NULL COMMENT '이벤트의 이벤트ID',                               -- 이벤트ID
-    `present_delete`    BOOLEAN NOT NULL    DEFAULT false                           -- 선물삭제여부
-);
-
--- 회원등급(grade) 테이블 생성
-CREATE TABLE `grade` (
-    `grade_name`    VARCHAR(10) NOT NULL    DEFAULT '일반' COMMENT 'VIP/VVIP 등',  -- 등급이름
-    `grade_benefit` VARCHAR(1000)   NOT NULL,                                    -- 등급혜택
-    `grade_standard`    INT NOT NULL    COMMENT '총 결제 금액에 따른 회원 등급 구분'      -- 금액기준
-);
-
--- 이벤트카테고리(event_category) 테이블 생성
-CREATE TABLE `event_category` (
-    `event_category_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,    				  -- 카테고리ID
-    `event_category_type`   VARCHAR(20) NOT NULL,                   				  -- 카테고리종류
-    `is_personal`   BOOLEAN NOT NULL    DEFAULT true COMMENT 'true(비공개), false(공개)' -- 상세구분
-);
-
--- 게스트명단(guest_list) 테이블 생성
-CREATE TABLE `guest_list` (
-    `guest_id`  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,                                    -- 게스트ID
-    `guest_email`   VARCHAR(50),                                                            -- 이메일
-    `guest_phone`   VARCHAR(13),                                                            -- 전화번호
-    `is_attended`   BOOLEAN NOT NULL    DEFAULT false COMMENT 'true(참석), false(불참)',      -- 참석여부
-    `send_time` DATETIME    DEFAULT CURRENT_TIMESTAMP NOT NULL,                             -- 이벤트발송시간
-    `is_send`   BOOLEAN NOT NULL    DEFAULT false COMMENT 'true(발송성공), false(발송실패)',    -- 이벤트발송성공여부
-    `event_id`  INT NOT NULL COMMENT '이벤트의 이벤트ID'                                       -- 이벤트ID
-);
-
--- 선물결제(present_payment) 테이블 생성
-CREATE TABLE `present_payment` (
-    `payment_id`    INT NOT NULL COMMENT '결제의 결제ID',    -- 결제ID
-    `present_id`    INT NOT NULL COMMENT '선물의 선물ID'     -- 선물ID
-);
-
--- 초대장결제(invitation_payment) 테이블 생성
-CREATE TABLE `invitation_payment` (
-    `payment_id`    INT NOT NULL,                                                        -- 결제ID
-    `invitation_template_id`    INT NOT NULL COMMENT '초대장템플릿의 초대장템플릿ID',            -- 초대장템플릿ID
-    `is_available`  BOOLEAN NOT NULL DEFAULT TRUE COMMENT 'true(사용가능), false(사용불가)'   -- 사용가능여부
-);
-
--- 환불(refund) 테이블 생성
-CREATE TABLE `refund` (
-    `refund_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,                        -- 환불ID
-    `refund_state`  VARCHAR(30) NOT NULL    DEFAULT '신청'    COMMENT '신청/완료',  -- 환불상태
-    `refund_request_date`   DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,     -- 환불신청날짜
-    `refund_complete_date`  DATETIME,                                           -- 환불완료날짜
-    `payment_id`    INT NOT NULL COMMENT '결제의 결제ID'                           -- 결제ID
-);
-
--- 회원별초대내역(user_invite) 테이블 생성
-CREATE TABLE `user_invite` (
-    `event_id`  INT NOT NULL COMMENT '이벤트의 이벤트ID',                                          -- 이벤트ID
-    `user_id`   VARCHAR(50) NOT NULL COMMENT '회원의 회원ID',                                     -- 회원ID
-    `is_invited`    BOOLEAN NOT NULL    DEFAULT false   COMMENT 'true(초대받음), false(초대함)'    -- 초대구분
-);
-
--- 이미지(image) 테이블 생성
-CREATE TABLE `image` (
-    `image_id`  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,    -- 이미지ID
-    `image_route`   VARCHAR(500)    NOT NULL,               -- 경로
-    `image_name`    VARCHAR(100)    NOT NULL,               -- 원본이미지이름
-    `image_type`    VARCHAR(30) NOT NULL                    -- 이미지구분
-);
-
--- 이벤트좋아요관리(event_like) 테이블 생성
-CREATE TABLE `event_like` (
-    `event_id`  INT NOT NULL COMMENT '이벤트의 이벤트ID',      -- 이벤트ID
-    `user_id`   VARCHAR(50) NOT NULL COMMENT '회원의 회원ID'  -- 회원ID
-);
-
--- 게시글(post) 테이블 생성
-CREATE TABLE `post` (
-    `post_id`   INT NOT NULL    AUTO_INCREMENT PRIMARY KEY,             -- 게시글ID
-    `post_title`    VARCHAR(100)    NOT NULL,                           -- 게시글제목
-    `post_type` VARCHAR(10) NOT NULL    COMMENT '문의사항/공지사항',         -- 게시글유형                    
-    `post_contents` TEXT    NOT NULL,                                   -- 게시글내용
-    `post_date` DATETIME    NOT NULL DEFAULT CURRENT_TIMESTAMP,         -- 게시글작성일
-    `report_category_id`    INT COMMENT '문의카테고리의 문의카테고리ID',        -- 문의카테고리ID
-    `user_id`   VARCHAR(50) NOT NULL    COMMENT '회원의 회원ID',           -- 작성자ID
-    `image_id`  INT COMMENT '이미지의 이미지ID',                            -- 이미지ID
-    `post_deleted`  BOOLEAN NOT NULL    DEFAULT false                   -- 게시글삭제여부
-);
-
--- 문의카테고리(report_category) 테이블 생성
-CREATE TABLE `report_category` (
-    `report_category_id`    INT NOT NULL AUTO_INCREMENT PRIMARY KEY,      -- 문의카테고리ID
-    `report_type`   VARCHAR(40) NOT NULL    UNIQUE comment '스팸/욕설 등'    -- 문의종류
-);
-
--- 초대장템플릿좋아요관리(invitation_template_like) 테이블 생성
-CREATE TABLE `invitation_template_like` (
-    `invitation_template_id`    INT NOT NULL COMMENT '초대장템플릿의 초대장템플릿ID',    -- 초대장템플릿ID
-    `user_id`   VARCHAR(30) NOT NULL    COMMENT '회원의 회원ID'                     -- 회원ID
-);
-
--- 회원(user) 테이블 생성
-CREATE TABLE `user` (
-    `user_id`   VARCHAR(50) NOT NULL    COMMENT '이메일 형식',                                   -- 회원ID
-    `user_pw`   VARCHAR(20) NOT NULL,                                                         -- 비밀번호
-    `user_name` VARCHAR(12) NOT NULL,                                                         -- 회원이름
-    `user_phone`    VARCHAR(13) NOT NULL,                                                     -- 전화번호
-    `total_price`   INT NOT NULL    DEFAULT 0   COMMENT '결제 금액에 대한 총 합',                  -- 누적결제금액
-    `user_withdraw` DATETIME    NULL,                                                         -- 탈퇴일자
-    `grade_name`    VARCHAR(10) NOT NULL    DEFAULT '일반회원' COMMENT '일반회원/운영자 등',         -- 등급이름
-    `user_status`   VARCHAR(20) NOT NULL    DEFAULT '활성화'   COMMENT '활성화/계정정지/탈퇴 등',     -- 회원상태
-    `user_nickname` VARCHAR(15) NOT NULL    UNIQUE                                            -- 닉네임
-);
-
--- 답변(reply) 테이블 생성
-CREATE TABLE `reply` (
-    `reply_id`  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,                    -- 답변ID
-    `reply_contents`    TEXT    NOT NULL,                                   -- 답변내용
-    `reply_title`   VARCHAR(100)    NOT NULL,                               -- 답변제목
-    `user_id`   VARCHAR(50) NOT NULL    COMMENT '회원의 회원ID',               -- 관리자ID
-    `post_id`   INT NOT NULL COMMENT '게시글의 게시글ID',                       -- 게시글ID
-    `reply_deleted` BOOLEAN NOT NULL    DEFAULT false COMMENT 'true(삭제)'   -- 답변삭제여부
+CREATE TABLE `PROJECT_TEAM`
+(
+    `PROJECT_TEAM_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `MAX_MEMBER`    INTEGER NOT NULL,
+    `CURRENT_MEMBER`    INTEGER NOT NULL,
+    `TEAM_NAME`    VARCHAR(50) NOT NULL,
+    `ADDED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `IS_ACTIVE`    BOOLEAN DEFAULT FALSE NOT NULL,
+ PRIMARY KEY ( `PROJECT_TEAM_ID` )
 );
 
 
-ALTER TABLE `grade` ADD CONSTRAINT `PK_GRADE` PRIMARY KEY (
-    `grade_name`
+CREATE TABLE `NOTICE`
+(
+    `NOTICE_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `POSTED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+ PRIMARY KEY ( `NOTICE_ID` )
 );
 
-ALTER TABLE `present_payment` ADD CONSTRAINT `PK_PRESENT_PAYMENT` PRIMARY KEY (
-    `payment_id`,
-    `present_id`
+
+CREATE TABLE `REPLY`
+(
+    `REPLY_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `POSTED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `COMMENT_ID`    INTEGER NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+ PRIMARY KEY ( `REPLY_ID` )
 );
 
-ALTER TABLE `invitation_payment` ADD CONSTRAINT `PK_INVITATION_PAYMENT` PRIMARY KEY (
-    `payment_id`,
-    `invitation_template_id`
+
+CREATE TABLE `PERSONAL_LINK`
+(
+    `URL`    VARCHAR(255) NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+ PRIMARY KEY ( `URL`,`MEMBER_ID` )
 );
 
-ALTER TABLE `user_invite` ADD CONSTRAINT `PK_USER_INVITE` PRIMARY KEY (
-    `event_id`,
-    `user_id`
+
+CREATE TABLE `PROJECT_MEMBER`
+(
+    `PROJECT_MEMBER_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `PROJECT_TEAM_ID`    INTEGER NOT NULL,
+    `MEMBER_CATEGORY`    VARCHAR(255) NOT NULL,
+ PRIMARY KEY ( `PROJECT_MEMBER_ID` )
 );
 
-ALTER TABLE `event_like` ADD CONSTRAINT `PK_EVENT_LIKE` PRIMARY KEY (
-    `event_id`,
-    `user_id`
+
+CREATE TABLE `PROJECT`
+(
+    `PROJECT_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `START_DATE`    VARCHAR(30) NOT NULL,
+    `END_DATE`    VARCHAR(30),
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `STATUS`    VARCHAR(20) NOT NULL,
+    `PROJECT_TEAM_ID`    INTEGER NOT NULL,
+    `PROJECT_MEMBER_ID`    INTEGER NOT NULL,
+    `IS_PUBLIC`    BOOLEAN DEFAULT TRUE NOT NULL,
+ PRIMARY KEY ( `PROJECT_ID` )
 );
 
-ALTER TABLE `invitation_template_like` ADD CONSTRAINT `PK_INVITATION_TEMPLATE_LIKE` PRIMARY KEY (
-    `invitation_template_id`,
-    `user_id`
+
+CREATE TABLE `ISSUE`
+(
+    `ISSUE_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `IS_CLOSED`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `POSTED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `CLOSED_DATE`    VARCHAR(30),
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `PROJECT_MEMBER_ID`    INTEGER NOT NULL,
+    `PROJECT_ID`    INTEGER NOT NULL,
+ PRIMARY KEY ( `ISSUE_ID` )
 );
 
-ALTER TABLE `user` ADD CONSTRAINT `PK_USER` PRIMARY KEY (
-    `user_id`
+
+CREATE TABLE `BOOKMARK`
+(
+    `BOOKMARK_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `IS_LIKE`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `IS_BOOKMARK`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `ADDED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `SEEKING_MEMBER_POST_ID`    INTEGER NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+ PRIMARY KEY ( `BOOKMARK_ID` )
 );
 
-ALTER TABLE `event` ADD CONSTRAINT `FK_event_category_TO_event_1` FOREIGN KEY (
-    `event_category_id`
-)
-REFERENCES `event_category` (
-    `event_category_id`
+
+CREATE TABLE `SCHEDULE`
+(
+    `SCHEDULE_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `START_DATE`    VARCHAR(30) NOT NULL,
+    `END_DATE`    VARCHAR(30),
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `PROGRESS`    FLOAT DEFAULT 0 NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `PROJECT_MEMBER_ID`    INTEGER NOT NULL,
+    `PROJECT_ID`    INTEGER NOT NULL,
+ PRIMARY KEY ( `SCHEDULE_ID` )
 );
 
-ALTER TABLE `event` ADD CONSTRAINT `FK_user_TO_event_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
+
+CREATE TABLE `POST`
+(
+    `POSTING_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `POSTED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `HITS`    INTEGER DEFAULT 0 NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+ PRIMARY KEY ( `POSTING_ID` )
 );
 
-ALTER TABLE `event` ADD CONSTRAINT `FK_invitation_template_TO_event_1` FOREIGN KEY (
-    `invitation_template_id`
-)
-REFERENCES `invitation_template` (
-    `invitation_template_id`
+
+CREATE TABLE `PROFILE`
+(
+    `PROFILE_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TILTLE`    VARCHAR(50) NOT NULL,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `TECH_STACK`    VARCHAR(255),
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+ PRIMARY KEY ( `PROFILE_ID` )
 );
 
-ALTER TABLE `comment` ADD CONSTRAINT `FK_event_TO_comment_1` FOREIGN KEY (
-    `event_id`
-)
-REFERENCES `event` (
-    `event_id`
+
+CREATE TABLE `COMMENT`
+(
+    `COMMENT_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `CONTENT`    LONGTEXT NOT NULL,
+    `POSTED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `COMMENT_CATEGORY`    VARCHAR(20) NOT NULL,
+    `POSTING_ID`    INTEGER,
+    `SEEKING_MEMBER_POST_ID`    INTEGER,
+    `ISSUE_ID`    INTEGER,
+ PRIMARY KEY ( `COMMENT_ID` )
 );
 
-ALTER TABLE `comment` ADD CONSTRAINT `FK_user_TO_comment_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
+
+CREATE TABLE `JOIN_WAITING_MEMBER`
+(
+    `JOIN_WAITING_MEMBER_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `PROJECT_TEAM_ID`    INTEGER NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `CATEGORY`    VARCHAR(10) NOT NULL,
+    `JOIN_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+ PRIMARY KEY ( `JOIN_WAITING_MEMBER_ID` )
 );
 
-ALTER TABLE `comment` ADD CONSTRAINT `FK_image_TO_comment_1` FOREIGN KEY (
-    `image_id`
-)
-REFERENCES `image` (
-    `image_id`
+
+CREATE TABLE `MEMBER`
+(
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `NAME`    VARCHAR(30) NOT NULL,
+    `NICKNAME`    VARCHAR(20),
+    `PASSWORD`    VARCHAR(20) NOT NULL,
+    `EMAIL`    VARCHAR(40),
+    `PHONE_NUM`    VARCHAR(11),
+    `ADDRESS`    VARCHAR(255),
+    `BIRTHDAY`    VARCHAR(30),
+    `SIGN_UP_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `IS_WITHDRAW`    BOOLEAN DEFAULT FALSE NOT NULL,
+ PRIMARY KEY ( `MEMBER_ID` )
 );
 
-ALTER TABLE `payment` ADD CONSTRAINT `FK_user_TO_payment_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
+
+CREATE TABLE `SEEKING_MEMBER_POST`
+(
+    `SEEKING_MEMBER_POST_ID`    INTEGER NOT NULL AUTO_INCREMENT,
+    `TITLE`    VARCHAR(50) NOT NULL,
+    `SEEKING_MEMBER`    INTEGER NOT NULL,
+    `START_DATE`    VARCHAR(30) NOT NULL,
+    `END_DATE`    VARCHAR(30),
+    `TECH_STACK`    VARCHAR(255),
+    `CONTENT`    LONGTEXT NOT NULL,
+    `LAST_MODIFIED_DATE`    VARCHAR(30) DEFAULT NOW() NOT NULL,
+    `IS_SEEKING`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `MEMBER_ID`    VARCHAR(20) NOT NULL,
+    `IS_DELETED`    BOOLEAN DEFAULT FALSE NOT NULL,
+    `PROJECT_ID`    INTEGER NOT NULL,
+ PRIMARY KEY ( `SEEKING_MEMBER_POST_ID` )
 );
 
-ALTER TABLE `invitation_template` ADD CONSTRAINT `FK_image_TO_invitation_template_1` FOREIGN KEY (
-    `image_id`
-)
-REFERENCES `image` (
-    `image_id`
-);
 
-ALTER TABLE `present` ADD CONSTRAINT `FK_event_TO_present_1` FOREIGN KEY (
-    `event_id`
-)
-REFERENCES `event` (
-    `event_id`
-);
 
-ALTER TABLE `guest_list` ADD CONSTRAINT `FK_event_TO_guest_list_1` FOREIGN KEY (
-    `event_id`
-)
-REFERENCES `event` (
-    `event_id`
-);
+ALTER TABLE `REPLY`
+ ADD CONSTRAINT `REPLY_FK` FOREIGN KEY ( `COMMENT_ID` )
+ REFERENCES `COMMENT` (`COMMENT_ID` );
 
-ALTER TABLE `present_payment` ADD CONSTRAINT `FK_payment_TO_present_payment_1` FOREIGN KEY (
-    `payment_id`
-)
-REFERENCES `payment` (
-    `payment_id`
-);
+ALTER TABLE `REPLY`
+ ADD CONSTRAINT `REPLY_FK1` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
 
-ALTER TABLE `present_payment` ADD CONSTRAINT `FK_present_TO_present_payment_1` FOREIGN KEY (
-    `present_id`
-)
-REFERENCES `present` (
-    `present_id`
-);
 
-ALTER TABLE `invitation_payment` ADD CONSTRAINT `FK_payment_TO_invitation_payment_1` FOREIGN KEY (
-    `payment_id`
-)
-REFERENCES `payment` (
-    `payment_id`
-);
 
-ALTER TABLE `invitation_payment` ADD CONSTRAINT `FK_invitation_template_TO_invitation_payment_1` FOREIGN KEY (
-    `invitation_template_id`
-)
-REFERENCES `invitation_template` (
-    `invitation_template_id`
-);
+ALTER TABLE `PERSONAL_LINK`
+ ADD CONSTRAINT `PERSONAL_LINK_FK` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
 
-ALTER TABLE `refund` ADD CONSTRAINT `FK_payment_TO_refund_1` FOREIGN KEY (
-    `payment_id`
-)
-REFERENCES `payment` (
-    `payment_id`
-);
 
-ALTER TABLE `user_invite` ADD CONSTRAINT `FK_event_TO_user_invite_1` FOREIGN KEY (
-    `event_id`
-)
-REFERENCES `event` (
-    `event_id`
-);
 
-ALTER TABLE `user_invite` ADD CONSTRAINT `FK_user_TO_user_invite_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
-);
+ALTER TABLE `PROJECT_MEMBER`
+ ADD CONSTRAINT `PROJECT_MEMBER_FK` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
 
-ALTER TABLE `event_like` ADD CONSTRAINT `FK_event_TO_event_like_1` FOREIGN KEY (
-    `event_id`
-)
-REFERENCES `event` (
-    `event_id`
-);
+ALTER TABLE `PROJECT_MEMBER`
+ ADD CONSTRAINT `PROJECT_MEMBER_FK1` FOREIGN KEY ( `PROJECT_TEAM_ID` )
+ REFERENCES `PROJECT_TEAM` (`PROJECT_TEAM_ID` );
 
-ALTER TABLE `event_like` ADD CONSTRAINT `FK_user_TO_event_like_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
-);
 
-ALTER TABLE `post` ADD CONSTRAINT `FK_report_category_TO_post_1` FOREIGN KEY (
-    `report_category_id`
-)
-REFERENCES `report_category` (
-    `report_category_id`
-);
 
-ALTER TABLE `post` ADD CONSTRAINT `FK_user_TO_post_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
-);
+ALTER TABLE `PROJECT`
+ ADD CONSTRAINT `PROJECT_FK` FOREIGN KEY ( `PROJECT_TEAM_ID` )
+ REFERENCES `PROJECT_TEAM` (`PROJECT_TEAM_ID` );
 
-ALTER TABLE `post` ADD CONSTRAINT `FK_image_TO_post_1` FOREIGN KEY (
-    `image_id`
-)
-REFERENCES `image` (
-    `image_id`
-);
+ALTER TABLE `PROJECT`
+ ADD CONSTRAINT `PROJECT_FK1` FOREIGN KEY ( `PROJECT_MEMBER_ID` )
+ REFERENCES `PROJECT_MEMBER` (`PROJECT_MEMBER_ID` );
 
-ALTER TABLE `invitation_template_like` ADD CONSTRAINT `FK_invitation_template_TO_invitation_template_like_1` FOREIGN KEY (
-    `invitation_template_id`
-)
-REFERENCES `invitation_template` (
-    `invitation_template_id`
-);
 
-ALTER TABLE `invitation_template_like` ADD CONSTRAINT `FK_user_TO_invitation_template_like_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
-);
 
-ALTER TABLE `user` ADD CONSTRAINT `FK_grade_TO_user_1` FOREIGN KEY (
-    `grade_name`
-)
-REFERENCES `grade` (
-    `grade_name`
-);
+ALTER TABLE `ISSUE`
+ ADD CONSTRAINT `ISSUE_FK` FOREIGN KEY ( `PROJECT_MEMBER_ID` )
+ REFERENCES `PROJECT_MEMBER` (`PROJECT_MEMBER_ID` );
 
-ALTER TABLE `reply` ADD CONSTRAINT `FK_user_TO_reply_1` FOREIGN KEY (
-    `user_id`
-)
-REFERENCES `user` (
-    `user_id`
-);
+ALTER TABLE `ISSUE`
+ ADD CONSTRAINT `ISSUE_FK1` FOREIGN KEY ( `PROJECT_ID` )
+ REFERENCES `PROJECT` (`PROJECT_ID` );
 
-ALTER TABLE `reply` ADD CONSTRAINT `FK_post_TO_reply_1` FOREIGN KEY (
-    `post_id`
-)
-REFERENCES `post` (
-    `post_id`
-);
+
+
+ALTER TABLE `BOOKMARK`
+ ADD CONSTRAINT `BOOKMARK_FK` FOREIGN KEY ( `SEEKING_MEMBER_POST_ID` )
+ REFERENCES `SEEKING_MEMBER_POST` (`SEEKING_MEMBER_POST_ID` );
+
+ALTER TABLE `BOOKMARK`
+ ADD CONSTRAINT `BOOKMARK_FK1` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
+
+
+
+ALTER TABLE `SCHEDULE`
+ ADD CONSTRAINT `SCHEDULE_FK` FOREIGN KEY ( `PROJECT_MEMBER_ID` )
+ REFERENCES `PROJECT_MEMBER` (`PROJECT_MEMBER_ID` );
+
+ALTER TABLE `SCHEDULE`
+ ADD CONSTRAINT `SCHEDULE_FK1` FOREIGN KEY ( `PROJECT_ID` )
+ REFERENCES `PROJECT` (`PROJECT_ID` );
+
+
+
+ALTER TABLE `POST`
+ ADD CONSTRAINT `POST_FK` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
+
+
+
+ALTER TABLE `PROFILE`
+ ADD CONSTRAINT `PROFILE_FK` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
+
+
+
+ALTER TABLE `COMMENT`
+ ADD CONSTRAINT `COMMENT_FK` FOREIGN KEY ( `POSTING_ID` )
+ REFERENCES `POST` (`POSTING_ID` );
+
+ALTER TABLE `COMMENT`
+ ADD CONSTRAINT `COMMENT_FK1` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
+
+ALTER TABLE `COMMENT`
+ ADD CONSTRAINT `COMMENT_FK2` FOREIGN KEY ( `SEEKING_MEMBER_POST_ID` )
+ REFERENCES `SEEKING_MEMBER_POST` (`SEEKING_MEMBER_POST_ID` );
+
+ALTER TABLE `COMMENT`
+ ADD CONSTRAINT `COMMENT_FK3` FOREIGN KEY ( `ISSUE_ID` )
+ REFERENCES `ISSUE` (`ISSUE_ID` );
+
+
+
+ALTER TABLE `JOIN_WAITING_MEMBER`
+ ADD CONSTRAINT `JOIN_WAITING_MEMBER_FK` FOREIGN KEY ( `PROJECT_TEAM_ID` )
+ REFERENCES `PROJECT_TEAM` (`PROJECT_TEAM_ID` );
+
+ALTER TABLE `JOIN_WAITING_MEMBER`
+ ADD CONSTRAINT `JOIN_WAITING_MEMBER_FK1` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
+
+
+
+ALTER TABLE `SEEKING_MEMBER_POST`
+ ADD CONSTRAINT `SEEKING_MEMBER_POST_FK` FOREIGN KEY ( `MEMBER_ID` )
+ REFERENCES `MEMBER` (`MEMBER_ID` );
 ```
 </details>
 
-## 📃 테스트케이스 문서
 
-[테스트케이스 바로가기](https://docs.google.com/spreadsheets/d/1tX0TRsPvECfPtoJETw0iKIp1Ami4aau9lG6vSYuidu4/edit#gid=427773154)
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/테스트케이스_수정.png"/></p>
 
-## ✒️ 주요 쿼리
+## Mybatis 
+
+### 1. 회원 조회
 <details>
-	<summary><b>이벤트RSVP UPDATE</b></summary>
-         <p><img src="PNG/Captures/event/이벤트RSVP_UPDATE.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트RSVP_UPDATE_캡쳐.PNG"/></p>
+	<summary><b>회원 조회 기능</b></summary>
+         <p><img src=""/></p>
+	 <p><img src=""/></p>
 	</details>
-	<details>
-         <summary><b>이벤트 참석자 명단</b></summary>
-         <p><img src="PNG/Captures/event/이벤트참석자명단.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트_참석자_명단3.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트참석자명단_캡쳐.PNG"/></p>
-	</details>
-	<details>
-         <summary><b>이벤트발송 업데이트</b></summary>
-         <p><img src="PNG/Captures/event/이벤트발송_업데이트.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트발송_업데이트_캡쳐.PNG"/></p>
-	</details>
-	<details>      
-	<summary><b>이벤트 좋아요</b></summary>
-         <p><img src="PNG/Captures/event/이벤트 좋아요 트리거 생성.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트 좋아요 실행.gif"/></p>
-	 <p><img src="PNG/Captures/event/이벤트좋아요_캡쳐.PNG"/></p>
-	</details>
-	<details>
-	<summary><b>회원가입</b></summary>
-         <p><img src="PNG/Captures/user/회원가입_기능4.gif"/></p>
-	<p><img src="PNG/Captures/user/회원가입_기능1.png"/></p>
-	<p><img src="PNG/Captures/user/회원가입_기능2.png"/></p>
-	<p><img src="PNG/Captures/user/회원가입_기능3.png"/></p>
-	</details>
- 	<details>
-        <summary><b>회원등급 업데이트</b></summary>
-             <p><img src="PNG/Captures/user/회원등급_업데이트.gif"/></p>
-	     <p><img src="PNG/Captures/user/회원등급_업데이트_캡쳐.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>회원등급별 할인 적용 금액 조회</b></summary>
-             <p><img src="PNG/Captures/user/회원등급별_할인_적용_금액_조회3.gif"/></p>
-		<p><img src="PNG/Captures/user/회원등급별_할인_적용_금액_조회1.png"/></p>
-		<p><img src="PNG/Captures/user/회원등급별_할인_적용_금액_조회2.png"/></p>
-        </details>
-        <details>
-        <summary><b>회원등급별 할인적용</b></summary>
-             <p><img src="PNG/Captures/user/회원등급별_할인적용.gif"/></p>
-	     <p><img src="PNG/Captures/user/회원등급별_할인적용_캡쳐.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>회원별작성게시글확인</b></summary>
-             <p><img src="PNG/Captures/user/회원별작성게시글확인.gif"/></p>
-	     <p><img src="PNG/Captures/user/회원별작성게시글확인_캡쳐.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>선물별 결제 회원 확인</b></summary>
-             <p><img src="PNG/Captures/present/선물별_결제_회원_확인3.gif"/></p>
-	     <p><img src="PNG/Captures/present/선물별_결제_회원_확인1.png"/></p>
-	     <p><img src="PNG/Captures/present/선물별_결제_회원_확인2.png"/></p>
-        </details>
-        <details>
-        <summary><b>선물결제</b></summary>
-             <p><img src="PNG/Captures/payment/선물결제.gif"/></p>    
-	     <p><img src="PNG/Captures/payment/선물결제_캡쳐.PNG"/></p>
-	</details>
-        <details>
-        <summary><b>초대장템플릿 결제</b></summary>
-             <p><img src="PNG/Captures/payment/초대장템플릿__결제.gif"/></p>
-	     <p><img src="PNG/Captures/payment/초대장템플릿_결제1.PNG"/></p>
-	     <p><img src="PNG/Captures/payment/초대장템플릿_결제2.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>사용가능한 초대장템플릿 확인</b></summary>
-             <p><img src="PNG/Captures/invitation_template/사용가능한_초대장템플릿확인.gif"/></p>
-	     <p><img src="PNG/Captures/invitation_template/사용가능한_초대장템플릿확인_캡쳐.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>초대장템플릿 인덱스생성</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_인덱스생성.gif"/></p>
-	     <p><img src="PNG/Captures/invitation_template/초대장템플릿_인덱스생성_캡쳐.PNG"/></p>
-        </details>
-        <details>
-        <summary><b>초대장 템플릿 환불</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_환불3.gif"/></p>
-	     <p><img src="PNG/Captures/invitation_template/초대장템플릿_환불1.png"/></p>
-	     <p><img src="PNG/Captures/invitation_template/초대장템플릿_환불2.png"/></p>
-        </details>
 </details> 
 
 
-## 🏁 테스트케이스 
+### 2. 프로젝트 조회
 <details>
-<summary><b>🕵️‍♀️회원</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 회원가입</b></summary>
-         <p><img src="PNG/Captures/user/회원_회원가입1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_회원가입2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>2. 비밀번호 찾기</b></summary>
-         <p><img src="PNG/Captures/user/회원_비밀번호_찾기1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_비밀번호_찾기2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>3. 회원정보 수정</b></summary>
-         <p><img src="PNG/Captures/user/회원_회원정보_수정1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_회원정보_수정2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>4. 회원 탈퇴</b></summary>
-         <p><img src="PNG/Captures/user/회원_회원_탈퇴1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_회원_탈퇴2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>5. 초대 내역 확인</b></summary>
-         <p><img src="PNG/Captures/user/회원_초대내역확인_초대받았을때1.png"/></p>
-         <p><img src="PNG/Captures/user/회원_초대내역확인_초대받았을때2.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_초대내역확인_초대했을때1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_초대내역확인_초대했을때2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>6. 회원 상태 관리</b></summary>
-         <p><img src="PNG/Captures/user/회원_회원상태관리1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_회원상태관리2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>7. 회원ID 검색</b></summary>
-         <p><img src="PNG/Captures/user/회원_회원ID검색1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_회원ID검색2.png"/></p>
-         </details>				 
-	 <details>
-         <summary><b>8. 닉네임 검색</b></summary>
-         <p><img src="PNG/Captures/user/회원_닉네임검색1.png"/></p>
-	 <p><img src="PNG/Captures/user/회원_닉네임검색2.png"/></p>
-         </details>
-    </div>
-</details>
+	<summary><b>프로젝트 조회 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
 
-***
+
+### 3. 프로젝트 조회
 <details>
-<summary><b>✨이벤트</b></summary>
-	<div>
-         <details>
-         <summary><b>1. 이벤트 삭제</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트삭제1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트삭제2.png"/></p>
-         </details>
-         <details>
-         <summary><b>2. 이벤트 공개</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트공개1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트공개2.png"/></p>
-         </details>
-         <details>
-         <summary><b>3. 이벤트 비공개</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트비공개1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트비공개2.png"/></p>
-         </details>
-         <details>
-         <summary><b>4. 이벤트 좋아요</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요2.png"/></p>
-         </details>
-         <details>
-         <summary><b>5. 이벤트 좋아요 취소</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요취소1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요취소2.png"/></p>
-         </details>
-         <details>
-         <summary><b>6. 이벤트 댓글 작성</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글작성1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글작성2.png"/></p>
-         </details>
-         <details>
-         <summary><b>7. 이벤트 댓글 수정</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글수정1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글수정2.png"/></p>
-         </details>
-         <details>
-         <summary><b>8. 이벤트 댓글 삭제</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글삭제1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트댓글삭제2.png"/></p>
-         </details>
-         <details>
-         <summary><b>9. 이벤트 좋아요</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트좋아요2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>10. 회원별 작성 이벤트 댓글 조회</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_회원별작성이벤트댓글조회1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_회원별작성이벤트댓글조회2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>11. 이벤트 주최 회원 닉네임 확인</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트주최회원닉네임확인1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트주최회원닉네임확인2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>12. 이벤트카테고리별 이벤트 목록 확인</b></summary>
-         <p><img src="PNG/Captures/event/이벤트_이벤트카테고리별이벤목록확인1.png"/></p>
-         <p><img src="PNG/Captures/event/이벤트_이벤트카테고리별이벤트목록확인2.png"/></p>
-         </details>
-    </div>
-</details>
+	<summary><b>프로젝트 팀 조회 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
 
-***
+
+### 4. 모집글 조회
 <details>
-<summary><b>💸결제</b></summary>
-    <div>
-	 <details>
-         <summary><b>1. 결제하기</b></summary>
-         <p><img src="PNG/Captures/payment/결제_결제하기1.png"/></p>
-         <p><img src="PNG/Captures/payment/결제_결제하기2.png"/></p>
-         </details>
-	 <details>
-         <summary><b>2. 결제내역 확인</b></summary>
-         <p><img src="PNG/Captures/payment/결제_결제내역확인1.png"/></p>
-         <p><img src="PNG/Captures/payment/결제_결제내역확인2.png"/></p>
-         </details>
-    </div>
-</details>
+	<summary><b>모집글글 조회 기능</b></summary>
+         	<p><img src=""/></p>
+	 	<p><img src=""/></p>
+	</details>
+</details> 
 
-***
+
+
+## JPA
+
+### 1. 회원
+
+
+
+## 단위테스트 결과 보고서
+
+[단위테스트 결과보고서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1417392135)
+<p align="center"><img src=""/></p>
+
+## 주요 테스트 결과
 <details>
-<summary><b>💱환불</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 환불 신청</b></summary>
-         <p><img src="PNG/Captures/refund/환불_환불신청1.png"/></p>
-	 <p><img src="PNG/Captures/refund/환불_환불신청2.png"/></p>
-         </details>
-         <details>
-         <summary><b>2. 환불 완료</b></summary>
-         <p><img src="PNG/Captures/refund/환불_환불완료1.png"/></p>
-	 <p><img src="PNG/Captures/refund/환불_환불완료2.png"/></p>
-         </details>
-         <details>
-         <summary><b>3. 환불내역 확인</b></summary>
-         <p><img src="PNG/Captures/refund/환불_환불내역확인1.png"/></p>
-	 <p><img src="PNG/Captures/refund/환불_환불내역확인12.png"/></p>
-         </details>
-         <details>
-         <summary><b>4. 초대장템플릿별 환불내역 확인</b></summary>
-         <p><img src="PNG/Captures/refund/환불_초대장템플릿별환불내역확인1.png"/></p>
-	 <p><img src="PNG/Captures/refund/환불_초대장템플릿별환불내역확인2.png"/></p>
-         </details>
-         <details>
-         <summary><b>5. 선물별 환불 내역 확인</b></summary>
-         <p><img src="PNG/Captures/refund/환불_선물별환불내역확인1.png"/></p>
-	 <p><img src="PNG/Captures/refund/환불_선물별환불내역확인2.png"/></p>
-         </details>
-    </div>
-</details>
-
-***
-
-<details>
-<summary><b>📮초대장템플릿</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 초대장템플릿 업로드</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿 업로드2.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿 업로드.png"/></p>
-        </details>
-        <details>
-        <summary><b>2. 초대장템플릿 검색</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿검색.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿검색2.png"/></p>
-        </details>
-        <details>
-        <summary><b>3. 초대장템플릿 구매가능 조회</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿구매가능.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿구매가능2.png"/></p>
-        </details>
-        <details>
-        <summary><b>4. 초대장템플릿 목록확인</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿목록확인.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿목록확인2.png"/></p>
-        </details>
-        <details>
-        <summary><b>5. 초대장템플릿 삭제</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿삭제.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿삭제2.png"/></p>
-        </details>
-        <details>
-        <summary><b>6. 초대장템플릿 수정</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿수정.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿수정2.png"/></p>
-        </details>
-        <details>
-        <summary><b>7. 초대장템플릿 좋아요</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿좋아요.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿좋아요2.png"/></p>
-        </details>
-        <details>
-        <summary><b>8. 초대장템플릿 좋아요취소</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿좋아요취소.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿좋아요취소2.png"/></p>
-        </details>
-        <details>
-        <summary><b>9. 초대장템플릿 추천순정렬</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿추천순정렬.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿추천순정렬2.png"/></p>
-        </details>
-        <details>
-      <summary><b>10. 초대장템플릿 카테고리별 조회</b></summary>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿카테고리별.png"/></p>
-             <p><img src="PNG/Captures/invitation_template/초대장템플릿_초대장템플릿카테고리별2.png"/></p>
-        </details>
-</details>
-
-***
-
-<details>
-<summary><b>🎁선물</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 선물 등록</b></summary>
-             <p><img src="PNG/Captures/present/선물_선물등록.png"/></p>
-             <p><img src="PNG/Captures/present/선물_선물등록2.png"/></p>
-        </details>
-        <details>
-        <summary><b>2. 선물 모인금액 확인</b></summary>
-             <p><img src="PNG/Captures/present/선물_선물모인금액확인.png"/></p>
-             <p><img src="PNG/Captures/present/선물_선물모인금액확인2.png"/></p>
-        </details>
-    </div>
-</details>
-
-***
-<details>
-<summary><b>🗒️게스트명단</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 게스트명단 확인</b></summary>
-         <p><img src="PNG/Captures/guest_list/게스트명단_확인1.png"/></p>
-         <p><img src="PNG/Captures/guest_list/게스트명단_확인2.png"/></p>
-         </details>
-    </div>
-</details>
-
-***
-<details>
-<summary><b>✍️게시글</b></summary>
-    <div>
-         <details>
-         <summary><b>1. 게시글 문의사항 작성</b></summary>
-             <p><img src="PNG/Captures/post/게시글_문의사항_작성_1.png"/></p>
-             <p><img src="PNG/Captures/post/게시글_문의사항_작성_2.png"/></p>
-        </details>
-        <details>
-        <summary><b>2. 게시글 문의사항 수정</b></summary>
-             <p><img src="PNG/Captures/post/문의사항 수정1.png"/></p>
-             <p><img src="PNG/Captures/post/문의사항 수정2.png"/></p>
-        </details>
-        <details>
-        <summary><b>3. 게시글 문의사항 답변</b></summary>
-             <p><img src="PNG/Captures/post/문의사항 답변1.png"/></p>
-             <p><img src="PNG/Captures/post/문의사항 답변2.png"/></p>
-        </details>
-        <details>
-        <summary><b>4. 게시글 문의사항 답변 수정</b></summary>
-             <p><img src="PNG/Captures/post/문의사항 답변 수정1.png"/></p>
-             <p><img src="PNG/Captures/post/문의사항 답변 수정2.png"/></p>
-        </details>
-        <details>
-        <summary><b>5. 게시글 문의사항별 답변 확인</b></summary>
-             <p><img src="PNG/Captures/post/문의사항별 답변 확인1.png"/></p>
-             <p><img src="PNG/Captures/post/문의사항별 답변 확인2.png"/></p>
-        </details>
-        <details>
-        <summary><b>6. 게시글 공지사항 작성</b></summary>
-             <p><img src="PNG/Captures/post/공지사항 작성1.png"/></p>
-             <p><img src="PNG/Captures/post/공지사항 작성2.png"/></p>
-        </details>
-        <details>
-        <summary><b>7. 게시글 공지사항 삭제</b></summary>
-             <p><img src="PNG/Captures/post/공지사항 삭제1.png"/></p>
-             <p><img src="PNG/Captures/post/공지사항 삭제2.png"/></p>
-        </details>
-        <details>
-        <summary><b>8. 게시글 공지사항 수정</b></summary>
-             <p><img src="PNG/Captures/post/공지사항 수정1.png"/></p>
-             <p><img src="PNG/Captures/post/공지사항 수정2.png"/></p>
-        </details>
-</details>
+	<summary><b>회원 ID로 회원이 작성한 이슈 조회</b></summary>
+         <p><img src=""/></p>
+	 <p><img src=""/></p>
+	</details>
+</details> 
 
 ## 👫 회고
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
