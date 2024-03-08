@@ -6,11 +6,17 @@
 
 ###  팀원
 
-<div align="center">
-    
-|[장민석](https://github.com/ms1011) | [최종찬] | [이재원] | [조예린] | [지현근] |
+- 팀원 : **최종찬**
+[<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/CJC0512)
+- 팀원 : **이재원**
+[<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jlee38266)
+- 팀원 : **장민석**
+[<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/ms1011)
+- 팀원 : **조예린**
+[<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/orlzlL)
+- 팀원 : **지현근**
+[<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jihyeongeun)
 
-</div>
 
 ##  프로젝트 개요
 
