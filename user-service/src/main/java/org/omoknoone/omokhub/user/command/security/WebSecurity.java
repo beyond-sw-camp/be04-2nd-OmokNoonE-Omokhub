@@ -39,7 +39,7 @@ public class WebSecurity {
         /* 설명. 로그인 시 추가할 내용 */
         AuthenticationManagerBuilder authenticationManagerBuilder =
                 http.getSharedObject(AuthenticationManagerBuilder.class);
-        // TODO. 여기 오류 발생! 해결할 것
+
         authenticationManagerBuilder.userDetailsService(memberService).passwordEncoder(bCryptPasswordEncoder);
 
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
