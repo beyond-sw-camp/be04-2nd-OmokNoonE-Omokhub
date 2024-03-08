@@ -62,4 +62,14 @@ public class SeekingMemberPostController {
 
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    /* 설명. 특정 회원이 작성한 모집글을 조회하여, 존재한다면 해당 모집글의 삭제 여부를 True로 변환하는 메소드 */
+    @PutMapping("/remove/member-id")
+    public ResponseEntity<Boolean> removeSeekingMemberPostByMemberId(
+            Map<String, String> memberId) {
+
+        seekingMemberPostService.removeSeekingMemberPostByMemberId(memberId.get("memberId"));
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(true);
+    }
 }

@@ -72,6 +72,21 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
         seekingMemberPostRepository.flush();
     }
 
+    @Override
+    public void removeSeekingMemberPostByMemberId(String memberId) {
+        List<SeekingMemberPost> seekingMemberPosts
+                = seekingMemberPostRepository.findSeekingMemberPostsByMemberId(memberId);
+
+        if(seekingMemberPosts.isEmpty()){
+           throw new IllegalArgumentException(memberId + "아이디의 유저가 작성한 모집글이 존재하지 않음");
+        }
+
+        for (SeekingMemberPost seekingMemberPost : seekingMemberPosts) {
+            seekingMemberPost.setIsDeleted(true);
+        }
+        seekingMemberPostRepository.flush();
+    }
+
     private void techStackToString(SeekingMemberPostDTO seekingMemberPostDTO, SeekingMemberPost seekingMemberPost) {
         List<String> techStackList = seekingMemberPostDTO.getTechStack();
 

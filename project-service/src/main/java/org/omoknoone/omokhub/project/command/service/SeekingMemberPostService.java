@@ -8,4 +8,7 @@ public interface SeekingMemberPostService {
     int modify(SeekingMemberPostDTO seekingMemberPostDTO);
 
     void removeSeekingMemberPost(int seekingMemberPostId);
+
+    void removeSeekingMemberPostByMemberId(String memberId);
+
 }
