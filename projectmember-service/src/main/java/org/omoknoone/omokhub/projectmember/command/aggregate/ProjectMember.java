@@ -48,6 +48,11 @@ public class ProjectMember {
         return memberCategory;
     }
 
+
+    public void setMemberCategory(String memberCategory) {
+        this.memberCategory = memberCategory;
+    }
+
     @Override
     public String toString() {
         return "ProjectMember{" +
