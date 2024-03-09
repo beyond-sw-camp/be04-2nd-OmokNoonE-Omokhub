@@ -6,7 +6,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://192.168.0.21:58761/eureka
+      defaultZone: http://172.30.1.28:58761/eureka
 
 spring:
   application:
@@ -20,16 +20,29 @@ spring:
             - Path=/user-service/**
           filters:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-#            - Method=GET
+
+        # 로그인 토큰 권한 설정
+        - id: user-service
+          uri: lb://OMOK-USER-SERVICE
+          predicates:
+            - Path=/user-service/login
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
+
         - id: project-service
           uri: lb://OMOK-PROJECT-SERVICE
           predicates:
             - Path=/project-service/**
           filters:
-#            - AddRequestHeader=project-request, project-request-header
-#            - AddResponseHeader=project-response, project-response-header
             - RewritePath=/project-service/(?<segment>.*), /$\{segment}
-#            - AuthorizationHeaderFilter
+
+        - id: projectmember-service
+          uri: lb://OMOK-PROJECTMEMBER-SERVICE
+          predicates:
+            - Path=/projectmember-service/**
+          filters:
+            - RewritePath=/projectmember-service/(?<segment>.*), /$\{segment}
 
 token:
   secret: iW50hkbOkPd92kEi4Z+hdBtNlGoaUwI0Aa9UY+Fb5jZyQK7Sm1dbEIaRauzhHyu6NVOT6bUZwXk3tOhiBuggnA==
