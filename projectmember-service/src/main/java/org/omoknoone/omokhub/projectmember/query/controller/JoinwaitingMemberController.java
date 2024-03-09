@@ -3,7 +3,7 @@ package org.omoknoone.omokhub.projectmember.query.controller;
 import org.modelmapper.ModelMapper;
 import org.omoknoone.omokhub.projectmember.query.dto.WaitingAndMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.service.JoinwaitingMemberService;
-import org.omoknoone.omokhub.user.query.dto.MemberDTO;
+//import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
