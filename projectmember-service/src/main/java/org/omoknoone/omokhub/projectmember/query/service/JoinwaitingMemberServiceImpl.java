@@ -6,7 +6,7 @@ import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.dto.ResponseMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.dto.WaitingAndMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.repository.JoinwaitingMemberMapper;
-import org.omoknoone.omokhub.user.query.dto.MemberDTO;
+//import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,13 +89,13 @@ public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
         }
 
 
-    @Override
-    public void searchInviteOrApplyMember() {
-        List<MemberDTO> members = joinwaitingMemberMapper.selectInviteOrApplyMember();
-    }
-
-    @Override
-    public void sesarchMyCurrentApplyStatus() {
-        List<JoinwaitingMemberDTO> waitingstatus = joinwaitingMemberMapper.myCurrentApplyStatus();
-    }
+//    @Override
+//    public void searchInviteOrApplyMember() {
+//        List<MemberDTO> members = joinwaitingMemberMapper.selectInviteOrApplyMember();
+//    }
+//
+//    @Override
+//    public void sesarchMyCurrentApplyStatus() {
+//        List<JoinwaitingMemberDTO> waitingstatus = joinwaitingMemberMapper.myCurrentApplyStatus();
+//    }
 }
