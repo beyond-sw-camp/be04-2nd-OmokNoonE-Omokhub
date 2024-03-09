@@ -4,17 +4,18 @@ import org.apache.ibatis.mapping.Environment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurity {
 
-    private final Environment environment;
 
-    @Autowired
-    public WebSecurity(Environment environment) {
-        this.environment = environment;
+    public WebSecurity() {
+
     }
 
     /* 설명. 인가(Authorization)용 메소드 */
@@ -28,8 +29,9 @@ public class WebSecurity {
 
         http.authorizeHttpRequests((auth) -> auth
                 .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/project/seekingmemberposts/**")).permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/project-member/**")).permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/projectmember/**")).permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/project-teams/**")).permitAll()
 
                 .anyRequest().authenticated()
         );
