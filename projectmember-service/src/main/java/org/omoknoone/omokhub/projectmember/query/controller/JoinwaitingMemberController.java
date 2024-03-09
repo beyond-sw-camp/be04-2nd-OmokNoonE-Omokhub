@@ -48,6 +48,8 @@ public class JoinwaitingMemberController {
         return ResponseEntity.status(HttpStatus.OK).body(waitingMemberList);
     }
 
+
+
 //    @GetMapping("/projectmember/joinwaitingmembers/my_current_apply_status/member-id/{memberId}")
 //    public ResponseEntity<List<MemberDTO>>
 

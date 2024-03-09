@@ -9,13 +9,13 @@ public class WaitingAndMemberDTO {
 
     private String category;
     private LocalDateTime joinDate;
-    private List<MemberDTO> waitingMember;
+    private List<ResponseMemberDTO> waitingMember;
     private int joinWaitingMemberId;
 
     public WaitingAndMemberDTO() {
     }
 
-    public WaitingAndMemberDTO(String category, LocalDateTime joinDate, List<MemberDTO> waitingMember, int joinWaitingMemberId) {
+    public WaitingAndMemberDTO(String category, LocalDateTime joinDate, List<ResponseMemberDTO> waitingMember, int joinWaitingMemberId) {
         this.category = category;
         this.joinDate = joinDate;
         this.waitingMember = waitingMember;
@@ -38,11 +38,11 @@ public class WaitingAndMemberDTO {
         this.joinDate = joinDate;
     }
 
-    public List<MemberDTO> getWaitingMember() {
+    public List<ResponseMemberDTO> getWaitingMember() {
         return waitingMember;
     }
 
-    public void setWaitingMember(List<MemberDTO> waitingMember) {
+    public void setWaitingMember(List<ResponseMemberDTO> waitingMember) {
         this.waitingMember = waitingMember;
     }
 
@@ -54,5 +54,13 @@ public class WaitingAndMemberDTO {
         this.joinWaitingMemberId = joinWaitingMemberId;
     }
 
-
+    @Override
+    public String toString() {
+        return "WaitingAndMemberDTO{" +
+                "category='" + category + '\'' +
+                ", joinDate=" + joinDate +
+                ", waitingMember=" + waitingMember +
+                ", joinWaitingMemberId=" + joinWaitingMemberId +
+                '}';
+    }
 }
