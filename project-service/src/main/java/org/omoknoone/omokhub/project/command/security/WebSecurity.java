@@ -26,8 +26,8 @@ public class WebSecurity {
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
-        System.out.println("http = " + http);
-        System.out.println("http.toString() = " + http.toString());
+//        System.out.println("http = " + http);
+//        System.out.println("http.toString() = " + http.toString());
         /* 설명. JWT 로그인 처리를 할 것이므로 csrf는 신경쓸 필요가 없다. */
         http.csrf((csrf) -> csrf.disable());
 
@@ -35,6 +35,10 @@ public class WebSecurity {
                 .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/project/seekingmemberposts/**")).permitAll()
+
+                // swagger 적용 시 security http.authorizeHttpRequests에 추가
+                .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
 
                 .anyRequest().authenticated()
         );
