@@ -1,18 +1,19 @@
 package org.omoknoone.omokhub.user.query.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO;
 import org.omoknoone.omokhub.user.query.service.MemberService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactoryFriend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController("QueryMemberController")
 @RequestMapping("/user/members")
@@ -34,11 +35,27 @@ public class MemberController {
     }
 
     @GetMapping("/nickname/{nickname}")
-    public ResponseEntity<MemberNicknameDTO> searchMemberIdByNickname(@PathVariable String nickname) {
+    public ResponseEntity<MemberNicknameDTO> getMemberIdAndNicknameByNickname(@PathVariable String nickname) {
 
-        MemberNicknameDTO member = memberService.searchMemberIdByNickname(nickname);
+        MemberNicknameDTO member = memberService.getMemberIdAndNickname(nickname);
 
         return ResponseEntity.status(HttpStatus.OK).body(member);
+    }
+
+    @GetMapping("/memberid-nickname/{memberId}")
+    public ResponseEntity<MemberNicknameDTO> getMemberIdAndNicknameByMemberId(@PathVariable String memberId){
+
+        MemberNicknameDTO member = memberService.getMemberIdAndNickname(memberId);
+
+        return ResponseEntity.status(HttpStatus.OK).body(member);
+    }
+
+    @GetMapping("/api/member-id/{memberIds}")
+    public ResponseEntity<List<MemberNicknameDTO>> getMemberIdAndNicknameByMemberList(@PathVariable List<String> memberIds){
+
+        List<MemberNicknameDTO> members = memberService.getMemberIdAndNicknameByMemberList(memberIds);
+
+        return ResponseEntity.status(HttpStatus.OK).body(members);
     }
 
 }

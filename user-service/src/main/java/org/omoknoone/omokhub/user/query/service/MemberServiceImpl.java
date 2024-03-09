@@ -3,9 +3,12 @@ package org.omoknoone.omokhub.user.query.service;
 
 import org.omoknoone.omokhub.user.query.dto.MemberDTO;
 import org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO;
+import org.omoknoone.omokhub.user.query.entity.Member;
 import org.omoknoone.omokhub.user.query.repository.MemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service("QueryMemberServiceImpl")
 public class MemberServiceImpl implements MemberService {
@@ -27,8 +30,19 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public MemberNicknameDTO searchMemberIdByNickname(String nickname) {
+    public MemberNicknameDTO getMemberIdAndNickname(String attribute) {
 
-        return memberMapper.selectMemberIdByNickname(nickname);
+        MemberNicknameDTO memberNicknameDTO = new MemberNicknameDTO();
+        memberNicknameDTO.setMemberId(attribute);
+
+        Member member = memberMapper.selectMemberNicknameById(memberNicknameDTO);
+
+        return new MemberNicknameDTO(member.getMemberId(), member.getNickname());
+    }
+
+    @Override
+    public List<MemberNicknameDTO> getMemberIdAndNicknameByMemberList(List<String> memberList) {
+
+        return memberMapper.selectMemberIdAndNicknameByMemberList(memberList);
     }
 }

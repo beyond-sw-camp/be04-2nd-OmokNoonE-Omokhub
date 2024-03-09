@@ -51,12 +51,4 @@ public class SeekingMemberPostServiceImpl implements SeekingMemberPostService {
         return seekingMemberPost.getSeekingMemberPostId();
     }
 
-
-//    @Transactional
-//    public void signUp(SeekingMemberPostDTO newMember) {
-//        logger.info("[LOGGER] newMember: {}", newMember);
-//
-//        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-//        memberRepository.save(modelMapper.map(newMember, SeekingMemberPost.class));
-//    }
 }

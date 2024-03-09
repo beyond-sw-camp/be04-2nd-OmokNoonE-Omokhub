@@ -40,7 +40,8 @@
         GROUP BY A.MEMBER_ID
     </select>
 
-    <select id="selectMemberIdByNickname" parameterType="string" resultMap="memberNicknameResultMap">
+    <select id="selectMemberIdByNickname" parameterType="org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO"
+            resultMap="memberNicknameResultMap">
         SELECT
             MEMBER_ID,
             NICKNAME
@@ -48,7 +49,26 @@
             member
         WHERE
             IS_WITHDRAW = 0
+        <if test="nickname != null">
             AND NICKNAME = #{nickname}
+        </if>
+        <if test="memberId != null">
+            AND MEMBER_ID = #{memberId}
+        </if>
+    </select>
+
+    <select id="selectMemberIdAndNicknameByMemberList" resultMap="memberNicknameResultMap" parameterType="list">
+        SELECT
+            MEMBER_ID,
+            NICKNAME
+        FROM
+           member
+        WHERE
+            IS_WITHDRAW = 0
+            AND MEMBER_ID IN
+        <foreach collection="list" item="memberId" open="(" close=")" separator=", ">
+            #{memberId}
+        </foreach>
     </select>
 
 </mapper>
