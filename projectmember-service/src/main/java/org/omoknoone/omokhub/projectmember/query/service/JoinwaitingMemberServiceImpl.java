@@ -1,5 +1,6 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.omoknoone.omokhub.client.MemberServiceClient;
 import org.omoknoone.omokhub.projectmember.query.dto.JoinwaitingMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.dto.ResponseMemberDTO;
@@ -11,12 +12,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service("QueryJoinwaitingMemberServiceImpl")
+@Slf4j
 public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
 
     private final JoinwaitingMemberMapper joinwaitingMemberMapper;
@@ -56,14 +59,17 @@ public class JoinwaitingMemberServiceImpl implements JoinwaitingMemberService {
 
             List<WaitingAndMemberDTO> memberList = joinwaitingMemberMapper.selectWaitingMember(findprojectId);
 
+
             // memberId 리스트 추출
             List<String> memberIds = memberList.stream()
                     .flatMap(member -> member.getNicknameAndId().stream())
                     .map(ResponseMemberDTO::getMemberId)
                     .collect(Collectors.toList());
 
+//            Map<String, List<String>> memberListMap = new HashMap<>();
+            logger.info("user 클라이언트 호출 {} ", memberIds);
             // 배치 요청으로 멤버 정보 조회
-            List<ResponseMemberDTO> membersInfo = memberServiceClient.getUserInfos(memberIds.toString());
+            List<ResponseMemberDTO> membersInfo = memberServiceClient.getUserInfos(memberIds);
 
             // memberId를 키로 하고 ResponseMemberDTO를 값으로 하는 맵 생성
             Map<String, ResponseMemberDTO> membersInfoMap = membersInfo.stream()
