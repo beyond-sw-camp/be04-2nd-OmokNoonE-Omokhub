@@ -1,7 +1,6 @@
 package org.omoknoone.omokhub.project.command.vo;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class RequestSchedule {
     private int scheduleId;

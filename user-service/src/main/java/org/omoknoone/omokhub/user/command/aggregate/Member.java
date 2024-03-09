@@ -85,7 +85,7 @@ public class Member {
         return signUpDate;
     }
 
-    public boolean isWithdraw() {
+    public boolean getIsWithdraw() {
         return isWithdraw;
     }
 
@@ -123,6 +123,10 @@ public class Member {
 
     public void setSignUpDate(String signUpDate) {
         this.signUpDate = signUpDate;
+    }
+
+    public void setIsWithdraw(boolean withdraw) {
+        isWithdraw = withdraw;
     }
 
     @Override

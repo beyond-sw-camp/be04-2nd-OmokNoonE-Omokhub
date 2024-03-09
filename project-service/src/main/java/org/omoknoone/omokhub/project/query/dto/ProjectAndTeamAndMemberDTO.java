@@ -1,23 +1,19 @@
 package org.omoknoone.omokhub.project.query.dto;
 
-
-import org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO;
-import org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO;
-
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ProjectAndTeamAndMemberDTO {
 
     private int projectId;
     private String title;
-    private LocalTime startDate;
-    private LocalTime endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String status;
     private int projectTeamId;
     private int projectMemberId;
     private boolean isPublic;
-    private LocalTime lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
 
     /* 설명. ProjectTeamDTO           private String teamName; */
     private List<ProjectTeamDTO> projectTeams;
@@ -27,7 +23,7 @@ public class ProjectAndTeamAndMemberDTO {
     public ProjectAndTeamAndMemberDTO() {
     }
 
-    public ProjectAndTeamAndMemberDTO(int projectId, String title, LocalTime startDate, LocalTime endDate, LocalTime lastModifiedDate, String status, int projectTeamId, int projectMemberId, boolean isPublic, List<ProjectTeamDTO> projectTeams, List<ProjectMemberDTO> projectMembers) {
+    public ProjectAndTeamAndMemberDTO(int projectId, String title, LocalDateTime startDate, LocalDateTime endDate, LocalDateTime lastModifiedDate, String status, int projectTeamId, int projectMemberId, boolean isPublic, List<ProjectTeamDTO> projectTeams, List<ProjectMemberDTO> projectMembers) {
         this.projectId = projectId;
         this.title = title;
         this.startDate = startDate;
@@ -57,27 +53,27 @@ public class ProjectAndTeamAndMemberDTO {
         this.title = title;
     }
 
-    public LocalTime getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalTime startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalTime getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalTime endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
-    public LocalTime getLastModifiedDate() {
+    public LocalDateTime getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(LocalTime lastModifiedDate) {
+    public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 

@@ -5,7 +5,6 @@ import org.omoknoone.omokhub.project.command.dto.ScheduleDTO;
 import org.omoknoone.omokhub.project.command.service.ScheduleService;
 import org.omoknoone.omokhub.project.command.vo.RequestSchedule;
 import org.omoknoone.omokhub.project.command.vo.ResponseSchedule;
-import org.omoknoone.omokhub.project.command.vo.ResponseSchedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -13,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/project/schedule")
+@RequestMapping("/project/schedules")
 public class ScheduleController {
     private ModelMapper modelMapper;
     private ScheduleService scheduleService;
@@ -39,7 +38,7 @@ public class ScheduleController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseSchedule);
     }
 
-    @PostMapping("/modify")
+    @PutMapping("/modify")
     public ResponseEntity<ResponseSchedule> modifySchedule(@RequestBody RequestSchedule schedule){
 
         /* 설명. RequestUser -> UserDTO */

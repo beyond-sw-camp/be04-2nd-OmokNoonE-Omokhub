@@ -1,15 +1,15 @@
 package org.omoknoone.omokhub.project.query.dto;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class ScheduleDTO {
     private int scheduleId;
-    private LocalTime startDate;
-    private LocalTime endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String title;
     private String content;
     private double progress;
-    private LocalTime lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
     private int projectMemberId;
     private int projectId;
     private int memberId;
@@ -17,7 +17,7 @@ public class ScheduleDTO {
     public ScheduleDTO() {
     }
 
-    public ScheduleDTO(int scheduleId, LocalTime startDate, LocalTime endDate, String title, String content, double progress, LocalTime lastModifiedDate, int projectMemberId, int projectId, int memberId) {
+    public ScheduleDTO(int scheduleId, LocalDateTime startDate, LocalDateTime endDate, String title, String content, double progress, LocalDateTime lastModifiedDate, int projectMemberId, int projectId, int memberId) {
         this.scheduleId = scheduleId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -38,19 +38,19 @@ public class ScheduleDTO {
         this.scheduleId = scheduleId;
     }
 
-    public LocalTime getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalTime startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalTime getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalTime endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -78,11 +78,11 @@ public class ScheduleDTO {
         this.progress = progress;
     }
 
-    public LocalTime getLastModifiedDate() {
+    public LocalDateTime getLastModifiedDate() {
         return lastModifiedDate;
     }
 
-    public void setLastModifiedDate(LocalTime lastModifiedDate) {
+    public void setLastModifiedDate(LocalDateTime lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 

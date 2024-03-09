@@ -38,9 +38,10 @@ public class ScheduleServiceImpl implements ScheduleService{
         findschedule.setTitle(modifySchedule.getTitle());
         findschedule.setContent(modifySchedule.getContent());
         findschedule.setProgress(modifySchedule.getProgress());
+        findschedule.setEndDate(modifySchedule.getEndDate());
         findschedule.setLastModifiedDate(LocalDateTime.now());
 
-        scheduleRepository.save(modelMapper.map(findschedule, Schedule.class));
+        scheduleRepository.flush();
     }
 
     @Transactional

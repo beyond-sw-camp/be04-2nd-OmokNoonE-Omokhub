@@ -1,22 +1,22 @@
 package org.omoknoone.omokhub.project.query.entity;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Schedule {
     private int scheduleId;
-    private LocalTime startDate;
-    private LocalTime endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private String title;
     private String content;
     private double progress;
-    private LocalTime lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
     private int projectMemberId;
     private int projectId;
 
     public Schedule() {
     }
 
-    public Schedule(int scheduleId, LocalTime startDate, LocalTime endDate, String title, String content, double progress, LocalTime lastModifiedDate, int projectMemberId, int projectId) {
+    public Schedule(int scheduleId, LocalDateTime startDate, LocalDateTime endDate, String title, String content, double progress, LocalDateTime lastModifiedDate, int projectMemberId, int projectId) {
         this.scheduleId = scheduleId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -32,11 +32,11 @@ public class Schedule {
         return scheduleId;
     }
 
-    public LocalTime getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public LocalTime getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
@@ -52,7 +52,7 @@ public class Schedule {
         return progress;
     }
 
-    public LocalTime getLastModifiedDate() {
+    public LocalDateTime getLastModifiedDate() {
         return lastModifiedDate;
     }
 
