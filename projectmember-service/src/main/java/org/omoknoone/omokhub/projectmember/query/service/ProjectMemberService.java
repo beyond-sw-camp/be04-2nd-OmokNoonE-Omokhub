@@ -1,6 +1,6 @@
 package org.omoknoone.omokhub.projectmember.query.service;
 
-import org.omoknoone.omokhub.projectmember.command.client.MemberServiceClient;
+import org.omoknoone.omokhub.client.MemberServiceClient;
 import org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO;
 import org.omoknoone.omokhub.projectmember.query.repository.ProjectMemberMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,4 +27,5 @@ public class ProjectMemberService {
         memberInfo.forEach(System.out::println);
 
     }
+
 }
