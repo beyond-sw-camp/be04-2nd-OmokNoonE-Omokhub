@@ -13,10 +13,10 @@
         <result property="status" column="STATUS"/>
         <result property="isPublic" column="IS_PUBLIC"/>
         <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
-        <collection property="projectTeams" ofType="org.omoknoone.omokhub.projectmember.query.dto.ProjectTeamDTO">
+        <collection property="projectTeams" ofType="org.omoknoone.omokhub.project.query.dto.ProjectTeamDTO">
             <result property="teamName" column="TEAM_NAME"/>
         </collection>
-        <collection property="projectMembers" ofType="org.omoknoone.omokhub.projectmember.query.dto.ProjectMemberDTO">
+        <collection property="projectMembers" ofType="org.omoknoone.omokhub.project.query.dto.ProjectMemberDTO">
             <result property="memberId" column="MEMBER_ID"/>
         </collection>
     </resultMap>
