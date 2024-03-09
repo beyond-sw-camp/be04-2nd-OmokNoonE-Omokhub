@@ -44,5 +44,6 @@ spring:
           filters:
             - RewritePath=/projectmember-service/(?<segment>.*), /$\{segment}
 
+
 token:
   secret: iW50hkbOkPd92kEi4Z+hdBtNlGoaUwI0Aa9UY+Fb5jZyQK7Sm1dbEIaRauzhHyu6NVOT6bUZwXk3tOhiBuggnA==
