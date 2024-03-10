@@ -598,7 +598,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 </details> 
 
 ## 📰 Project Architecture
-<p align="center"><img src=""/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/omoknoone-project-architecture.png"/></p>
 
 ## 👫 회고
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
