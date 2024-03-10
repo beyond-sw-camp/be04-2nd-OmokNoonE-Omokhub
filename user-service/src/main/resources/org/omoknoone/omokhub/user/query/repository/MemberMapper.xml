@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.omoknoone.omokhub.user.query.repository.MemberMapper">
+
+    <resultMap id="memberResultMap" type="org.omoknoone.omokhub.user.query.dto.MemberDTO">
+        <id property="memberId" column="MEMBER_ID"/>
+        <result property="name" column="NAME"/>
+        <result property="nickname" column="NICKNAME"/>
+        <result property="email" column="EMAIL"/>
+        <result property="phoneNum" column="PHONE_NUM"/>
+        <result property="address" column="ADDRESS"/>
+        <result property="birthday" column="BIRTHDAY"/>
+        <result property="profileCount" column="PROFILE_COUNT"/>
+    </resultMap>
+
+    <resultMap id="memberNicknameResultMap" type="org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO">
+        <id property="memberId" column="MEMBER_ID"/>
+        <result property="nickname" column="NICKNAME"/>
+    </resultMap>
+
+    <select id="selectMemberInfoByMemberId" parameterType="string" resultMap="memberResultMap">
+        SELECT
+            A.MEMBER_ID ,
+            A.NAME ,
+            A.NICKNAME ,
+            A.EMAIL ,
+            A.PHONE_NUM ,
+            A.ADDRESS ,
+            A.BIRTHDAY,
+            COUNT(*) AS 'PROFILE_COUNT'
+        FROM
+            member A
+        JOIN profile B ON (A.MEMBER_ID = B.MEMBER_ID)
+        WHERE
+            A.IS_WITHDRAW = 0
+            AND A.MEMBER_ID = #{memberId}
+        GROUP BY A.MEMBER_ID
+    </select>
+
+    <select id="selectMemberIdByNickname" parameterType="org.omoknoone.omokhub.user.query.dto.MemberNicknameDTO"
+            resultMap="memberNicknameResultMap">
+        SELECT
+            MEMBER_ID,
+            NICKNAME
+        FROM
+            member
+        WHERE
+            IS_WITHDRAW = 0
+        <if test="nickname != null">
+            AND NICKNAME = #{nickname}
+        </if>
+        <if test="memberId != null">
+            AND MEMBER_ID = #{memberId}
+        </if>
+    </select>
+
+    <select id="selectMemberIdAndNicknameByMemberList" resultMap="memberNicknameResultMap" parameterType="list">
+        SELECT
+            MEMBER_ID,
+            NICKNAME
+        FROM
+           member
+        WHERE
+            IS_WITHDRAW = 0
+            AND MEMBER_ID IN
+        <foreach collection="list" item="memberId" open="(" close=")" separator=", ">
+            #{memberId}
+        </foreach>
+    </select>
+
+</mapper>

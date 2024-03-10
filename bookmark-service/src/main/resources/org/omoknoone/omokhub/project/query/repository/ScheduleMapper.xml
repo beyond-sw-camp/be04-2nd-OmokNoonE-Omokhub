@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.omoknoone.omokhub.project.query.repository.ScheduleMapper">
+
+        <resultMap id="scheduleInProjectResultMap" type="org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO">
+            <id property="projectId" column="PROJECT_ID"/>
+            <result property="title" column="TITLE"/>
+            <result property="status" column="STATUS"/>
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.dto.ScheduleDTO">
+                <id property="scheduleId" column="SCHEDULE_ID"/>
+                <result property="startDate" column="START_DATE"/>
+                <result property="endDate" column="END_DATE"/>
+                <result property="title" column="TITLE"/>
+                <result property="content" column="CONTENT"/>
+                <result property="progress" column="PROGRESS"/>
+                <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+            </collection>
+        </resultMap>
+        <resultMap id="MyScheduleResultMap" type="org.omoknoone.omokhub.project.query.dto.UserAndScheduleDTO">
+            <id property="memberId" column="MEMBER_ID"/>
+            <result property="name" column="NAME"/>
+            <collection property="list" ofType="org.omoknoone.omokhub.project.query.dto.ScheduleDTO">
+                <id property="scheduleId" column="SCHEDULE_ID"/>
+                <result property="title" column="TITLE"/>
+                <result property="startDate" column="START_DATE"/>
+                <result property="endDate" column="END_DATE"/>
+                <result property="progress" column="PROGRESS"/>
+                <result property="lastModifiedDate" column="LAST_MODIFIED_DATE"/>
+                <result property="projectId" column="PROJECT_ID"/>
+            </collection>
+        </resultMap>
+
+        <select id="selectScheduleByProject" parameterType="_int" resultMap="scheduleInProjectResultMap">
+            SELECT
+                   A.PROJECT_ID
+                 , A.TITLE
+                 , A.STATUS
+                 , B.START_DATE
+                 , B.END_DATE
+                 , B.TITLE
+                 , B.CONTENT
+                 , B.PROGRESS
+                 , B.LAST_MODIFIED_DATE
+              FROM PROJECT A
+              JOIN SCHEDULE B ON (A.PROJECT_ID = B.PROJECT_ID)
+             WHERE A.PROJECT_ID = #{projectId}
+        </select>
+
+        <select id="selectScheduleByUser" parameterType="string" resultMap="MyScheduleResultMap">
+            SELECT
+                   A.MEMBER_ID
+                 , A.NAME
+                 , C.PROJECT_ID
+                 , C.TITLE
+                 , C.START_DATE
+                 , C.END_DATE
+                 , C.PROGRESS
+                 , C.LAST_MODIFIED_DATE
+              FROM MEMBER A
+              JOIN PROJECT_MEMBER B ON (A.MEMBER_ID = B.MEMBER_ID)
+              JOIN SCHEDULE C ON (B.PROJECT_MEMBER_ID = C.PROJECT_MEMBER_ID)
+             WHERE A.MEMBER_ID = #{memberId}
+             ORDER BY C.SCHEDULE_ID DESC
+        </select>
+    </mapper>
