@@ -56,7 +56,7 @@
 </details>
 
 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=0)
-<p align="center"><img src=""/>https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C.png</p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C.png"/></p>
 
 ##  📋 DDD
 
@@ -69,8 +69,7 @@
 ##  📗 DB 모델링
 
 ### 1. 개념 모델링
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EA%B0%9C%EB%85%90%EB%AA%A8%EB%8D%B8%EB%A7%81.png
-"/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EA%B0%9C%EB%85%90%EB%AA%A8%EB%8D%B8%EB%A7%81.png"/></p>
 
 ### 2. 논리 모델링(Barker 표기법)
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/logic-model.png"/></p>
