@@ -19,33 +19,81 @@
 
 ## 목차
 <a href="#1">📄 1. 📝 프로젝트 개요</a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 프로젝트 소개</a>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-2">1-2. 프로젝트 필요성</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 프로젝트 소개</a>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-3">1-3. 프로젝트 주요 기능</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-2">1-2. 프로젝트 필요성</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-3">1-3. 프로젝트 주요 기능</a>
+
+<a href="#2">2. 🧑‍💻 기술스택</a>
+
+<a href="#3"> 3. 📃 WBS</a>
+
+<a href="#4">4. 📖 요구사항</a>
+
+<a href="#5">5. 📋 DDD</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-1">5-1. Event Stroming</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#5-2">5-2. Context Map</a>
+
+<a href="#6">6. 📗 DB 모델링</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-1">6-1. 개념 모델링</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-2">6-2. 논리 모델링(Barker 표기법)</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#6-3">6-3. 물리 모델링</a>
+
+<a href="#7">7. 📁 DDL</a>
+
+<a href="#8">8. 📒 API 명세서</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-1">8-1. USER-SERVICE</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-2">8-2. PROJECT</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-2-1">8-2-1. PROJECT - PROJECT</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-2-2">8-2-2. PROJECT - SCHEDULE</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-2-3">8-2-3. PROJECT - ISSUE</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#8-3">8-3. PROJECT - TEAM</a>
+
+<a href="#9">9. 📃 단위테스트 결과 보고서</a>
+
+<a href="#10">10. 📰 Project Architecture</a>
+
+<a href="#11">11. 👫 회고</a>
+
+
+
+
+
 
 
 
 ##  <p id="1">1. 📝 프로젝트 개요</p>
 
-### 1-1. 프로젝트 소개
+### <p id="1-1">1-1. 프로젝트 소개</p>
 
 - OMOKHUB 사이트는 개발자들을 위한 프로젝트 팀 모집 및 모집된 프로젝트의 일정을 함께 관리할 수 있는 사이트입니다. OMOKHUB 사이트를 활용하면 회원은 본인이 하고 싶은 프로젝트의 모집글을 통해 프로젝트 팀원을 모집할 수 있고 모집한 팀원들과의 프로젝트 일정관리도 가능하게 함으로써 원활한 협업이 가능합니다.
 
-### 1-2. 프로젝트 필요성
+### <p id="1-2">1-2. 프로젝트 필요성</p>
 
 - 개발자를 위한 다양한 사이트가 존재합니다. 지식을 공유하고 팀원을 모집하고, 일정을 관리하는 등 다양한 종류의 사이트가 있지만 프로젝트의 흐름에 따라 각각 다른 사이트를 이용해야한다는 불편함이 존재합니다.
- OMOKHUB 사이트는 프로젝트의 팀원 모집부터 프로젝트 생성, 프로젝트의 따른 일정관리까지 OMOKHUB 사이트에서 프로젝트가 한번에 진행될 수 있도록하여 개발자들의 원활한 협업을 돕습니다.
+ OMOKHUB 사이트는 프로젝트의 팀원 모집부터 프로젝트 생성, 프로젝트에 따른 일정관리까지 OMOKHUB 사이트에서 프로젝트가 한번에 진행될 수 있도록하여 개발자들의 원활한 협업을 돕습니다.
 
 
-### 1-3. 프로젝트 주요 기능
+### <p id="1-3">1-3. 프로젝트 주요 기능</p>
 
 - 프로젝트 팀원 모집
 - 프로젝트 생성
-- 프로젝트 일정관리리
+- 프로젝트 일정관리
 
-##  🧑‍💻 기술스택
+##  <p id="2">2. 🧑‍💻 기술스택</p>
 <div align="center">
 
 |DA#|ubuntu|MariaDB 3.3.3|spring 3.2.3|JPA 3.2.3|MyBatis 3.0.3|
@@ -54,12 +102,12 @@
 
 </div>
 
-##  📃 WBS
+##  <p id="3">3. 📃 WBS</p>
 
 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1027017419)
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20WBS.png"/></p>
 
-##  📖 요구사항
+##  <p id="4">4. 📖 요구사항</p>
 <details>
 <summary><b>Omok 세부정책</b></summary>
     
@@ -70,26 +118,26 @@
 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=0)
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C%20(2)_1.png"/></p>
 
-##  📋 DDD
+##  <p id="5">5. 📋 DDD</p>
 
-### 1. Event Stroming
+### <p id="5-1">5-1. Event Stroming</p>
 <img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/eventstroming.jpg"/>
 
-### 2. Context Map
+### <p id="5-2">5-2. Context Map</p>
 <img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/context-map.jpg"/>
 
-##  📗 DB 모델링
+##  <p id="6">6. 📗 DB 모델링</p>
 
-### 1. 개념 모델링
+### <<p id="6-1">6-1. 개념 모델링</p>
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EA%B0%9C%EB%85%90%EB%AA%A8%EB%8D%B8%EB%A7%81.png"/></p>
 
-### 2. 논리 모델링(Barker 표기법)
+### <p id="6-2">6-2. 논리 모델링(Barker 표기법)</p>
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/logic-model.png"/></p>
 
-### 3. 물리 모델링
+### <p id="6-3">6-3. 물리 모델링</p>
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/PhysicalModel.png"/></p>
 
-##  📁 DDL
+##  <p id="7">7. 📁 DDL</p>
 <details>
 <summary><b>Omok DDL</b></summary>
     
@@ -408,8 +456,8 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 
 
 
-## 📒 API 명세서
-### USER-SERVICE
+## <p id="8">8. 📒 API 명세서</p>
+### <p id="8-1">8-1. USER-SERVICE</p>
 <details>
 <summary> 1. 닉네임으로 회원검색 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/USER_SERVICE-%20%EB%8B%89%EB%84%A4%EC%9E%84%EC%9C%BC%EB%A1%9C%20%ED%9A%8C%EC%9B%90%EA%B2%80%EC%83%89.jpg"/></p>
@@ -435,8 +483,8 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%EB%AA%A9%EB%A1%9D%EC%9C%BC%EB%A1%9C%20%EB%8B%89%EB%84%A4%EC%9E%84%20%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0.jpg"/></p>
 </details>
 
-### PROJECT
-#### 1. PROJECT - PROJECT
+### <p id="8-2">8-2. PROJECT</p>
+#### <p id="8-2-1">8-2-1. PROJECT - PROJECT</p>
 <details>
 <summary> 1. 프로젝트 생성 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%83%9D%EC%84%B1.PNG"/></p>
@@ -466,7 +514,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A1%B0%ED%9A%8C(%ED%9A%8C%EC%9B%90id).PNG"/></p>
 </details>
 
-#### PROJECT-SCHEDULE
+#### <p id="8-2-2">8-2-2. PROJECT-SCHEDULE</p>
 <details>
 <summary> 1. 일정 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EB%93%B1%EB%A1%9D.PNG"/></p>
@@ -488,7 +536,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EC%A1%B0%ED%9A%8C(%ED%9A%8C%EC%9B%90%20id).PNG"/></p>
 </details>
 
-#### PROJECT-ISSUE
+#### <p id="8-2-3">8-2-3. PROJECT-ISSUE</p>
 <details>
 <summary> 1. 이슈 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%B4%EC%8A%88%20%EB%93%B1%EB%A1%9D.jpg"/></p>
@@ -506,7 +554,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%8A%B9%EC%A0%95%20%ED%9A%8C%EC%9B%90%EC%9D%B4%20%EC%9E%91%EC%84%B1%ED%95%9C%20%EC%9D%B4%EC%8A%88%20%EC%A1%B0%ED%9A%8C.jpg"/></p>
 </details>
 
-### PROJECT-TEAM
+### <p id="8-3">8-3. PROJECT-TEAM</p>
 <details>
 <summary> 1. 프로젝트 팀 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%93%B1%EB%A1%9D.png"/></p>
@@ -541,15 +589,15 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%8B%A0%EC%B2%AD%20%EB%8C%80%EA%B8%B0%EC%97%B4%20%EC%B0%B8%EA%B0%80.png"/></p>
 </details>
 
-## 📃 단위테스트 결과 보고서
+## <p id="9">9. 📃 단위테스트 결과 보고서</p>
 
 [단위테스트 결과보고서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1417392135)
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%20%EB%B3%B4%EA%B3%A0%EC%84%9C%20(1)_1.png"/></p>
 
-## 📰 Project Architecture
+## <p id="10">10. 📰 Project Architecture</p>
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/omoknoone-project-architecture.png"/></p>
 
-## 👫 회고
+## <p id="11">11. 👫 회고</p>
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
 |:---:|---|
 |최종찬|단순하게 기능을 개발하는 일은 익숙했지만, 이번 프로젝트에서는 기능 구현뿐만 아니라 서버 구축, 데이터베이스 통합 관리 등 다양한 측면을 구현했어야 되기에 저에게는 의미 있는 도전이었습니다. RestAPI 방식을 활용하여 서로 다른 IP 간 통신하는 것 또한 처음 시도해 보는 일이었습니다. 그러나, 팀원들과 함께 수업에서 배운 내용을 복습하며 해당 서비스를 구현할 수 있었고, 더 나아가 서로 다른 ip의 MSA 방식까지 구현하는 성과를 이룰 수 있었습니다. 모든 팀원들이 적극적으로 참여하여 프로젝트를 구성해나가는 것이 매우 감동적이었습니다. 우리 팀은 단순한 소통을 넘어서서 팀원 간에 작업물을 공유에 git-flow 방식을 적용하였습니다. git-flow가 익숙지 않아, 헤매기도 하였지만 협업의 다양한 측면에서 많은 점을 배웠습니다. DB, Service 별 서버 구축과 각 IP 간 소통, gateway의 활용 등 다양한 시도를 하였고, 팀 전체가 효과적으로 협업하여 프로젝트를 성공적으로 진행했습니다. 현재 프로젝트가 완성된 것은 아니지만, 이번 발표 내용으로 그치지 않고 추가적인 백엔드 개발과 점검, 리팩토링을 통해 더 나은 결과물을 만들어 나갈 것입니다.|
