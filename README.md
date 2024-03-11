@@ -429,7 +429,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%93%B1%EB%A1%9D.png"/></p>
 
 2. 프로젝트 팀 삭제
-<p align="center"><img src=""/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%82%AD%EC%A0%9C.png"/></p>
 
 3. 프로젝트 팀 조회
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%A1%B0%ED%9A%8C.png"/></p>
