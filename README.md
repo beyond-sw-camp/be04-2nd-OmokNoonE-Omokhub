@@ -401,8 +401,15 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 
 ## 📒 API 명세서
 ### USER-SERVICE
+1. 닉네임으로 회원 검색
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/USER_SERVICE-%20%EB%8B%89%EB%84%A4%EC%9E%84%EC%9C%BC%EB%A1%9C%20%ED%9A%8C%EC%9B%90%EA%B2%80%EC%83%89.jpg"/></p>
+
 ### PROJECT
+1. 프로젝트 별 이슈 조회
+   <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%84%20%EC%9D%B4%EC%8A%88%20%EC%A1%B0%ED%9A%8C.jpg"/></p>
 ### PROJECT-TEAM
+1. 프로젝트 팀 등록
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%93%B1%EB%A1%9D.png"/></p>
 
 
 ## 📃 단위테스트 결과 보고서
