@@ -48,7 +48,7 @@
 ##  📃 WBS
 
 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1027017419)
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%20%EB%AC%B8%EC%84%9C%20-%20WBS.png"/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20WBS.png"/></p>
 
 ##  📖 요구사항
 <details>
@@ -59,7 +59,7 @@
 </details>
 
 [요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=0)
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C.png"/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%20%EB%AA%85%EC%84%B8%EC%84%9C%20(2)_1.png"/></p>
 
 ##  📋 DDD
 
@@ -590,7 +590,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 ## 📃 단위테스트 결과 보고서
 
 [단위테스트 결과보고서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1417392135)
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%20%EB%AC%B8%EC%84%9C%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%20%EB%B3%B4%EA%B3%A0%EC%84%9C.png"/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%20%EB%B3%B4%EA%B3%A0%EC%84%9C%20(1)_1.png"/></p>
 
 ## 📑주요 테스트 결과
 <details>
