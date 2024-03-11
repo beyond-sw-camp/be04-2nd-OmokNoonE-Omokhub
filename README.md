@@ -39,9 +39,9 @@
 ##  🧑‍💻 기술스택
 <div align="center">
 
-|DA#|ubuntu|mariaDB 3.3.3|SPRING 3.2.3|JPA 3.2.3|Mybatis 3.0.3|
+|DA#|ubuntu|MariaDB 3.3.3|spring 3.2.3|JPA 3.2.3|MyBatis 3.0.3|
 |---|---|---|---|---|---|
-|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/mybatis.jpg" height="150" />
+|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/spring.jpg" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/mybatis.jpg" height="150" />
 
 </div>
 
