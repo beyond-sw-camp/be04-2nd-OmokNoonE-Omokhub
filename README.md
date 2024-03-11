@@ -128,7 +128,7 @@
 
 ##  <p id="6">6. 📗 DB 모델링</p>
 
-### <<p id="6-1">6-1. 개념 모델링</p>
+### <p id="6-1">6-1. 개념 모델링</p>
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/%EA%B0%9C%EB%85%90%EB%AA%A8%EB%8D%B8%EB%A7%81.png"/></p>
 
 ### <p id="6-2">6-2. 논리 모델링(Barker 표기법)</p>
