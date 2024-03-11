@@ -8,51 +8,14 @@ eureka:
     service-url:
       defaultZone: http://localhost:58761/eureka
 
-#spring:
-#  application:
-#    name: gateway-server
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: 1st-service
-##          uri: http://localhost:64880/
-#
-#          # ?? ???(???? ???? ???? ??? ???)?? ??, ??? ? ??(uri)
-#          uri: lb://MY-1ST-SERVICE
-#
-#          # ??? ?????? ?? ??? '/first/service/**? ????~'?? ??
-#          predicates:
-#            - Path=/first-service/**
-#
-#          # Global, Custom ?? ??? ???? ??(request ? response header? ? ??, segment? ??? ?? ??)
-#          filters:
-#            - AddRequestHeader=first-request, first-request-header
-#            - AddResponseHeader=first-response, first-response-header
-#            - RewritePath=/first-service/(?<segment>.*), /$\{segment}
-#        - id: 2nd-service
-##          uri: http://localhost:64890/
-#          uri: lb://MY-2ND-SERVICE
-#          predicates:
-#            - Path=/second-service/**
-#          filters:
-#            - AddRequestHeader=second-request, second-request-header
-#            - AddResponseHeader=second-response, second-response-header
-#            - RewritePath=/second-service/(?<segment>.*), /$\{segment}
 spring:
   application:
-    name: omok-gateway-server
+    name: gateway-server
   cloud:
     gateway:
       routes:
-        - id: user-service
-          uri: lb://OMOK-USER-SERVICE
-          predicates:
-            - Path=/user-service/login
-            - Method=GET
-          filters:
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-            - AuthorizationHeaderFilter
 
+        # 회원 서비스
         - id: user-service
           uri: lb://OMOK-USER-SERVICE
           predicates:
@@ -60,6 +23,17 @@ spring:
           filters:
             - RewritePath=/user-service/(?<segment>.*), /$\{segment}
 
+        # 로그인용 권한
+        - id: user-service
+          uri: lb://OMOK-USER-SERVICE
+          predicates:
+            - Path=/user-service/login
+            - Method=POST
+          filters:
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
+
+        # 프로젝트 서비스
         - id: project-service
           uri: lb://OMOK-PROJECT-SERVICE
           predicates:
@@ -67,6 +41,7 @@ spring:
           filters:
             - RewritePath=/project-service/(?<segment>.*), /$\{segment}
 
+        # 프로젝트 팀 서비스
         - id: projectmember-service
           uri: lb://OMOK-PROJECTMEMBER-SERVICE
           predicates:
@@ -75,4 +50,4 @@ spring:
             - RewritePath=/projectmember-service/(?<segment>.*), /$\{segment}
 
 token:
-  secret: iW50hkbOkPd92kEi4Z+hdBtNlGoaUwI0Aa9UY+Fb5jZyQK7Sm1dbEIaRauzhHyu6NVOT6bUZwXk3tOhiBuggnA==
+  secret:
