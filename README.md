@@ -404,13 +404,50 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 1. 닉네임으로 회원 검색
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/USER_SERVICE-%20%EB%8B%89%EB%84%A4%EC%9E%84%EC%9C%BC%EB%A1%9C%20%ED%9A%8C%EC%9B%90%EA%B2%80%EC%83%89.jpg"/></p>
 
+2. 회원 ID로 닉네임 검색
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20id%EB%A1%9C%20%EB%8B%89%EB%84%A4%EC%9E%84%20%EA%B2%80%EC%83%89.jpg"/></p>
+
+3. 회원 상세보기
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20%EC%83%81%EC%84%B8%EB%B3%B4%EA%B8%B0.jpg"/></p>
+
+4. 회원 정보 수정
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20%EC%A0%95%EB%B3%B4%20%EC%88%98%EC%A0%95.jpg"/></p>
+
+5. 회원가입
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.jpg"/></p>
+
+6. 회원목록으로 닉네임 검색하기
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%EB%AA%A9%EB%A1%9D%EC%9C%BC%EB%A1%9C%20%EB%8B%89%EB%84%A4%EC%9E%84%20%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0.jpg"/></p>
+
 ### PROJECT
-1. 프로젝트 별 이슈 조회
-   <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%B3%84%20%EC%9D%B4%EC%8A%88%20%EC%A1%B0%ED%9A%8C.jpg"/></p>
+
+7. 회원 ID로 프로젝트 조회
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%82%AD%EC%A0%9C.png"/></p>
+
 ### PROJECT-TEAM
 1. 프로젝트 팀 등록
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%93%B1%EB%A1%9D.png"/></p>
 
+2. 프로젝트 팀 삭제
+<p align="center"><img src=""/></p>
+
+3. 프로젝트 팀 조회
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%A1%B0%ED%9A%8C.png"/></p>
+
+4. 프로젝트 팀 멤버 제거
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%A9%A4%EB%B2%84%20%EC%A0%9C%EA%B1%B0.png"/></p>
+
+5. 프로젝트 팀 팀장 변경
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%ED%8C%80%EC%9E%A5%EB%B3%80%EA%B2%BD.png"/></p>
+
+6. 대기열 목록에서 회원 제거
+<p align="center"><img src=""/>https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EB%8C%80%EA%B8%B0%EC%97%B4%20%EB%AA%A9%EB%A1%9D%EC%97%90%EC%84%9C%20%ED%9A%8C%EC%9B%90%20%EC%A0%9C%EA%B1%B0.png</p>
+
+7. 특정 프로젝트의 대기열 목록 조회
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%8A%B9%EC%A0%95%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98%20%EB%8C%80%EA%B8%B0%EC%97%B4%20%EB%AA%A9%EB%A1%9D%20%EC%A1%B0%ED%9A%8C.png"/></p>
+
+8. 프로젝트 신청 대기열 참가
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%8B%A0%EC%B2%AD%20%EB%8C%80%EA%B8%B0%EC%97%B4%20%EC%B0%B8%EA%B0%80.png"/></p>
 
 ## 📃 단위테스트 결과 보고서
 
