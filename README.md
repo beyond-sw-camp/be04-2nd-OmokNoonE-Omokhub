@@ -38,7 +38,7 @@
 
 |DA#|ubuntu|mariaDB|JPA|Mybatis|
 |---|---|---|---|---|
-|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/mybatis.jpg" height="150" />
+|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/da%23.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/ubuntu.png" height="150" />|<img src="https://github.com/beyond-sw-camp/be04-1st-4goda-vite/blob/main/PNG/Readme/mariadb.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/JPA.png" height="150" />|<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/mybatis.jpg" height="150" />
 
 </div>
 
@@ -61,10 +61,10 @@
 ##  📋 DDD
 
 ### 1. Event Stroming
-<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/evnet-stroming.jpg"/>
+<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/evnet-stroming.jpg"/>
 
 ### 2. Context Map
-<img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/context-map.jpg"/>
+<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/context-map.jpg"/>
 
 ##  📗 DB 모델링
 
@@ -72,7 +72,7 @@
 <p align="center"><img src="개념모델링 사진"/></p>
 
 ### 2. 논리 모델링(Barker 표기법)
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/logic-model.png"/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/logic-model.png"/></p>
 
 ### 3. 물리 모델링
 <p align="center"><img src="물리모델링 사진"/></p>
@@ -598,7 +598,7 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 </details> 
 
 ## 📰 Project Architecture
-<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/feature/project/schedule/omoknoone-project-architecture.png"/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/omoknoone-project-architecture.png"/></p>
 
 ## 👫 회고
 |&nbsp;&nbsp;팀&nbsp;원&nbsp;&nbsp;&nbsp;|회고록|
