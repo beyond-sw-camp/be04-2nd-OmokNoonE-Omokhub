@@ -401,108 +401,141 @@ ALTER TABLE `SEEKING_MEMBER_POST`
 
 ## 📒 API 명세서
 ### USER-SERVICE
-1. 닉네임으로 회원 검색
+<details>
+<summary> 1. 닉네임으로 회원검색 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/USER_SERVICE-%20%EB%8B%89%EB%84%A4%EC%9E%84%EC%9C%BC%EB%A1%9C%20%ED%9A%8C%EC%9B%90%EA%B2%80%EC%83%89.jpg"/></p>
-
-2. 회원 ID로 닉네임 검색
+</details>
+<details>
+<summary> 2. 회원 ID로 닉네임 검색 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20id%EB%A1%9C%20%EB%8B%89%EB%84%A4%EC%9E%84%20%EA%B2%80%EC%83%89.jpg"/></p>
-
-3. 회원 상세보기
+</details>
+<details>
+<summary> 3. 회원 상세보기 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20%EC%83%81%EC%84%B8%EB%B3%B4%EA%B8%B0.jpg"/></p>
-
-4. 회원 정보 수정
+</details>
+<details>
+<summary> 4. 회원 정보 수정 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%20%EC%A0%95%EB%B3%B4%20%EC%88%98%EC%A0%95.jpg"/></p>
-
-5. 회원가입
+</details>
+<details>
+<summary> 5. 회원가입 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85.jpg"/></p>
-
-6. 회원목록으로 닉네임 검색하기
+</details>
+<details>
+<summary> 6. 회원목록으로 닉네임 검색하기 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%9A%8C%EC%9B%90%EB%AA%A9%EB%A1%9D%EC%9C%BC%EB%A1%9C%20%EB%8B%89%EB%84%A4%EC%9E%84%20%EA%B2%80%EC%83%89%ED%95%98%EA%B8%B0.jpg"/></p>
+</details>
 
 ### PROJECT
-
-1. 프로젝트 생성
-<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%83%9D%EC%84%B1.PNG/></p>
-
-2. 프로젝트 삭제
+#### 1. PROJECT - PROJECT
+<details>
+<summary> 1. 프로젝트 생성 </summary>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%83%9D%EC%84%B1.PNG"/></p>
+</details>
+<details>
+<summary> 2. 프로젝트 삭제 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%82%AD%EC%A0%9C.PNG"/></p>
-
-3. 프로젝트 수정
+</details>
+<details>
+<summary> 3. 프로젝트 수정 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%88%98%EC%A0%95.PNG"/></p>
-
-4. 프로젝트 ID로 프로젝트 조회
+</details>
+<details>
+<summary> 4. 프로젝트 ID로 프로젝트 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A1%B0%ED%9A%8C(id%20%EA%B8%B0%EC%A4%80).PNG"/></p>
-
-5. 프로젝트 상태별로 프로젝트 조회
+</details>
+<details>
+<summary> 5. 프로젝트 상태별로 프로젝트 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A1%B0%ED%9A%8C(%EC%83%81%ED%83%9C%20%EA%B8%B0%EC%A4%80).PNG"/></p>
-
-6. 팀이름을 기준으로 프로젝트 조회
+</details>
+<details>
+<summary> 6. 팀이름을 기준으로 프로젝트 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A1%B0%ED%9A%8C(%ED%8C%80%20%EC%9D%B4%EB%A6%84).PNG"/></p>
-
-7. 회원 ID로 프로젝트 조회
+</details>
+<details>
+<summary> 7. 회원 ID로 프로젝트 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A1%B0%ED%9A%8C(%ED%9A%8C%EC%9B%90id).PNG"/></p>
+</details>
 
-1. 일정 등록
+#### PROJECT-SCHEDULE
+<details>
+<summary> 1. 일정 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EB%93%B1%EB%A1%9D.PNG"/></p>
-
-2. 일정 삭제
+</details>
+<details>
+<summary> 2. 일정 삭제 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EC%82%AD%EC%A0%9C.PNG"/></p>
-
-3. 일정 수정
+</details>
+<details>
+<summary> 3. 일정 수정 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EC%88%98%EC%A0%95.PNG"/></p>
-
-4. 프로젝트 ID로 일정 조회
+</details>
+<details>
+<summary> 4. 프로젝트 ID로 일정 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EC%A1%B0%ED%9A%8C(%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8id).PNG"/></p>
-
-5. 회원 ID로 일정 조회
+</details>
+<details>
+<summary> 5. 회원 ID로 일정 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%BC%EC%A0%95%20%EC%A1%B0%ED%9A%8C(%ED%9A%8C%EC%9B%90%20id).PNG"/></p>
+</details>
 
-1. 이슈 등록
+#### PROJECT-ISSUE
+<details>
+<summary> 1. 이슈 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%B4%EC%8A%88%20%EB%93%B1%EB%A1%9D.jpg"/></p>
-2. 이슈 삭제
+</details>
+<details>
+<summary> 2. 이슈 삭제 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%B4%EC%8A%88%20%EC%82%AD%EC%A0%9C.jpg"/></p>
-3. 이슈 수정
+</details>
+<details>
+<summary> 3. 이슈 수정 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%9D%B4%EC%8A%88%20%EC%88%98%EC%A0%95.jpg"/></p>
-4. 특정회원이 작성한 이슈 조회
+</details>
+<details>
+<summary> 4. 특정회원이 작성한 이슈 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%8A%B9%EC%A0%95%20%ED%9A%8C%EC%9B%90%EC%9D%B4%20%EC%9E%91%EC%84%B1%ED%95%9C%20%EC%9D%B4%EC%8A%88%20%EC%A1%B0%ED%9A%8C.jpg"/></p>
+</details>
 
 ### PROJECT-TEAM
-1. 프로젝트 팀 등록
+<details>
+<summary> 1. 프로젝트 팀 등록 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%93%B1%EB%A1%9D.png"/></p>
+</details>
 
-2. 프로젝트 팀 삭제
+<details>
+<summary> 2. 프로젝트 팀 삭제 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%82%AD%EC%A0%9C.png"/></p>
-
-3. 프로젝트 팀 조회
+</details>
+<details>
+<summary> 3. 프로젝트 팀 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EC%A1%B0%ED%9A%8C.png"/></p>
-
-4. 프로젝트 팀 멤버 제거
+</details>
+<details>
+<summary> 4. 프로젝트 팀 멤버 제거 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%EB%A9%A4%EB%B2%84%20%EC%A0%9C%EA%B1%B0.png"/></p>
-
-5. 프로젝트 팀 팀장 변경
+</details>
+<details>
+<summary> 5. 프로젝트 팀 팀장 변경 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%8C%80%20%ED%8C%80%EC%9E%A5%EB%B3%80%EA%B2%BD.png"/></p>
-
-6. 대기열 목록에서 회원 제거
+</details>
+<details>
+<summary> 6. 대기열 목록에서 회원 제거 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EB%8C%80%EA%B8%B0%EC%97%B4%20%EB%AA%A9%EB%A1%9D%EC%97%90%EC%84%9C%20%ED%9A%8C%EC%9B%90%20%EC%A0%9C%EA%B1%B0.png"/></p>
-
-7. 특정 프로젝트의 대기열 목록 조회
+</details>
+<details>
+<summary> 7. 특정 프로젝트의 대기열 목록 조회 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%8A%B9%EC%A0%95%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98%20%EB%8C%80%EA%B8%B0%EC%97%B4%20%EB%AA%A9%EB%A1%9D%20%EC%A1%B0%ED%9A%8C.png"/></p>
-
-8. 프로젝트 신청 대기열 참가
+</details>
+<details>
+<summary> 8. 프로젝트 신청 대기열 참가 </summary>
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%8B%A0%EC%B2%AD%20%EB%8C%80%EA%B8%B0%EC%97%B4%20%EC%B0%B8%EA%B0%80.png"/></p>
+</details>
 
 ## 📃 단위테스트 결과 보고서
 
 [단위테스트 결과보고서 바로가기](https://docs.google.com/spreadsheets/d/1YxT_lA8VaVXNsjbl9au3YW109yCLpxz5oe4L39z-LwM/edit#gid=1417392135)
 <p align="center"><img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/%EC%98%A4%EB%AA%A9%EB%88%88%EC%9D%B4%201%EC%B0%A8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%84%9C%20-%20%EB%8B%A8%EC%9C%84%20%ED%85%8C%EC%8A%A4%ED%8A%B8%20%EA%B2%B0%EA%B3%BC%20%EB%B3%B4%EA%B3%A0%EC%84%9C%20(1)_1.png"/></p>
-
-## 📑주요 테스트 결과
-<details>
-	<summary><b>회원 ID로 회원이 작성한 이슈 조회</b></summary>
-         <p><img src=""/></p>
-	 <p><img src=""/></p>
-	</details>
-</details> 
 
 ## 📰 Project Architecture
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/omoknoone-project-architecture.png"/></p>
