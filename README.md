@@ -78,7 +78,7 @@
 <p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/logic-model.png"/></p>
 
 ### 3. 물리 모델링
-<p align="center"><img src="물리모델링 사진"/></p>
+<p align="center"><img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/PhysicalModel.png"/></p>
 
 ##  📁 DDL
 <details>
