@@ -64,7 +64,7 @@
 ##  📋 DDD
 
 ### 1. Event Stroming
-<img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/evnet-stroming.jpg"/>
+<img src="https://github.com/beyond-sw-camp/be04-2nd-OmokNoonE-Omokhub/blob/main/img/eventstroming.jpg"/>
 
 ### 2. Context Map
 <img src="https://github.com/OmokNoonE/OmokNoonE/blob/main/img/context-map.jpg"/>
