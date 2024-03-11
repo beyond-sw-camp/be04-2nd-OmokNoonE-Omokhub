@@ -54,13 +54,17 @@ public class WebSecurity {
         http.csrf((csrf) -> csrf.disable());
 
         http.authorizeHttpRequests((auth) -> auth
-                .requestMatchers(new AntPathRequestMatcher("/user/members/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
-                .requestMatchers("/**").access(
-                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('192.168.0.21') or hasIpAddress('192.168.0.250')"))
-                .anyRequest().authenticated()
-        )
+                        .requestMatchers(new AntPathRequestMatcher("/user/members/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
+
+                        // swagger 적용 시 security http.authorizeHttpRequests에 추가
+                        .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
+                        .requestMatchers("/**").access(
+                                new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('192.168.0.21') or hasIpAddress('192.168.0.250')"))
+                        .anyRequest().authenticated()
+                )
                 .authenticationManager(authenticationManager)
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS));

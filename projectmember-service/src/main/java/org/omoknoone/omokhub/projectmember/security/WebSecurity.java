@@ -33,6 +33,10 @@ public class WebSecurity {
                 .requestMatchers(new AntPathRequestMatcher("/projectmember/**")).permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/project-teams/**")).permitAll()
 
+                // swagger 적용 시 security http.authorizeHttpRequests에 추가
+                .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**")).permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**")).permitAll()
+
                 .anyRequest().authenticated()
         );
 //                .sessionManagement((session) -> session
