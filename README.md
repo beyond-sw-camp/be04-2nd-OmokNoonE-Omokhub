@@ -18,7 +18,7 @@
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jihyeongeun)
 
 ## 목차
-<a href="#1">📄 1. 📝 프로젝트 개요</a>
+<a href="#1">1. 📝 프로젝트 개요</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 프로젝트 소개</a>
 
