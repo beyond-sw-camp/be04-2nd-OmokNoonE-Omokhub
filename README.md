@@ -17,7 +17,7 @@
 - 팀원 : **지현근**
 [<img src="https://img.shields.io/badge/Github-Link-181717?logo=Github">](https://github.com/jihyeongeun)
 
-## 목차
+## <p id="목차">목차</p>
 <a href="#1">1. 📝 프로젝트 개요</a>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-1">1-1. 프로젝트 소개</a>
@@ -94,6 +94,7 @@
 - 프로젝트 일정관리
 
 ##  <p id="2">2. 🧑‍💻 기술스택</p>
+<a href="#목차">목차로 돌아가기</a>
 <div align="center">
 
 |DA#|ubuntu|MariaDB 3.3.3|spring 3.2.3|JPA 3.2.3|MyBatis 3.0.3|
