@@ -10,12 +10,13 @@ public class MemberDTO {
     private String phoneNum;
     private String address;
     private LocalDate birthday;
+    private String roleName;
     private Integer profileCount;
 
     public MemberDTO() {
     }
 
-    public MemberDTO(String memberId, String name, String nickname, String email, String phoneNum, String address, LocalDate birthday, int profileCount) {
+    public MemberDTO(String memberId, String name, String nickname, String email, String phoneNum, String address, LocalDate birthday, String roleName, Integer profileCount) {
         this.memberId = memberId;
         this.name = name;
         this.nickname = nickname;
@@ -23,6 +24,7 @@ public class MemberDTO {
         this.phoneNum = phoneNum;
         this.address = address;
         this.birthday = birthday;
+        this.roleName = roleName;
         this.profileCount = profileCount;
     }
 
@@ -82,11 +84,19 @@ public class MemberDTO {
         this.birthday = birthday;
     }
 
-    public int getProfileCount() {
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public Integer getProfileCount() {
         return profileCount;
     }
 
-    public void setProfileCount(int profileCount) {
+    public void setProfileCount(Integer profileCount) {
         this.profileCount = profileCount;
     }
 
@@ -100,6 +110,7 @@ public class MemberDTO {
                 ", phoneNum='" + phoneNum + '\'' +
                 ", address='" + address + '\'' +
                 ", birthday=" + birthday +
+                ", roleName='" + roleName + '\'' +
                 ", profileCount=" + profileCount +
                 '}';
     }

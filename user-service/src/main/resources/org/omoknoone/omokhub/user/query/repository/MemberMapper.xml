@@ -13,6 +13,7 @@
         <result property="phoneNum" column="PHONE_NUM"/>
         <result property="address" column="ADDRESS"/>
         <result property="birthday" column="BIRTHDAY"/>
+        <result property="roleName" column="ROLE_NAME"/>
         <result property="profileCount" column="PROFILE_COUNT"/>
     </resultMap>
 
@@ -30,6 +31,7 @@
             A.PHONE_NUM ,
             A.ADDRESS ,
             A.BIRTHDAY,
+            A.ROLE_NAME,
             COUNT(*) AS 'PROFILE_COUNT'
         FROM
             member A

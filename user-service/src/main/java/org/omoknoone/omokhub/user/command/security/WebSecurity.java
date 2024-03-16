@@ -45,7 +45,6 @@ public class WebSecurity {
         /* 설명. 로그인 시 추가할 내용 */
         AuthenticationManagerBuilder authenticationManagerBuilder =
                 http.getSharedObject(AuthenticationManagerBuilder.class);
-
         authenticationManagerBuilder.userDetailsService(memberService).passwordEncoder(bCryptPasswordEncoder);
 
         AuthenticationManager authenticationManager = authenticationManagerBuilder.build();
@@ -54,7 +53,9 @@ public class WebSecurity {
         http.csrf((csrf) -> csrf.disable());
 
         http.authorizeHttpRequests((auth) -> auth
-                        .requestMatchers(new AntPathRequestMatcher("/user/members/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/user/members/member-id/**")).hasRole("ADMIN")
+//                        .requestMatchers(new AntPathRequestMatcher("/user/members/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/user/members/signup")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/actuator/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/project/**")).permitAll()
 

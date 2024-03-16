@@ -14,11 +14,12 @@ public class MemberDTO {
     private LocalDate birthday;
     private LocalDateTime signUpDate;
     private boolean isWithdraw;
+    private String roleName;
 
     public MemberDTO() {
     }
 
-    public MemberDTO(String memberId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalDateTime signUpDate, boolean isWithdraw) {
+    public MemberDTO(String memberId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalDateTime signUpDate, boolean isWithdraw, String roleName) {
         this.memberId = memberId;
         this.name = name;
         this.nickname = nickname;
@@ -29,6 +30,7 @@ public class MemberDTO {
         this.birthday = birthday;
         this.signUpDate = signUpDate;
         this.isWithdraw = isWithdraw;
+        this.roleName = roleName;
     }
 
     public String getMemberId() {
@@ -111,9 +113,17 @@ public class MemberDTO {
         isWithdraw = withdraw;
     }
 
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
     @Override
     public String toString() {
-        return "Member{" +
+        return "MemberDTO{" +
                 "memberId='" + memberId + '\'' +
                 ", name='" + name + '\'' +
                 ", nickname='" + nickname + '\'' +
@@ -124,6 +134,7 @@ public class MemberDTO {
                 ", birthday=" + birthday +
                 ", signUpDate=" + signUpDate +
                 ", isWithdraw=" + isWithdraw +
+                ", roleName='" + roleName + '\'' +
                 '}';
     }
 }

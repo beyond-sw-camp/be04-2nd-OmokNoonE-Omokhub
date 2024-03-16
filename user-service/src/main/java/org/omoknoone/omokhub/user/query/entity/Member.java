@@ -14,11 +14,12 @@ public class Member {
     private LocalDate birthday;
     private LocalTime signUpDate;
     private boolean isWithdraw;
+    private String roleName;
 
     public Member() {
     }
 
-    public Member(String memberId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalTime signUpDate, boolean isWithdraw) {
+    public Member(String memberId, String name, String nickname, String password, String email, String phoneNum, String address, LocalDate birthday, LocalTime signUpDate, boolean isWithdraw, String roleName) {
         this.memberId = memberId;
         this.name = name;
         this.nickname = nickname;
@@ -29,6 +30,7 @@ public class Member {
         this.birthday = birthday;
         this.signUpDate = signUpDate;
         this.isWithdraw = isWithdraw;
+        this.roleName = roleName;
     }
 
     public String getMemberId() {
@@ -71,6 +73,10 @@ public class Member {
         return isWithdraw;
     }
 
+    public String getRoleName() {
+        return roleName;
+    }
+
     @Override
     public String toString() {
         return "Member{" +
@@ -84,6 +90,7 @@ public class Member {
                 ", birthday=" + birthday +
                 ", signUpDate=" + signUpDate +
                 ", isWithdraw=" + isWithdraw +
+                ", roleName=" + roleName +
                 '}';
     }
 }

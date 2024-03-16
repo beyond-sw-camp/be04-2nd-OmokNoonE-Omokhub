@@ -1,6 +1,7 @@
 package org.omoknoone.omokhub.user.command.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.FilterChain;
@@ -33,13 +34,13 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     }
 
     /* 설명. 로그인 시도 시 동작하는 기능(POST 방식의 /login 요청) -> request body에 담겨온다. */
-    /* 설명. service 계층 손보러 가자(우리의 Service 클래스를 UserDetailsService로 만들기) */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
         try {
             RequestLogin requestLogin =
                     new ObjectMapper().readValue(request.getInputStream(), RequestLogin.class);
 
+            /* 설명. id와 비밀번호를 기준으로 로그인을 한다 */
             return getAuthenticationManager().authenticate(
                     new UsernamePasswordAuthenticationToken(
                             requestLogin.getMemberId(), requestLogin.getPassword(), new ArrayList<>()
@@ -62,9 +63,14 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         /* 설명. DB를 다녀와 사용자의 고유 아이디(memberId)를 가져올 예정(Principal 객체(Authentication)에는 없는 값이므로) */
         MemberDTO memberDetails = memberService.getMemberDetailsByMemberId(id);
         String memberId = memberDetails.getMemberId();
+        String roleName = memberDetails.getRoleName();
+
+        Claims claims = Jwts.claims().setSubject(memberId);
+        claims.put("auth", roleName);
 
         String token = Jwts.builder()
-                .setSubject(memberId)
+//                .setSubject(memberId)
+                .setClaims(claims)
                 .setExpiration(new java.util.Date(System.currentTimeMillis()
                         + Long.valueOf(environment.getProperty("token.expiration_time"))))
                 .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
