@@ -16,9 +16,9 @@ import java.util.List;
 @Slf4j
 public class ProjectTeamServiceImpl implements ProjectTeamService {
 
-    Logger logger = LoggerFactory.getLogger(getClass());
+//    Logger logger = LoggerFactory.getLogger(getClass());
 
-    private ProjectTeamMapper projectTeamMapper;
+    private final ProjectTeamMapper projectTeamMapper;
 
     @Autowired
     public ProjectTeamServiceImpl(ProjectTeamMapper projectTeamMapper) {
@@ -28,18 +28,15 @@ public class ProjectTeamServiceImpl implements ProjectTeamService {
     @Override
     public List<ProjectTeamDTO> searchProjectTeam(int projectTeamId) {
 
-        logger.info("서비스 넘어온 후 {}", projectTeamId);
+//        logger.info("서비스 넘어온 후 {}", projectTeamId);
         List<ProjectTeam> projectTeamList = projectTeamMapper.selectProjectTeamByProjectTeamId(projectTeamId);
         for (ProjectTeam projectTeam : projectTeamList) {
-            logger.info("projectTeamMapper에 넣은 후 {}", projectTeam);
-
+//            logger.info("projectTeamMapper에 넣은 후 {}", projectTeam);
         }
-
 
         List<ProjectTeamDTO> projectTeamDTOList = projectTeamToProjectTeamDTO(projectTeamList);
         for (ProjectTeamDTO projectTeamDTO : projectTeamDTOList) {
-            logger.info("projectTeamDTOList 넣은 후 {}", projectTeamDTO);
-
+//            logger.info("projectTeamDTOList 넣은 후 {}", projectTeamDTO);
         }
         return projectTeamToProjectTeamDTO(projectTeamList);
     }
