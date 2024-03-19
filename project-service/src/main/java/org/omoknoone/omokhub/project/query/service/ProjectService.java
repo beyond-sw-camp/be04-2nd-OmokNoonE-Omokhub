@@ -1,6 +1,5 @@
 package org.omoknoone.omokhub.project.query.service;
 
-import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO;
 
 import java.util.List;
@@ -13,4 +12,10 @@ public interface ProjectService {
     List<ProjectAndTeamAndMemberDTO> searchProjectByTeamName(String teamName);
 
     List<ProjectAndTeamAndMemberDTO> searchMyProjects(String memberId);
+
+    List<ProjectAndTeamAndMemberDTO> searchProjectByTitle(String title);
+
+    List<ProjectAndTeamAndMemberDTO> searchProjectByStatusList(String statusList);
+
+
 }

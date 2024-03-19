@@ -5,7 +5,8 @@
 
 <mapper namespace="org.omoknoone.omokhub.project.query.repository.ProjectMapper">
     <!--설명. 프로젝트 id 기준 조회 -->
-    <resultMap id="projectAndTeamAndMemberResultMap" type="org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO">
+    <resultMap id="projectAndTeamAndMemberResultMap"
+               type="org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO">
         <id property="projectId" column="PROJECT_ID"/>
         <result property="title" column="TITLE"/>
         <result property="startDate" column="START_DATE"/>
@@ -20,80 +21,120 @@
             <result property="memberId" column="MEMBER_ID"/>
         </collection>
     </resultMap>
-<select id="searchProjectByProjectId" parameterType="_int" resultMap="projectAndTeamAndMemberResultMap">
-    SELECT
-          a.PROJECT_ID
-       ,  a.TITLE
-       ,  a.START_DATE
-       ,  a.END_DATE
-       ,  a.STATUS
-       ,  a.IS_PUBLIC
-       ,  a.LAST_MODIFIED_DATE
-       ,  b.TEAM_NAME		-- 팀명
-       ,  c.MEMBER_ID		-- 팀장
-     FROM project a
-     JOIN project_team b ON (a.project_team_id = b.project_team_id)
-     JOIN project_member c ON (a.project_member_id = c.project_member_id)
-    WHERE a.project_id = #{projectId}
-      AND c.member_category = '팀장'
-    ORDER BY a.project_id DESC;
-</select>
+    <select id="searchProjectByProjectId" parameterType="_int" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+        a.PROJECT_ID
+        , a.TITLE
+        , a.START_DATE
+        , a.END_DATE
+        , a.STATUS
+        , a.IS_PUBLIC
+        , a.LAST_MODIFIED_DATE
+        , b.TEAM_NAME -- 팀명
+        , c.MEMBER_ID -- 팀장
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        WHERE a.project_id = #{projectId}
+        AND c.member_category = '팀장'
+        ORDER BY a.project_id DESC;
+    </select>
 
     <!-- 설명. 진행상태 별 프로젝트 목록 보기 -->
     <select id="searchProjectByStatus" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
         SELECT
-              a.PROJECT_ID
-            , a.TITLE
-            , a.START_DATE
-            , a.END_DATE
-            , a.STATUS
-            , a.IS_PUBLIC
-            , a.LAST_MODIFIED_DATE
-            , b.TEAM_NAME	-- 팀명
-            , c.MEMBER_ID		-- 팀장
-         FROM project a
-         JOIN project_team b ON (a.project_team_id = b.project_team_id)
-         JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        a.PROJECT_ID
+        , a.TITLE
+        , a.START_DATE
+        , a.END_DATE
+        , a.STATUS
+        , a.IS_PUBLIC
+        , a.LAST_MODIFIED_DATE
+        , b.TEAM_NAME -- 팀명
+        , c.MEMBER_ID -- 팀장
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        JOIN project_member c ON (a.project_member_id = c.project_member_id)
         WHERE c.member_category = '팀장'
-          AND a.status = #{status}
-          And a.is_public
+        AND a.status = #{status}
+        AND a.is_public
         ORDER BY a.project_id DESC;
     </select>
 
     <!-- 설명. 특정 팀이 속한 모든 프로젝트를 팀 이름으로 조회 -->
     <select id="searchProjectByTeamName" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
         SELECT
-              a.project_id
-            , a.title
-            , a.start_date
-            , a.end_date
-            , a.status
-            , a.is_public
-            , a.LAST_MODIFIED_DATE
-            , b.team_name
-            , c.member_id		-- 팀장
+        a.project_id
+        , a.title
+        , a.start_date
+        , a.end_date
+        , a.status
+        , a.is_public
+        , a.LAST_MODIFIED_DATE
+        , b.team_name
+        , c.member_id -- 팀장
         FROM project a
-         JOIN project_team b ON (a.project_team_id = b.project_team_id)
-         JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        JOIN project_member c ON (a.project_member_id = c.project_member_id)
         WHERE c.member_category = '팀장'
-          AND b.team_name = #{teamName}
+        AND b.team_name = #{teamName}
     </select>
 
     <!-- 설명. 내가 참여한 프로젝트 목록 -->
     <select id="searchMyProjects" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
         SELECT
-              a.project_id
-            , a.title
-            , a.start_date
-            , a.end_date
-            , a.status
-            , a.is_public
-            , a.LAST_MODIFIED_DATE
-            , b.team_name
-            , c.member_id
-         FROM project a
-         JOIN project_team b ON (a.project_team_id = b.project_team_id)
-         JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        a.project_id
+        , a.title
+        , a.start_date
+        , a.end_date
+        , a.status
+        , a.is_public
+        , a.LAST_MODIFIED_DATE
+        , b.team_name
+        , c.member_id
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        JOIN project_member c ON (a.project_member_id = c.project_member_id)
         WHERE c.member_id = #{memberId}
     </select>
+
+    <!-- 설명. 프로젝트명이 일부 포함된 프로젝트 조회 (목록) -->
+    <select id="searchProjectByTitle" parameterType="string" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+        a.PROJECT_ID
+        , a.TITLE
+        , b.TEAM_NAME -- 팀명
+        , a.START_DATE
+        , a.STATUS
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        WHERE a.IS_PUBLIC
+        <!-- 프로젝트명이 포함된 항목들을 조회하도록 변경 -->
+        <if test="projectTitle != null and projectTitle != ''">
+            AND a.TITLE LIKE CONCAT('%', #{title}, '%')
+        </if>
+        ORDER BY a.project_id DESC;
+    </select>
+
+    <!-- 설명. 프로젝트 진행현황에 따른 프로젝트 목록 조회 (목록) -->
+    <select id="searchProjectByStatusList" parameterType="list" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+        a.PROJECT_ID
+        , a.TITLE
+        , b.TEAM_NAME -- 팀명
+        , a.START_DATE
+        , a.STATUS
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        WHERE a.IS_PUBLIC = 1
+        <!-- 전달된 진행 상태값에 따른 프로젝트 조회 -->
+        <if test="statusList != null and statusList.size() > 0">
+            AND a.STATUS IN
+            <foreach item="status" collection="statusList" open="(" separator="," close=")">
+                #{status}
+            </foreach>
+        </if>
+        ORDER BY a.project_id DESC;
+    </select>
+
 </mapper>

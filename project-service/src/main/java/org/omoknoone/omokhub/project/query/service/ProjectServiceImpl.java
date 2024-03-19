@@ -1,11 +1,11 @@
 package org.omoknoone.omokhub.project.query.service;
 
-import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO;
 import org.omoknoone.omokhub.project.query.repository.ProjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service("QueryProjectServiceImpl")
@@ -47,6 +47,21 @@ public class ProjectServiceImpl implements ProjectService {
     public List<ProjectAndTeamAndMemberDTO> searchMyProjects(String memberId) {
         List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchMyProjects(memberId);
 //        projects.forEach(System.out::println);
+
+        return projects;
+    }
+
+    /* 설명. 프로젝트명이 일부 포함된 프로젝트 조회 (목록)*/
+    @Override
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByTitle(String title) {
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchProjectByTitle(title);
+        return projects;
+    }
+
+    @Override
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByStatusList(String statusString) {
+        List<String> statusList = Arrays.asList(statusString.split("&"));
+        List<ProjectAndTeamAndMemberDTO> projects = projectMapper.searchProjectByStatusList(statusList);
 
         return projects;
     }

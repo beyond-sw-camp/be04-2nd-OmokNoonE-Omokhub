@@ -6,15 +6,17 @@ public class ProjectTeamDTO {
     private int maxMember;
     private int currentMember;
     private int remainMember;
+    private String teamName;
 
     public ProjectTeamDTO() {
     }
 
-    public ProjectTeamDTO(int projectTeamId, int maxMember, int currentMember, int remainMember) {
+    public ProjectTeamDTO(int projectTeamId, int maxMember, int currentMember, int remainMember, String teamName) {
         this.projectTeamId = projectTeamId;
         this.maxMember = maxMember;
         this.currentMember = currentMember;
         this.remainMember = remainMember;
+        this.teamName = teamName;
     }
 
     public int getProjectTeamId() {
@@ -49,6 +51,14 @@ public class ProjectTeamDTO {
         this.remainMember = remainMember;
     }
 
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
     @Override
     public String toString() {
         return "ProjectTeamDTO{" +
@@ -56,6 +66,7 @@ public class ProjectTeamDTO {
                 ", maxMember=" + maxMember +
                 ", currentMember=" + currentMember +
                 ", remainMember=" + remainMember +
+                ", teamName='" + teamName + '\'' +
                 '}';
     }
 }

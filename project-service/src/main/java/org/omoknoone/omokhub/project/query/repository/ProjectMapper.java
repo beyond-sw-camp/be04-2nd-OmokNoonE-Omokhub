@@ -19,4 +19,10 @@ public interface ProjectMapper {
     List<ProjectAndTeamAndMemberDTO> searchMyProjects(String memberId);
 
     List<ProjectAndScheduleDTO> searchSchedulesByProjectId(int projectId);
+
+    List<ProjectAndTeamAndMemberDTO> searchProjectByTitle(String title);
+
+    List<ProjectAndTeamAndMemberDTO> searchProjectByStatusList(List<String> statusList);
+
+
 }
