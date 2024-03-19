@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.user.command.security;
+package org.omoknoone.omokhub.auth.security;
 
 import jakarta.servlet.Filter;
 import org.omoknoone.omokhub.user.command.service.MemberService;

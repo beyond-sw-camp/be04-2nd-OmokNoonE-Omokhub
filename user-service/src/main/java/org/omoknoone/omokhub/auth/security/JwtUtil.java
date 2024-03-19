@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.user.command.security;
+package org.omoknoone.omokhub.auth.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
@@ -28,7 +28,7 @@ public class JwtUtil {
 
     public JwtUtil(
             @Value("${token.secret}") String secretKey,
-            @Value("${token.expiration_time}") long accessTokenExpTime,
+            @Value("${token.access-expiration-time}") long accessTokenExpTime,
             MemberService memberService
     ) {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
@@ -67,6 +67,8 @@ public class JwtUtil {
     public boolean validateToken(String token) {
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+
+            return true;
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
 //            log.info("Invalid JWT Token {}", e);
         } catch (ExpiredJwtException e) {
@@ -77,7 +79,7 @@ public class JwtUtil {
 //            log.info("JWT claims strig si empty {}", e);
         }
 
-        return true;
+        return false;
     }
 
     /* 설명. Token에서 User의 Id 개념 추출 */

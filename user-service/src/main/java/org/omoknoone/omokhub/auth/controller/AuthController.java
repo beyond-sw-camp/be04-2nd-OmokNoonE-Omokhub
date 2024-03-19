@@ -1,0 +1,27 @@
+package org.omoknoone.omokhub.auth.controller;
+
+import org.omoknoone.omokhub.auth.service.AuthService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
+    private final AuthService authService;
+
+    @Autowired
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@RequestBody String memberId, @RequestHeader("Refresh") String refreshToken) {
+        authService.logout(memberId, refreshToken);
+
+        return ResponseEntity.noContent().build();
+    }
+
+
+}

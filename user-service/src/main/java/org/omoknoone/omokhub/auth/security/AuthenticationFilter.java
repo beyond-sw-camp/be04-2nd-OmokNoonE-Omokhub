@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.user.command.security;
+package org.omoknoone.omokhub.auth.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
@@ -64,19 +64,29 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         MemberDTO memberDetails = memberService.getMemberDetailsByMemberId(id);
         String memberId = memberDetails.getMemberId();
         String roleName = memberDetails.getRoleName();
+        String name = memberDetails.getName();
 
         Claims claims = Jwts.claims().setSubject(memberId);
-        claims.put("auth", roleName);
+        claims.put("role", roleName);
+        claims.put("name", name);
 
-        String token = Jwts.builder()
+        String accessToken = Jwts.builder()
 //                .setSubject(memberId)
                 .setClaims(claims)
                 .setExpiration(new java.util.Date(System.currentTimeMillis()
-                        + Long.valueOf(environment.getProperty("token.expiration_time"))))
+                        + Long.valueOf(environment.getProperty("token.access-expiration-time"))))
                 .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
                 .compact();
 
-        response.addHeader("token", token);
+        String refreshToken = Jwts.builder()
+                .setSubject(memberId)
+                .setExpiration(new java.util.Date(System.currentTimeMillis()
+                        + Long.valueOf(environment.getProperty("token.refresh-expiration-time"))))
+                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
+                .compact();
+
+        response.addHeader("accessToken", accessToken);
+        response.addHeader("refreshToken", refreshToken);
         response.addHeader("memberId", memberId);
     }
 }

@@ -1,4 +1,4 @@
-package org.omoknoone.omokhub.user.command.security;
+package org.omoknoone.omokhub.auth.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
