@@ -52,11 +52,16 @@ public class ProjectController {
         return ResponseEntity.status(HttpStatus.OK).body(projectAndTeamAndMemberDTOList);
     }
 
-    @GetMapping("/statusList/{statusList}")
+    @GetMapping("/status-list/{statusList}")
     public ResponseEntity<List<ProjectAndTeamAndMemberDTO>> getProjectByStatusList(@PathVariable("statusList") String statusList) {
         List<ProjectAndTeamAndMemberDTO> projectAndTeamAndMemberDTOList = projectService.searchProjectByStatusList(statusList);
         return ResponseEntity.status(HttpStatus.OK).body(projectAndTeamAndMemberDTOList);
     }
 
+    @GetMapping("/search-list/{options}")
+    public ResponseEntity<List<ProjectAndTeamAndMemberDTO>> getProjectByOptions(@PathVariable("options") String options){
+        List<ProjectAndTeamAndMemberDTO> projectAndTeamAndMemberDTOList = projectService.searchProjectByOptions(options);
+        return ResponseEntity.status(HttpStatus.OK).body(projectAndTeamAndMemberDTOList);
+    }
 
 }

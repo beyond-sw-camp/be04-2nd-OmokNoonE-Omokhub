@@ -65,5 +65,12 @@ public class ProjectServiceImpl implements ProjectService {
 
         return projects;
     }
+
+    @Override
+    public List<ProjectAndTeamAndMemberDTO> searchProjectByOptions(String options) {
+        /* 설명. 예시 주소 문자열(options=) */
+        List<String> optionList = Arrays.asList(options.split("&"));
+        return null;
+    }
 }
 

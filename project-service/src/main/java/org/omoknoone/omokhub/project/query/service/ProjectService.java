@@ -17,5 +17,5 @@ public interface ProjectService {
 
     List<ProjectAndTeamAndMemberDTO> searchProjectByStatusList(String statusList);
 
-
+    List<ProjectAndTeamAndMemberDTO> searchProjectByOptions(String options);
 }
