@@ -4,6 +4,7 @@ import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import org.omoknoone.omokhub.auth.service.AuthService;
 import org.omoknoone.omokhub.user.command.service.MemberService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,6 +14,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
+import javax.naming.AuthenticationException;
 import java.security.Key;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -23,17 +25,14 @@ import java.util.stream.Stream;
 public class JwtUtil {
 
     private final Key key;
-    private final long accessTokenExpTime;
     private final MemberService memberService;
 
     public JwtUtil(
             @Value("${token.secret}") String secretKey,
             @Value("${token.access-expiration-time}") long accessTokenExpTime,
-            MemberService memberService
-    ) {
+            MemberService memberService) {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         this.key = Keys.hmacShaKeyFor(keyBytes);
-        this.accessTokenExpTime = accessTokenExpTime;
         this.memberService = memberService;
     }
     
@@ -64,7 +63,7 @@ public class JwtUtil {
     }
     
     /* 설명. Token 검증 */
-    public boolean validateToken(String token) {
+    public boolean validateToken(String token) throws ExpiredJwtException {
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
 
@@ -72,7 +71,7 @@ public class JwtUtil {
         } catch (io.jsonwebtoken.security.SecurityException | MalformedJwtException e) {
 //            log.info("Invalid JWT Token {}", e);
         } catch (ExpiredJwtException e) {
-//            log.info("expired JWT Toekn {}", e);
+            throw e;
         } catch (UnsupportedJwtException e) {
 //            log.info("Unsupported JWT Token {}", e);
         } catch (IllegalArgumentException e) {

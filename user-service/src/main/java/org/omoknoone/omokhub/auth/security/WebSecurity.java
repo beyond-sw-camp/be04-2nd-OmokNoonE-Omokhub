@@ -28,17 +28,19 @@ public class WebSecurity {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final Environment environment;
     private final JwtUtil jwtUtil;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Autowired
     public WebSecurity(MemberService memberService, AuthService authService,
                        BCryptPasswordEncoder bCryptPasswordEncoder,
                        Environment environment,
-                       JwtUtil jwtUtil) {
+                       JwtUtil jwtUtil, JwtTokenProvider jwtTokenProvider) {
         this.memberService = memberService;
         this.authService = authService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.environment = environment;
         this.jwtUtil = jwtUtil;
+        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     /* 설명. 인가(Authorization)용 메소드 */
@@ -73,15 +75,18 @@ public class WebSecurity {
                 .sessionManagement((session) -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
+        /* 설명. 로그아웃 처리 */
+//        http.logout((logout) -> logout.logoutUrl("/auth/logout"))
+
         http.addFilter(getAuthenticationFilter(authenticationManager));
-        http.addFilterBefore(new JwtFilter(memberService, jwtUtil), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(new JwtFilter(memberService, environment, authService, jwtUtil, jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
 
     /* 설명. 인증(Authentication)용 메소드 */
     private Filter getAuthenticationFilter(AuthenticationManager authenticationManager) {
-        return new AuthenticationFilter(authenticationManager, memberService, authService, environment);
+        return new AuthenticationFilter(authenticationManager, memberService, authService, environment, jwtTokenProvider);
     }
 
 }

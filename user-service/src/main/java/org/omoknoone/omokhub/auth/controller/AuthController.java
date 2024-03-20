@@ -19,8 +19,8 @@ public class AuthController {
 
 
     @PostMapping("/logout")
-    public ResponseEntity<?> logout(@RequestHeader String tokenIndex) throws AuthenticationException {
-        authService.logout(tokenIndex);
+    public ResponseEntity<?> logout(@RequestHeader String refreshTokenId) throws AuthenticationException {
+        authService.logout(refreshTokenId);
 
         return ResponseEntity.noContent().build();
     }

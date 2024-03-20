@@ -3,7 +3,6 @@ package org.omoknoone.omokhub.auth.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,12 +27,14 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final MemberService memberService;
     private final AuthService authService;
     private final Environment environment;
+    private final JwtTokenProvider jwtTokenProvider;
 
-    public AuthenticationFilter(AuthenticationManager authenticationManager, MemberService memberService, AuthService authService, Environment environment) {
+    public AuthenticationFilter(AuthenticationManager authenticationManager, MemberService memberService, AuthService authService, Environment environment, JwtTokenProvider jwtTokenProvider) {
         super(authenticationManager);
         this.memberService = memberService;
         this.authService = authService;
         this.environment = environment;
+        this.jwtTokenProvider = jwtTokenProvider;
     }
 
     /* 설명. 로그인 시도 시 동작하는 기능(POST 방식의 /login 요청) -> request body에 담겨온다. */
@@ -77,27 +78,32 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 //        claims.put("role2", roleName);
 //        claims.put("name2", name);
 
-        String accessToken = Jwts.builder()
-//                .setSubject(memberId)
-                .setClaims(claims)
-                .setExpiration(new java.util.Date(System.currentTimeMillis()
-                        + Long.valueOf(environment.getProperty("token.access-expiration-time"))))
-                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
-                .compact();
+//        String accessToken = Jwts.builder()
+//                .setClaims(claims)
+//                .setExpiration(new java.util.Date(System.currentTimeMillis()
+//                        + Long.valueOf(environment.getProperty("token.access-expiration-time"))))
+//                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
+//                .compact();
+//
+//        String refreshToken = Jwts.builder()
+//                .setClaims(claims)
+//                .setExpiration(new java.util.Date(System.currentTimeMillis()
+//                        + Long.valueOf(environment.getProperty("token.refresh-expiration-time"))))
+//                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
+//                .compact();
+        Long accessExpirationTime = Long.valueOf(environment.getProperty("token.access-expiration-time"));
+        String accessToken = jwtTokenProvider.generateToken(claims, accessExpirationTime);
 
-        String refreshToken = Jwts.builder()
-//                .setClaims(claims2)
-                .setSubject(memberId)
-                .setExpiration(new java.util.Date(System.currentTimeMillis()
-                        + Long.valueOf(environment.getProperty("token.refresh-expiration-time"))))
-                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
-                .compact();
+        Long refreshExpirationTime = Long.valueOf(environment.getProperty("token.refresh-expiration-time"));
+        String refreshToken = jwtTokenProvider.generateToken(claims, refreshExpirationTime);
 
-        /* 설명. refreshToken 관리를 위해 redis에 회원 정보 전달 */
-        authService.successLogin(memberId, refreshToken);
+        /* 설명. redis에 refreshToken을 저장하고 id값 가져오기 */
+        String refreshTokenId = authService.successLogin(memberId, refreshToken);
 
         response.addHeader("accessToken", accessToken);
-        response.addHeader("refreshToken", refreshToken);
+        
+        /* 설명. refreshToken이 아닌 token의 Id를 전달, refreshToken은 서버만 가지고 있음 */
+        response.addHeader("refreshTokenId", refreshTokenId);
         response.addHeader("memberId", memberId);
     }
 }
