@@ -43,9 +43,9 @@ public class JwtUtil {
 
         /* 설명. 토큰에서 claim들 추출(토큰 복호화) */
         Claims claims = parseClaims(token);
-        System.out.println("넘어온 AccessToekn claims 확인: " + claims);
+        System.out.println("넘어온 AccessToken claims 확인: " + claims);
 
-        if (claims.get("auth") == null) {
+        if (claims.get("role") == null) {
             throw new RuntimeException("권한 정보가 없는 토큰입니다.");
         }
 
@@ -57,7 +57,7 @@ public class JwtUtil {
 //        List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();
 //        simpleGrantedAuthorities.add(simpleGrantedAuthority);
 
-        Collection<? extends GrantedAuthority> authorities = Stream.of(new SimpleGrantedAuthority((String) claims.get("auth")))
+        Collection<? extends GrantedAuthority> authorities = Stream.of(new SimpleGrantedAuthority((String) claims.get("role")))
                 .collect(Collectors.toList());
 
         return new UsernamePasswordAuthenticationToken(userDetails, "", authorities);

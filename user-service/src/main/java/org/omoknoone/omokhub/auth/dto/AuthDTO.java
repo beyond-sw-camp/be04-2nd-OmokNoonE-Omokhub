@@ -1,7 +1,8 @@
 package org.omoknoone.omokhub.auth.dto;
 
 public class AuthDTO {
-    private String token;
+    private Long id;
+    private String refreshToken;
     private String memberId;
     private boolean isExpired;
     private boolean isRevoked;
@@ -9,19 +10,28 @@ public class AuthDTO {
     public AuthDTO() {
     }
 
-    public AuthDTO(String token, String memberId, boolean isExpired, boolean isRevoked) {
-        this.token = token;
+    public AuthDTO(Long id, String refreshToken, String memberId, boolean isExpired, boolean isRevoked) {
+        this.id = id;
+        this.refreshToken = refreshToken;
         this.memberId = memberId;
         this.isExpired = isExpired;
         this.isRevoked = isRevoked;
     }
 
-    public String getToken() {
-        return token;
+    public Long getId() {
+        return id;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
     }
 
     public String getMemberId() {
@@ -46,15 +56,5 @@ public class AuthDTO {
 
     public void setRevoked(boolean revoked) {
         isRevoked = revoked;
-    }
-
-    @Override
-    public String toString() {
-        return "Auth{" +
-                "token='" + token + '\'' +
-                ", memberId='" + memberId + '\'' +
-                ", isExpired=" + isExpired +
-                ", isRevoked=" + isRevoked +
-                '}';
     }
 }

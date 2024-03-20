@@ -8,6 +8,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.omoknoone.omokhub.auth.service.AuthService;
 import org.omoknoone.omokhub.user.command.dto.MemberDTO;
 import org.omoknoone.omokhub.user.command.service.MemberService;
 import org.omoknoone.omokhub.user.command.vo.RequestLogin;
@@ -24,12 +25,14 @@ import java.util.ArrayList;
 
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-    private MemberService memberService;
-    private Environment environment;
+    private final MemberService memberService;
+    private final AuthService authService;
+    private final Environment environment;
 
-    public AuthenticationFilter(AuthenticationManager authenticationManager, MemberService memberService, Environment environment) {
+    public AuthenticationFilter(AuthenticationManager authenticationManager, MemberService memberService, AuthService authService, Environment environment) {
         super(authenticationManager);
         this.memberService = memberService;
+        this.authService = authService;
         this.environment = environment;
     }
 
@@ -70,6 +73,10 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         claims.put("role", roleName);
         claims.put("name", name);
 
+//        Claims claims2 = Jwts.claims().setSubject(memberId);
+//        claims.put("role2", roleName);
+//        claims.put("name2", name);
+
         String accessToken = Jwts.builder()
 //                .setSubject(memberId)
                 .setClaims(claims)
@@ -79,11 +86,15 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
                 .compact();
 
         String refreshToken = Jwts.builder()
+//                .setClaims(claims2)
                 .setSubject(memberId)
                 .setExpiration(new java.util.Date(System.currentTimeMillis()
                         + Long.valueOf(environment.getProperty("token.refresh-expiration-time"))))
                 .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
                 .compact();
+
+        /* 설명. refreshToken 관리를 위해 redis에 회원 정보 전달 */
+        authService.successLogin(memberId, refreshToken);
 
         response.addHeader("accessToken", accessToken);
         response.addHeader("refreshToken", refreshToken);

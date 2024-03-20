@@ -1,6 +1,7 @@
 package org.omoknoone.omokhub.auth.security;
 
 import jakarta.servlet.Filter;
+import org.omoknoone.omokhub.auth.service.AuthService;
 import org.omoknoone.omokhub.user.command.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,16 +24,18 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurity {
 
     private final MemberService memberService;
+    private final AuthService authService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final Environment environment;
     private final JwtUtil jwtUtil;
 
     @Autowired
-    public WebSecurity(MemberService memberService,
+    public WebSecurity(MemberService memberService, AuthService authService,
                        BCryptPasswordEncoder bCryptPasswordEncoder,
                        Environment environment,
                        JwtUtil jwtUtil) {
         this.memberService = memberService;
+        this.authService = authService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.environment = environment;
         this.jwtUtil = jwtUtil;
@@ -78,7 +81,7 @@ public class WebSecurity {
 
     /* 설명. 인증(Authentication)용 메소드 */
     private Filter getAuthenticationFilter(AuthenticationManager authenticationManager) {
-        return new AuthenticationFilter(authenticationManager, memberService, environment);
+        return new AuthenticationFilter(authenticationManager, memberService, authService, environment);
     }
 
 }

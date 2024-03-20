@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.AuthenticationException;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -17,8 +19,8 @@ public class AuthController {
 
 
     @PostMapping("/logout")
-    public ResponseEntity<?> logout(@RequestBody String memberId, @RequestHeader("Refresh") String refreshToken) {
-        authService.logout(memberId, refreshToken);
+    public ResponseEntity<?> logout(@RequestHeader String tokenIndex) throws AuthenticationException {
+        authService.logout(tokenIndex);
 
         return ResponseEntity.noContent().build();
     }
