@@ -5,6 +5,7 @@ import org.omoknoone.omokhub.project.query.dto.ProjectAndScheduleDTO;
 import org.omoknoone.omokhub.project.query.dto.ProjectAndTeamAndMemberDTO;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ProjectMapper {
@@ -24,5 +25,5 @@ public interface ProjectMapper {
 
     List<ProjectAndTeamAndMemberDTO> searchProjectByStatusList(List<String> statusList);
 
-
+    List<ProjectAndTeamAndMemberDTO> searchProjectByOptions(Map<String, Object> params);
 }

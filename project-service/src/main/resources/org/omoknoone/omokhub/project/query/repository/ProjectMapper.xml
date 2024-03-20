@@ -137,4 +137,37 @@
         ORDER BY a.project_id DESC;
     </select>
 
+    <select id="searchProjectByOptions" parameterType="java.util.Map" resultMap="projectAndTeamAndMemberResultMap">
+        SELECT
+        a.PROJECT_ID
+        , a.TITLE
+        , a.START_DATE
+        , a.END_DATE
+        , a.STATUS
+        , a.IS_PUBLIC
+        , a.LAST_MODIFIED_DATE
+        , b.TEAM_NAME -- 팀명
+        , c.MEMBER_ID -- 팀장
+        FROM project a
+        JOIN project_team b ON (a.project_team_id = b.project_team_id)
+        JOIN project_member c ON (a.project_member_id = c.project_member_id)
+        WHERE 1=1
+        <if test="title != null">
+            AND a.TITLE LIKE CONCAT('%', #{title}, '%')
+        </if>
+        <if test="startDate != null">
+            AND STR_TO_DATE(a.START_DATE, '%Y-%m-%d') >= STR_TO_DATE(#{startDate}, '%Y-%m-%d')
+        </if>
+        <if test="statusList != null and statusList.size() > 0">
+            AND a.STATUS IN
+            <foreach item="status" collection="statusList" open="(" separator="," close=")">
+                #{status}
+            </foreach>
+        </if>
+        <if test="projectTeam != null">
+            AND b.TEAM_NAME LIKE CONCAT('%', #{projectTeam}, '%')
+        </if>
+        ORDER BY a.PROJECT_ID DESC;
+    </select>
+
 </mapper>
