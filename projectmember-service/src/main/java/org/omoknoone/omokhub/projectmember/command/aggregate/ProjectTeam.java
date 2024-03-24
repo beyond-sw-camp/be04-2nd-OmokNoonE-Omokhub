@@ -85,11 +85,20 @@ public class ProjectTeam {
         this.addedDate = addedDate;
     }
 
-    public boolean getIsActive() {
+//    public boolean getIsActive() {
+//        return isActive;
+//    }
+//
+//    public void setIsActive(boolean active) {
+//        isActive = active;
+//    }
+
+
+    public boolean isActive() {
         return isActive;
     }
 
-    public void setIsActive(boolean active) {
+    public void setActive(boolean active) {
         isActive = active;
     }
 

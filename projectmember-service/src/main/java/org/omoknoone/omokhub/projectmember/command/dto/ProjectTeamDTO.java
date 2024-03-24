@@ -26,6 +26,14 @@ public class ProjectTeamDTO {
         this.isActive = isActive;
     }
 
+    public ProjectTeamDTO(int maxMember, int currentMember, String teamName, LocalDate addedDate, boolean isActive) {
+        this.maxMember = maxMember;
+        this.currentMember = currentMember;
+        this.teamName = teamName;
+        this.addedDate = addedDate;
+        this.isActive = isActive;
+    }
+
     public int getProjectTeamId() {
         return projectTeamId;
     }
